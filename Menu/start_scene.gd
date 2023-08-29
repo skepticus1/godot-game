@@ -40,7 +40,8 @@ func _on_brenda_pressed():
 
 
 func _on_dakota_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://Playgrounds/Dakota/dakotasscene1.tscn")
+	
 
 
 func _on_don_pressed():
