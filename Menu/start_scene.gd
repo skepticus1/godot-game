@@ -44,4 +44,4 @@ func _on_dakota_pressed():
 
 
 func _on_don_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://Playgrounds/dons-folder/scenes/dons-scene.tscn")
