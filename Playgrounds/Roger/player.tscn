@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cuyckghws16o2" path="res://Playgrounds/Roger/PlayerMovement/moveDown/moveDown1.tres" id="3_li2vb"]
 [ext_resource type="Texture2D" uid="uid://p004leeyne4q" path="res://Playgrounds/Roger/PlayerMovement/moveDown/moveDown2.tres" id="4_c8y5w"]
 [ext_resource type="Texture2D" uid="uid://dn7cf1l2pmlv" path="res://Playgrounds/Roger/PlayerMovement/moveDown/moveDown3.tres" id="5_514k1"]
+[ext_resource type="Texture2D" uid="uid://dffydcrf675ci" path="res://Playgrounds/Roger/PlayerMovement/Idle/IdleUp.tres" id="5_ih1fb"]
 [ext_resource type="Texture2D" uid="uid://dxx7t55467kwr" path="res://Playgrounds/Roger/PlayerMovement/moveDown/moveDown4.tres" id="6_biv71"]
 [ext_resource type="Texture2D" uid="uid://cmn11t3yyxrb1" path="res://Playgrounds/Roger/PlayerMovement/moveDown/moveDown5.tres" id="7_4aer7"]
 [ext_resource type="Texture2D" uid="uid://cu8d8di1ylbv8" path="res://Playgrounds/Roger/PlayerMovement/moveDown/moveDown6.tres" id="8_kv1nv"]
@@ -91,10 +92,6 @@
 atlas = ExtResource("2_advac")
 region = Rect2(0, 715, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_e320j"]
-atlas = ExtResource("2_advac")
-region = Rect2(0, 523, 64, 64)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_pujre"]
 animations = [{
 "frames": [{
@@ -123,7 +120,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_e320j")
+"texture": ExtResource("5_ih1fb")
 }],
 "loop": true,
 "name": &"IdleUp",
@@ -513,8 +510,8 @@ metadata/_edit_lock_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -15)
 sprite_frames = SubResource("SpriteFrames_pujre")
-animation = &"SwordAttackUp"
-frame_progress = 0.680206
+animation = &"IdleUp"
+frame_progress = 0.772138
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
