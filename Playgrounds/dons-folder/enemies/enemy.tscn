@@ -1,6 +1,8 @@
-[gd_scene load_steps=71 format=3 uid="uid://cwdu7k673i2rb"]
+[gd_scene load_steps=72 format=3 uid="uid://cwdu7k673i2rb"]
 
 [ext_resource type="Texture2D" uid="uid://6uijdkdh4lij" path="res://Playgrounds/dons-folder/enemies/assets/Skeleton-naked-scimitar.png" id="1_1yp43"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mbycd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c818f"]
 atlas = ExtResource("1_1yp43")
@@ -580,8 +582,10 @@ animations = [{
 [node name="enemy" type="CharacterBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 19)
+shape = SubResource("CircleShape2D_mbycd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_s6ila")
-animation = &"slash_up"
-frame_progress = 0.97251
+animation = &"slash_right"
+frame_progress = 0.189148
