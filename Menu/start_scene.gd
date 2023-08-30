@@ -32,7 +32,7 @@ func _on_roger_pressed():
 
 
 func _on_katie_pressed():
-	get_tree().change_scene_to_file("res://Playgrounds/KT/world_one.tscn")
+	pass #get_tree().change_scene_to_file("res://Playgrounds/KT/world_one.tscn")
 
 
 func _on_brenda_pressed():
