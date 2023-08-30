@@ -1,5 +1,6 @@
-[gd_scene load_steps=72 format=3 uid="uid://cwdu7k673i2rb"]
+[gd_scene load_steps=74 format=3 uid="uid://cwdu7k673i2rb"]
 
+[ext_resource type="Script" path="res://Playgrounds/dons-folder/enemies/enemy.gd" id="1_0thwa"]
 [ext_resource type="Texture2D" uid="uid://6uijdkdh4lij" path="res://Playgrounds/dons-folder/enemies/assets/Skeleton-naked-scimitar.png" id="1_1yp43"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mbycd"]
@@ -579,7 +580,11 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_3qwm0"]
+radius = 157.003
+
 [node name="enemy" type="CharacterBody2D"]
+script = ExtResource("1_0thwa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 19)
@@ -589,3 +594,11 @@ shape = SubResource("CircleShape2D_mbycd")
 sprite_frames = SubResource("SpriteFrames_s6ila")
 animation = &"slash_right"
 frame_progress = 0.189148
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+shape = SubResource("CircleShape2D_3qwm0")
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
