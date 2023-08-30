@@ -511,7 +511,6 @@ metadata/_edit_lock_ = true
 position = Vector2(1, -15)
 sprite_frames = SubResource("SpriteFrames_pujre")
 animation = &"IdleUp"
-frame_progress = 0.594992
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2ufaag5xjino"]
+[gd_scene load_steps=4 format=3 uid="uid://cdebq8utbitln"]
 
 [ext_resource type="Script" path="res://Menu/start_scene.gd" id="1_uhjqc"]
 [ext_resource type="Texture2D" uid="uid://5yrt3nd4fxs4" path="res://Menu/wallpaperflare.com_wallpaper.jpg" id="2_mmj3u"]
