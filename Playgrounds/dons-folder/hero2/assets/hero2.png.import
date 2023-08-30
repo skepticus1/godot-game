@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxygyerqhte2h"
-path="res://.godot/imported/TX Tileset Grass.png-d347cd4cc2549a137545e2d6fceef46b.ctex"
+uid="uid://da8ivtb4xejbn"
+path="res://.godot/imported/hero2.png-ab6d3cff5e3fea1a35fe6ce8ff1a9105.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Playgrounds/dons-folder/scenes/assets/TX Tileset Grass.png"
-dest_files=["res://.godot/imported/TX Tileset Grass.png-d347cd4cc2549a137545e2d6fceef46b.ctex"]
+source_file="res://Playgrounds/dons-folder/hero2/assets/hero2.png"
+dest_files=["res://.godot/imported/hero2.png-ab6d3cff5e3fea1a35fe6ce8ff1a9105.ctex"]
 
 [params]
 
