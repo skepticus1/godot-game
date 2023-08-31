@@ -24,10 +24,10 @@ layer_1/tile_data = PackedInt32Array(2162688, 65537, 12, 2162689, 65537, 12, 216
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
-[node name="hero" parent="." instance=ExtResource("2_mx6bm")]
+[node name="hero" parent="." instance=ExtResource("1_ekcmh")]
 position = Vector2(150, 148)
 
-[node name="enemy" parent="." instance=ExtResource("2_6ng8c")]
+[node name="enemy" parent="." instance=ExtResource("2_dxroy")]
 position = Vector2(486, 159)
 
 [node name="enemy-nav" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_pcnrg")]
