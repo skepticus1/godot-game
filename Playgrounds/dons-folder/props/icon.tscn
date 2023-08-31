@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://cch1jbab2too6"]
+
+[ext_resource type="Texture2D" uid="uid://da8ivtb4xejbn" path="res://Playgrounds/dons-folder/hero2/assets/hero2.png" id="1_fhdjf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mtrfd"]
+size = Vector2(15, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hite"]
+atlas = ExtResource("1_fhdjf")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exyj0"]
+atlas = ExtResource("1_fhdjf")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2b7i2"]
+atlas = ExtResource("1_fhdjf")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qx5g8"]
+atlas = ExtResource("1_fhdjf")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hw4bm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hite")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exyj0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2b7i2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qx5g8")
+}],
+"loop": true,
+"name": &"test",
+"speed": 5.0
+}]
+
+[node name="icon" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_mtrfd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hw4bm")
+animation = &"test"
+autoplay = "test"
+frame_progress = 0.0338473
