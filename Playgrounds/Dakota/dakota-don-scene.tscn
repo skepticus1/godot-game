@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cm4f22w5q6p7h"]
+[gd_scene load_steps=6 format=3 uid="uid://76npnuiqdjy1"]
 
-[ext_resource type="PackedScene" uid="uid://dsy0355es5nna" path="res://Playgrounds/dons-folder/hero/hero.tscn" id="1_ekcmh"]
-[ext_resource type="PackedScene" uid="uid://cwdu7k673i2rb" path="res://Playgrounds/dons-folder/enemies/enemy.tscn" id="2_dxroy"]
+[ext_resource type="PackedScene" uid="uid://dsy0355es5nna" path="res://Playgrounds/dons-folder/hero/hero.tscn" id="1_sgo2m"]
+[ext_resource type="PackedScene" uid="uid://cwdu7k673i2rb" path="res://Playgrounds/dons-folder/enemies/enemy.tscn" id="2_aheuw"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pxhby"]
 
@@ -276,8 +276,8 @@ format = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
-[node name="hero" parent="." instance=ExtResource("1_ekcmh")]
+[node name="hero" parent="." instance=ExtResource("1_sgo2m")]
 position = Vector2(150, 148)
 
-[node name="enemy" parent="." instance=ExtResource("2_dxroy")]
+[node name="enemy" parent="." instance=ExtResource("2_aheuw")]
 position = Vector2(486, 159)
