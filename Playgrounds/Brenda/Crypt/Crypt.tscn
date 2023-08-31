@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://ccregw136oay"]
 
-[ext_resource type="PackedScene" uid="uid://dcjvhl6hw64i1" path="res://Playgrounds/Roger/Hero.tscn" id="2_5dwl6"]
+[ext_resource type="PackedScene" uid="uid://dcjvhl6hw64i1" path="res://Playgrounds/Roger/Hero/Hero.tscn" id="2_5dwl6"]
 [ext_resource type="Texture2D" path="res://Playgrounds/Brenda/Art/Dungen/FD_Dungeon.png" id="2_6651g"]
 [ext_resource type="Texture2D" path="res://Playgrounds/Brenda/Art/Crypt32x32/RA_Crypt.png" id="2_qs61l"]
 [ext_resource type="Texture2D" path="res://Playgrounds/Brenda/Art/Dungen/FD_Dungeon_Doors.png" id="3_cruh0"]

@@ -5,7 +5,6 @@ const ACCEL = 400
 const ATTACK_DISTANCE = 30
 
 var player = null
-var health = 10
 var current_dir = "none"
 
 @onready var animated_sprite = $AnimatedSprite2D
@@ -29,12 +28,12 @@ func _physics_process(delta):
 func _on_player_detection_body_entered(body):
 	#print("Entered: ", body, ", Type: ", typeof(body))
 	if body.name == "Hero":
-		#print("here entered")
+		print("here entered")
 		player = body
 		
 func _on_player_detection_body_exited(body):
 	if body.name == "Hero":
-		#print("hero exited")
+		print("hero exited")
 		player = null
 		
 func update_animation(direction):

@@ -13,11 +13,13 @@ var last_movement = Vector2.ZERO
 var is_attacking = false
 
 func _physics_process(delta):
-	if Input.is_action_pressed("attack1"):
+	if Input.is_action_just_pressed("attack1"):
 		is_attacking = true
-	if Input.is_action_just_released("attack1"):
-		is_attacking = false
-	player_movement(delta)
+		sword_attack()
+		await sword_attack()
+	else:
+		if is_attacking == false:
+			player_movement(delta)
 
 func get_input():
 	input.x = int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left"))
@@ -55,13 +57,9 @@ func play_idle_animation():
 			sword_attack()
 
 func player_movement(delta):
-	if is_attacking == false:
-		input = get_input()
-	else:
-		input = Vector2.ZERO
+	input = get_input()
 
 	if input == Vector2.ZERO:
-		sword_attack() # this stops the character if walking and attacks
 		if velocity.length() > (friction * delta):
 			velocity -= velocity.normalized() * (friction * delta)
 		else:
@@ -75,18 +73,29 @@ func player_movement(delta):
 func sword_attack():
 	if is_attacking == true:
 		if last_movement == Vector2.RIGHT:
-			get_node("AnimatedSprite2D").play("SwordAttackRight")
-			await get_node("AnimatedSprite2D").animation_finished
-			is_attacking = false
+			get_node("AnimationPlayer").play("SwordAttackRight")
+			await get_node("AnimationPlayer").animation_finished
 		elif last_movement == Vector2.LEFT:
-			get_node("AnimatedSprite2D").play("SwordAttackLeft")
-			await get_node("AnimatedSprite2D").animation_finished
-			is_attacking = false
+			get_node("AnimationPlayer").play("SwordAttackLeft")
+			await get_node("AnimationPlayer").animation_finished
 		elif last_movement == Vector2.DOWN:
-			get_node("AnimatedSprite2D").play("SwordAttackUp")
-			await get_node("AnimatedSprite2D").animation_finished
-			is_attacking = false
+			get_node("AnimationPlayer").play("SwordAttackUp")
+			await get_node("AnimationPlayer").animation_finished
 		elif last_movement == Vector2.UP:
-			get_node("AnimatedSprite2D").play("SwordAttackDown")
-			await get_node("AnimatedSprite2D").animation_finished
-			is_attacking = false
+			get_node("AnimationPlayer").play("SwordAttackDown")
+			await get_node("AnimationPlayer").animation_finished
+	is_attacking = false
+	return is_attacking
+
+
+
+
+
+
+func _on_attack_hit_box_body_entered(body):
+	if body.name == "Skeleton":
+		print("hit skeleton")
+	elif body.name == "Enemy":
+		print("hit enemy")
+	elif body.name == "Object":
+		print("hit object")
