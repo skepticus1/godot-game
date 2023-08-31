@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://du6g83fsi5whl"]
+
+[ext_resource type="Script" path="res://Playgrounds/dons-folder/nav_test/enemy_nav.gd" id="1_2px5v"]
+[ext_resource type="Texture2D" uid="uid://bkelcudwjqel0" path="res://icon.svg" id="2_rl3u0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m1305"]
+radius = 60.0333
+
+[node name="enemy-nav" type="CharacterBody2D"]
+modulate = Color(1, 0.231373, 0.129412, 1)
+scale = Vector2(0.25, 0.25)
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_2px5v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_rl3u0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_m1305")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -9,14 +9,19 @@ var current_dir = "none"
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var detection_zone = $PlayerDetection
-
-
+@onready var nav_agent = $NavigationAgent2D
 
 func _physics_process(delta):
-	print("player: ", player, ", Type: ", typeof(player))
+	#print("player: ", player, ", Type: ", typeof(player))
 	if player:
+		# get distance to player
 		#chase the player
-		var direction = (player.global_position - global_position).normalized()
+		# old direction code
+		# var direction = (player.global_position - global_position).normalized()
+		
+		# get new direction with nav agent
+		make_path()
+		var direction = to_local(nav_agent.get_next_path_position()).normalized()
 		velocity = direction * MAX_SPEED
 		update_animation(direction)
 	else:
@@ -27,13 +32,11 @@ func _physics_process(delta):
 
 func _on_player_detection_body_entered(body):
 	print("Entered: ", body, ", Type: ", typeof(body))
-	if body.name == "hero":
-		print("here entered")
+	if body.name == "hero" || body.name == "player_nav":
 		player = body
 		
 func _on_player_detection_body_exited(body):
-	if body.name == "hero":
-		print("hero exited")
+	if body.name == "hero" || body.name == "player_nav":
 		player = null
 		
 func update_animation(direction):
@@ -51,3 +54,10 @@ func update_animation(direction):
 	animated_sprite.play(anim)
 	current_dir = anim.replace("idle_", "").replace("walk_", "")
 
+func make_path():
+	if player:
+		nav_agent.target_position = player.global_position
+
+func _on_timer_timeout():
+	#print("timer timed out")
+	make_path()
