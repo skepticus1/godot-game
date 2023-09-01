@@ -28,7 +28,7 @@ func _on_test_area_pressed():
 
 
 func _on_roger_pressed():
-	get_tree().change_scene_to_file("res://Playgrounds/Roger/rogertest.tscn")
+	pass
 
 
 func _on_katie_pressed():
