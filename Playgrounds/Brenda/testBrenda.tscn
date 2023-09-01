@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://d32dn8mc4qa8q"]
+[gd_scene load_steps=2 format=3 uid="uid://bn2cotnreyh53"]
 
-[ext_resource type="Script" path="res://Playgrounds/Brenda/testBrenda.gd" id="1_efrfc"]
+[sub_resource type="GDScript" id="GDScript_uk1mo"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_efrfc")
+script = SubResource("GDScript_uk1mo")

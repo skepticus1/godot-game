@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://b1lb2jhev3pir"]
+
+[ext_resource type="Texture2D" uid="uid://svh2hy3h3yy4" path="res://Playgrounds/Brenda/Art/Crypt32x32/RA_Crypt_Animations.png" id="1_emu0j"]
+[ext_resource type="AudioStream" uid="uid://difyga7m8whf0" path="res://Playgrounds/Brenda/Audio/fireSounds.mp3" id="2_qf8ha"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3xcvh"]
+size = Vector2(24, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebki3"]
+atlas = ExtResource("1_emu0j")
+region = Rect2(512, 28, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ui1p"]
+atlas = ExtResource("1_emu0j")
+region = Rect2(544, 28, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p22yr"]
+atlas = ExtResource("1_emu0j")
+region = Rect2(576, 28, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_de5fc"]
+atlas = ExtResource("1_emu0j")
+region = Rect2(608, 28, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6qknn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebki3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ui1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p22yr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_de5fc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_jrakv"]
+offsets = PackedFloat32Array(0, 0.692683)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pacas"]
+gradient = SubResource("Gradient_jrakv")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="FirePit" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_3xcvh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6qknn")
+autoplay = "default"
+frame = 1
+frame_progress = 0.917627
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_qf8ha")
+volume_db = 1.0
+autoplay = true
+max_distance = 130.0
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -5)
+scale = Vector2(1.42969, 1.07031)
+color = Color(1, 0.831373, 0.329412, 1)
+texture = SubResource("GradientTexture2D_pacas")

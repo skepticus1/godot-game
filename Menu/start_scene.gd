@@ -28,11 +28,11 @@ func _on_test_area_pressed():
 
 
 func _on_roger_pressed():
-	get_tree().change_scene_to_file("res://Playgrounds/Roger/rogertest.tscn")
+	pass # Replace with function body.
 
 
 func _on_katie_pressed():
-	pass # Replace with function body.
+	pass #get_tree().change_scene_to_file("res://Playgrounds/KT/world_one.tscn")
 
 
 func _on_brenda_pressed():
