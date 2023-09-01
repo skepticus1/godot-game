@@ -32,11 +32,11 @@ func _physics_process(delta):
 
 func _on_player_detection_body_entered(body):
 	print("Entered: ", body, ", Type: ", typeof(body))
-	if body.name == "hero" || body.name == "player_nav":
+	if body.name == "Hero" || body.name == "player_nav":
 		player = body
 		
 func _on_player_detection_body_exited(body):
-	if body.name == "hero" || body.name == "player_nav":
+	if body.name == "Hero" || body.name == "player_nav":
 		player = null
 		
 func update_animation(direction):
