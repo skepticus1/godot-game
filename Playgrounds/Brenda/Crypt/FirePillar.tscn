@@ -60,7 +60,7 @@ shape = SubResource("RectangleShape2D_lxck5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_83o7f")
 autoplay = "default"
-frame_progress = 0.98531
+frame_progress = 0.812773
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0, 11)
