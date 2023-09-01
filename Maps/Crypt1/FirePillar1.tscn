@@ -1,25 +1,25 @@
-[gd_scene load_steps=11 format=3 uid="uid://5l2jr68k0hau"]
+[gd_scene load_steps=11 format=3 uid="uid://c0ecacijb71tl"]
 
-[ext_resource type="Texture2D" uid="uid://svh2hy3h3yy4" path="res://Playgrounds/Brenda/Art/Crypt32x32/RA_Crypt_Animations.png" id="1_oy58e"]
-[ext_resource type="AudioStream" uid="uid://difyga7m8whf0" path="res://Playgrounds/Brenda/Audio/fireSounds.mp3" id="2_2slpg"]
+[ext_resource type="Texture2D" uid="uid://svh2hy3h3yy4" path="res://Playgrounds/Brenda/Art/Crypt32x32/RA_Crypt_Animations.png" id="1_yb8oh"]
+[ext_resource type="AudioStream" uid="uid://difyga7m8whf0" path="res://Playgrounds/Brenda/Audio/fireSounds.mp3" id="2_hoia8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lxck5"]
 size = Vector2(24, 42)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ouavp"]
-atlas = ExtResource("1_oy58e")
+atlas = ExtResource("1_yb8oh")
 region = Rect2(512, 60, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u7w3d"]
-atlas = ExtResource("1_oy58e")
+atlas = ExtResource("1_yb8oh")
 region = Rect2(544, 60, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c0hj2"]
-atlas = ExtResource("1_oy58e")
+atlas = ExtResource("1_yb8oh")
 region = Rect2(576, 60, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v07ch"]
-atlas = ExtResource("1_oy58e")
+atlas = ExtResource("1_yb8oh")
 region = Rect2(608, 60, 32, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_83o7f"]
@@ -64,7 +64,7 @@ frame_progress = 0.812773
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0, 11)
-stream = ExtResource("2_2slpg")
+stream = ExtResource("2_hoia8")
 volume_db = 1.0
 autoplay = true
 max_distance = 130.0
