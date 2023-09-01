@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://dr74k4aa8uqoa" path="res://Playgrounds/KT/Assets/RA_Jungle.png" id="3_a8h6t"]
 [ext_resource type="Texture2D" uid="uid://bdmtfvackuh4p" path="res://Playgrounds/KT/Assets/RA_Ruins_Animations.png" id="4_wuwp4"]
 [ext_resource type="Texture2D" uid="uid://dxdrn5pehbvq6" path="res://Playgrounds/KT/Assets/RA_Jungle_Animations.png" id="5_cjddl"]
-[ext_resource type="PackedScene" uid="uid://dcjvhl6hw64i1" path="res://Playgrounds/Roger/Hero/Hero.tscn" id="6_gpqss"]
-[ext_resource type="PackedScene" uid="uid://bfnyylh4j7tjo" path="res://Playgrounds/Roger/Mobs/Skeleton.tscn" id="7_fhsgx"]
+[ext_resource type="PackedScene" uid="uid://dcjvhl6hw64i1" path="res://Playgrounds/Roger/Hero/Hero.tscn" id="6_376by"]
+[ext_resource type="PackedScene" uid="uid://bfnyylh4j7tjo" path="res://Playgrounds/Roger/Mobs/Skeleton.tscn" id="7_kbixu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0p87v"]
 texture = ExtResource("1_w3pgg")
@@ -37211,8 +37211,8 @@ limit_right = 1450
 limit_bottom = 1150
 editor_draw_limits = true
 
-[node name="Hero" parent="." instance=ExtResource("6_gpqss")]
-position = Vector2(14, 23)
+[node name="Hero" parent="." instance=ExtResource("6_376by")]
+position = Vector2(15, 27)
 
-[node name="Skeleton" parent="." instance=ExtResource("7_fhsgx")]
-position = Vector2(6, 411)
+[node name="Skeleton" parent="." instance=ExtResource("7_kbixu")]
+position = Vector2(18, 449)

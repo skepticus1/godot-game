@@ -13,13 +13,17 @@ var last_movement = Vector2.ZERO
 var is_attacking = false
 
 func _physics_process(delta):
-	if Input.is_action_just_pressed("attack1"):
-		is_attacking = true
-		sword_attack()
-		await sword_attack()
+	if health >= 1:
+		if Input.is_action_just_pressed("attack1"):
+			is_attacking = true
+			sword_attack()
+			await sword_attack()
+		else:
+			if is_attacking == false:
+				player_movement(delta)
 	else:
-		if is_attacking == false:
-			player_movement(delta)
+		get_node("AnimationPlayer").play("Death")
+		get_tree().change_scene_to_file("res://Playgrounds/Roger/roger_start_scene.tscn")
 
 func get_input():
 	input.x = int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left"))

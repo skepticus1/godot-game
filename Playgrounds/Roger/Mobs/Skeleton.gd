@@ -4,6 +4,7 @@ const MAX_SPEED = 100
 const ACCEL = 400
 const ATTACK_DISTANCE = 30
 
+var health = 10
 var player = null
 var current_dir = "none"
 

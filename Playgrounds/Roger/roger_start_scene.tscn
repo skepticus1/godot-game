@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://bsi2yox6mxvgj"]
 
-[ext_resource type="Script" path="res://Menu/start_scene.gd" id="1_t4uxc"]
+[ext_resource type="Script" path="res://Playgrounds/Roger/roger_start_scene.gd" id="1_nvhc8"]
 [ext_resource type="Texture2D" uid="uid://5yrt3nd4fxs4" path="res://Menu/wallpaperflare.com_wallpaper.jpg" id="2_47rqm"]
 [ext_resource type="AudioStream" uid="uid://c64638yxipeer" path="res://Menu/assets/RPG Medieval Fantasy - Off To New Shores.mp3" id="3_hblaf"]
 
 [node name="start-scene" type="Node2D"]
-script = ExtResource("1_t4uxc")
+script = ExtResource("1_nvhc8")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(575, 323)
