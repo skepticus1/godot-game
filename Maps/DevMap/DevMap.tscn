@@ -78,3 +78,15 @@ position = Vector2(760, 356)
 
 [node name="Hero" parent="." instance=ExtResource("3_vi40c")]
 position = Vector2(362, 394)
+
+[node name="Skeleton2" parent="." instance=ExtResource("3_r72ea")]
+position = Vector2(1032, 169)
+
+[node name="Skeleton3" parent="." instance=ExtResource("3_r72ea")]
+position = Vector2(1159, 300)
+
+[node name="Skeleton4" parent="." instance=ExtResource("3_r72ea")]
+position = Vector2(1105, 350)
+
+[node name="Skeleton5" parent="." instance=ExtResource("3_r72ea")]
+position = Vector2(1078, 530)
