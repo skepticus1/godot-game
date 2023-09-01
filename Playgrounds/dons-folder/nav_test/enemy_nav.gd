@@ -17,9 +17,15 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 	
 func makepath() -> void:
-	nav_agent.target_position = player.global_position
-	#print("Target position", nav_agent.target_position)
+	if player:
+		nav_agent.target_position = player.global_position
+		#print("Target position", nav_agent.target_position)
 	
 func _on_timer_timeout():
 	#print("timer timed out")
 	makepath()
+
+
+func _on_area_2d_area_entered(area):
+	if area.is_in_group("player_group"):
+		print("enemy collided")
