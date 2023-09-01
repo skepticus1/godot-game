@@ -654,7 +654,7 @@ shape = SubResource("CircleShape2D_85i4t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gn0cn")
-animation = &"walk_up"
+animation = &"idle_down"
 frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

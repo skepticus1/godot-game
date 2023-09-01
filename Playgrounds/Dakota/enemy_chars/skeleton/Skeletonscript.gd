@@ -50,10 +50,12 @@ func update_animation(direction):
 			anim = "idle_" + current_dir
 	animated_sprite.play(anim)
 	current_dir = anim.replace("idle_", "").replace("walk_", "")
-
-
-
-func _on_attack_zone_body_entered(body):
-	if body.name == "hero":
-		print("player in attack zone")
+	
+	func _on_area_2d_body_entered(body):
+		if body.name == "hero":
+			start_attack(body)
 		
+func start_attack(player):
+	$Sprite.play("")
+	player.play_attack_animation()
+
