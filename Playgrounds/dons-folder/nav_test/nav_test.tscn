@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dg32i54rjc7un"]
+[gd_scene load_steps=11 format=3 uid="uid://dg32i54rjc7un"]
 
 [ext_resource type="Texture2D" uid="uid://cmcx2uxkifecg" path="res://Playgrounds/dons-folder/nav_test/bkgr.png" id="1_6q1at"]
 [ext_resource type="PackedScene" uid="uid://bjqneukhlg0no" path="res://Playgrounds/dons-folder/nav_test/player_nav.tscn" id="2_lti5g"]
 [ext_resource type="PackedScene" uid="uid://cwdu7k673i2rb" path="res://Playgrounds/dons-folder/enemies/enemy.tscn" id="4_j5lef"]
+[ext_resource type="PackedScene" uid="uid://du6g83fsi5whl" path="res://Playgrounds/dons-folder/nav_test/enemy_nav.tscn" id="4_o0dgl"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_3uln0"]
 vertices = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -78,3 +79,6 @@ position = Vector2(406, 149)
 
 [node name="enemy" parent="." instance=ExtResource("4_j5lef")]
 position = Vector2(798, 377)
+
+[node name="enemy-nav" parent="." instance=ExtResource("4_o0dgl")]
+position = Vector2(195, 66)
