@@ -1,6 +1,5 @@
-[gd_scene load_steps=74 format=3 uid="uid://cwdu7k673i2rb"]
+[gd_scene load_steps=72 format=3 uid="uid://cwdu7k673i2rb"]
 
-[ext_resource type="Script" path="res://Playgrounds/dons-folder/enemies/enemy.gd" id="1_0thwa"]
 [ext_resource type="Texture2D" uid="uid://6uijdkdh4lij" path="res://Playgrounds/dons-folder/enemies/assets/Skeleton-naked-scimitar.png" id="1_1yp43"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mbycd"]
@@ -438,7 +437,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"slash_right",
-"speed": 8.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -580,37 +579,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3qwm0"]
-radius = 287.007
-
 [node name="enemy" type="CharacterBody2D"]
-collision_layer = 2
-collision_mask = 3
-motion_mode = 1
-wall_min_slide_angle = 0.0
-script = ExtResource("1_0thwa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 19)
 shape = SubResource("CircleShape2D_mbycd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -20)
 sprite_frames = SubResource("SpriteFrames_s6ila")
-animation = &"idle_left"
-frame_progress = 0.314528
-
-[node name="PlayerDetection" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
-shape = SubResource("CircleShape2D_3qwm0")
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.25
-autostart = true
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-debug_enabled = true
-
-[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
-[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+animation = &"slash_right"
+frame_progress = 0.189148
