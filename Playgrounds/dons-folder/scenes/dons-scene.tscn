@@ -1,12 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cm4f22w5q6p7h"]
+[gd_scene load_steps=5 format=3 uid="uid://cm4f22w5q6p7h"]
 
-[ext_resource type="PackedScene" uid="uid://dsy0355es5nna" path="res://Playgrounds/dons-folder/hero/hero.tscn" id="1_ekcmh"]
-[ext_resource type="PackedScene" uid="uid://cwdu7k673i2rb" path="res://Playgrounds/dons-folder/enemies/enemy.tscn" id="2_dxroy"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pxhby"]
+[ext_resource type="Texture2D" uid="uid://dxygyerqhte2h" path="res://Playgrounds/dons-folder/scenes/assets/TX Tileset Grass.png" id="1_vudvo"]
+[ext_resource type="PackedScene" uid="uid://dsy0355es5nna" path="res://Playgrounds/dons-folder/hero/hero.tscn" id="2_mx6bm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qr81c"]
-texture = SubResource("CompressedTexture2D_pxhby")
+texture = ExtResource("1_vudvo")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -276,8 +274,5 @@ format = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
-[node name="hero" parent="." instance=ExtResource("1_ekcmh")]
+[node name="hero" parent="." instance=ExtResource("2_mx6bm")]
 position = Vector2(150, 148)
-
-[node name="enemy" parent="." instance=ExtResource("2_dxroy")]
-position = Vector2(486, 159)
