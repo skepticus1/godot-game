@@ -87,7 +87,7 @@ func sword_attack():
 			await get_node("AnimationPlayer").animation_finished
 	is_attacking = false
 	return is_attacking
-
+#test
 
 
 
