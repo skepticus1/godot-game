@@ -5,8 +5,9 @@ const ACCEL = 400
 const ATTACK_DISTANCE = 30
 
 var player = null
-var current_dir = "none"
+var current_dir = "down"
 
+@onready var animation_player = $AnimationPlayer
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var detection_zone = $PlayerDetection
 @onready var nav_agent = $NavigationAgent2D
@@ -61,3 +62,16 @@ func make_path():
 func _on_timer_timeout():
 	#print("timer timed out")
 	make_path()
+
+func _on_attack_zone_body_entered(body):
+	var anim_attack = ""
+	if body.name == "Hero" || body.name == "player_nav":
+		print("attack zone entered by", body.name)
+		#play animation
+		if current_dir in ["up", "down", "left", "right"]:
+			print("current direction:", current_dir)
+			anim_attack = "slash_" + current_dir
+			animation_player.play(anim_attack)
+			
+		
+
