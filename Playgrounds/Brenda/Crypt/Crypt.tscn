@@ -1,18 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://ccregw136oay"]
+[gd_scene load_steps=12 format=3 uid="uid://ccregw136oay"]
 
-[ext_resource type="PackedScene" uid="uid://dcjvhl6hw64i1" path="res://Playgrounds/Roger/player.tscn" id="2_5dwl6"]
-[ext_resource type="Texture2D" uid="uid://cy5ia2cv21jll" path="res://Playgrounds/Brenda/Art/Dungen/FD_Dungeon.png" id="2_6651g"]
-[ext_resource type="Texture2D" uid="uid://0g1l18vcj26i" path="res://Playgrounds/Brenda/Art/Crypt32x32/RA_Crypt.png" id="2_qs61l"]
-[ext_resource type="Texture2D" uid="uid://clhx8utfeb78b" path="res://Playgrounds/Brenda/Art/Dungen/FD_Dungeon_Doors.png" id="3_cruh0"]
-[ext_resource type="Texture2D" uid="uid://dlhqh0dnge846" path="res://Playgrounds/Brenda/Art/FD_Halloween.png" id="4_kcjx8"]
-[ext_resource type="Texture2D" uid="uid://cgy3eivcwmimx" path="res://Playgrounds/Brenda/Art/Cavern32x32/RA_Ground_Tiles.png" id="6_6imuo"]
-[ext_resource type="Texture2D" uid="uid://8hrdwr4fymmm" path="res://Playgrounds/Brenda/Art/RA_Graveyard.png" id="7_acs1h"]
-[ext_resource type="Texture2D" uid="uid://svh2hy3h3yy4" path="res://Playgrounds/Brenda/Art/Crypt32x32/RA_Crypt_Animations.png" id="7_e3ku1"]
-[ext_resource type="Texture2D" uid="uid://bhsylyxxim823" path="res://Playgrounds/Brenda/Art/Cavern32x32/RA_Cavern.png" id="8_bgoa1"]
-[ext_resource type="Texture2D" uid="uid://by3ydvxaclsc0" path="res://Playgrounds/Brenda/Art/FD_Forest.png" id="9_nlfhj"]
+[ext_resource type="PackedScene" path="res://Playgrounds/Roger/player.tscn" id="2_5dwl6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0x8q4"]
-texture = ExtResource("2_qs61l")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -1124,7 +1114,6 @@ texture_region_size = Vector2i(32, 32)
 20:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 20:12/0/physics_layer_0/angular_velocity = 0.0
 20:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-21:12/size_in_atlas = Vector2i(1, 2)
 21:12/0 = 0
 21:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 21:12/0/physics_layer_0/angular_velocity = 0.0
@@ -1299,7 +1288,6 @@ texture_region_size = Vector2i(32, 32)
 13:14/0/modulate = Color(0.741176, 0.741176, 0.741176, 1)
 13:14/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:14/0/physics_layer_0/angular_velocity = 0.0
-16:14/size_in_atlas = Vector2i(2, 2)
 16:14/0 = 0
 16:14/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 16:14/0/physics_layer_0/angular_velocity = 0.0
@@ -1418,7 +1406,6 @@ texture_region_size = Vector2i(32, 32)
 26:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ary2k"]
-texture = ExtResource("2_6651g")
 texture_region_size = Vector2i(32, 32)
 4:0/0 = 0
 4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -3530,9 +3517,6 @@ texture_region_size = Vector2i(32, 32)
 25:31/0 = 0
 25:31/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 25:31/0/physics_layer_0/angular_velocity = 0.0
-26:31/animation_columns = 2
-26:31/animation_frame_0/duration = 1.0
-26:31/animation_frame_1/duration = 1.0
 26:31/0 = 0
 26:31/0/modulate = Color(1, 0.984314, 0, 1)
 26:31/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -4518,7 +4502,6 @@ texture_region_size = Vector2i(32, 32)
 31:40/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3jw1q"]
-texture = ExtResource("3_cruh0")
 texture_region_size = Vector2i(32, 32)
 8:0/0 = 0
 8:0/0/modulate = Color(0.55, 0.55, 0.55, 1)
@@ -5199,7 +5182,6 @@ texture_region_size = Vector2i(32, 32)
 17:10/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sryu4"]
-texture = ExtResource("4_kcjx8")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -5887,11 +5869,6 @@ texture_region_size = Vector2i(32, 32)
 4:17/0 = 0
 4:17/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:17/0/physics_layer_0/angular_velocity = 0.0
-6:17/animation_columns = 4
-6:17/animation_frame_0/duration = 1.0
-6:17/animation_frame_1/duration = 1.0
-6:17/animation_frame_2/duration = 1.0
-6:17/animation_frame_3/duration = 1.0
 6:17/0 = 0
 6:17/0/modulate = Color(0.75, 0.75, 0.75, 1)
 6:17/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -5920,11 +5897,6 @@ texture_region_size = Vector2i(32, 32)
 4:18/0 = 0
 4:18/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:18/0/physics_layer_0/angular_velocity = 0.0
-6:18/animation_columns = 4
-6:18/animation_frame_0/duration = 1.0
-6:18/animation_frame_1/duration = 1.0
-6:18/animation_frame_2/duration = 1.0
-6:18/animation_frame_3/duration = 1.0
 6:18/0 = 0
 6:18/0/modulate = Color(0.34902, 0.34902, 0.34902, 1)
 6:18/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -5955,7 +5927,6 @@ texture_region_size = Vector2i(32, 32)
 9:19/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vux25"]
-texture = ExtResource("6_6imuo")
 texture_region_size = Vector2i(32, 32)
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -6643,7 +6614,6 @@ texture_region_size = Vector2i(32, 32)
 23:15/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ko0ry"]
-texture = ExtResource("7_e3ku1")
 texture_region_size = Vector2i(32, 32)
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -6681,11 +6651,6 @@ texture_region_size = Vector2i(32, 32)
 14:1/0 = 0
 14:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:1/0/physics_layer_0/angular_velocity = 0.0
-16:1/animation_columns = 4
-16:1/animation_frame_0/duration = 1.0
-16:1/animation_frame_1/duration = 1.0
-16:1/animation_frame_2/duration = 1.0
-16:1/animation_frame_3/duration = 1.0
 16:1/0 = 0
 16:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 16:1/0/physics_layer_0/angular_velocity = 0.0
@@ -6726,12 +6691,6 @@ texture_region_size = Vector2i(32, 32)
 14:2/0 = 0
 14:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:2/0/physics_layer_0/angular_velocity = 0.0
-16:2/size_in_atlas = Vector2i(1, 2)
-16:2/animation_columns = 4
-16:2/animation_frame_0/duration = 1.0
-16:2/animation_frame_1/duration = 1.0
-16:2/animation_frame_2/duration = 1.0
-16:2/animation_frame_3/duration = 1.0
 16:2/0 = 0
 16:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 16:2/0/physics_layer_0/angular_velocity = 0.0
@@ -7096,12 +7055,6 @@ texture_region_size = Vector2i(32, 32)
 14:10/0 = 0
 14:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:10/0/physics_layer_0/angular_velocity = 0.0
-16:10/size_in_atlas = Vector2i(1, 2)
-16:10/animation_columns = 4
-16:10/animation_frame_0/duration = 1.0
-16:10/animation_frame_1/duration = 1.0
-16:10/animation_frame_2/duration = 1.0
-16:10/animation_frame_3/duration = 1.0
 16:10/0 = 0
 16:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 16:10/0/physics_layer_0/angular_velocity = 0.0
@@ -7166,12 +7119,6 @@ texture_region_size = Vector2i(32, 32)
 9:12/0 = 0
 9:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:12/0/physics_layer_0/angular_velocity = 0.0
-11:12/size_in_atlas = Vector2i(1, 2)
-11:12/animation_columns = 4
-11:12/animation_frame_0/duration = 1.0
-11:12/animation_frame_1/duration = 1.0
-11:12/animation_frame_2/duration = 1.0
-11:12/animation_frame_3/duration = 1.0
 11:12/0 = 0
 11:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 11:12/0/physics_layer_0/angular_velocity = 0.0
@@ -7248,12 +7195,6 @@ texture_region_size = Vector2i(32, 32)
 9:14/0 = 0
 9:14/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:14/0/physics_layer_0/angular_velocity = 0.0
-16:14/size_in_atlas = Vector2i(1, 2)
-16:14/animation_columns = 4
-16:14/animation_frame_0/duration = 1.0
-16:14/animation_frame_1/duration = 1.0
-16:14/animation_frame_2/duration = 1.0
-16:14/animation_frame_3/duration = 1.0
 16:14/0 = 0
 16:14/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 16:14/0/physics_layer_0/angular_velocity = 0.0
@@ -7282,11 +7223,6 @@ texture_region_size = Vector2i(32, 32)
 9:15/0 = 0
 9:15/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:15/0/physics_layer_0/angular_velocity = 0.0
-1:16/animation_columns = 4
-1:16/animation_frame_0/duration = 1.0
-1:16/animation_frame_1/duration = 1.0
-1:16/animation_frame_2/duration = 1.0
-1:16/animation_frame_3/duration = 1.0
 1:16/0 = 0
 1:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:16/0/physics_layer_0/angular_velocity = 0.0
@@ -7302,11 +7238,6 @@ texture_region_size = Vector2i(32, 32)
 9:16/0 = 0
 9:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:16/0/physics_layer_0/angular_velocity = 0.0
-11:16/animation_columns = 4
-11:16/animation_frame_0/duration = 1.0
-11:16/animation_frame_1/duration = 1.0
-11:16/animation_frame_2/duration = 1.0
-11:16/animation_frame_3/duration = 1.0
 11:16/0 = 0
 11:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 11:16/0/physics_layer_0/angular_velocity = 0.0
@@ -7454,28 +7385,16 @@ texture_region_size = Vector2i(32, 32)
 17:19/0 = 0
 17:19/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 17:19/0/physics_layer_0/angular_velocity = 0.0
-11:14/size_in_atlas = Vector2i(1, 2)
-11:14/animation_columns = 4
-11:14/animation_frame_0/duration = 1.0
-11:14/animation_frame_1/duration = 1.0
-11:14/animation_frame_2/duration = 1.0
-11:14/animation_frame_3/duration = 1.0
 11:14/0 = 0
 11:14/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 11:14/0/physics_layer_0/angular_velocity = 0.0
 11:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -8.13173, -24.9255, -0.707108, -25.1023, 7.6014, -25.1023, 16, -16, 15.5563, 32.7037, -16.0867, 32.1734)
-16:16/animation_columns = 4
-16:16/animation_frame_0/duration = 1.0
-16:16/animation_frame_1/duration = 1.0
-16:16/animation_frame_2/duration = 1.0
-16:16/animation_frame_3/duration = 1.0
 16:16/0 = 0
 16:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 16:16/0/physics_layer_0/angular_velocity = 0.0
 16:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12.25, -12.125, -0.125, -12.125, 11.5, -11.625, 11.75, 8, -11.875, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6cqq7"]
-texture = ExtResource("7_acs1h")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -8773,7 +8692,6 @@ texture_region_size = Vector2i(32, 32)
 29:10/0 = 0
 29:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 29:10/0/physics_layer_0/angular_velocity = 0.0
-30:10/size_in_atlas = Vector2i(2, 2)
 30:10/0 = 0
 30:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 30:10/0/physics_layer_0/angular_velocity = 0.0
@@ -9027,7 +8945,6 @@ texture_region_size = Vector2i(32, 32)
 29:12/0 = 0
 29:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 29:12/0/physics_layer_0/angular_velocity = 0.0
-30:12/size_in_atlas = Vector2i(1, 2)
 30:12/0 = 0
 30:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 30:12/0/physics_layer_0/angular_velocity = 0.0
@@ -9046,7 +8963,6 @@ texture_region_size = Vector2i(32, 32)
 43:12/0 = 0
 43:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 43:12/0/physics_layer_0/angular_velocity = 0.0
-44:12/size_in_atlas = Vector2i(3, 1)
 44:12/0 = 0
 44:12/0/modulate = Color(0.54902, 0.54902, 0.54902, 1)
 44:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -9157,7 +9073,6 @@ texture_region_size = Vector2i(32, 32)
 43:13/0 = 0
 43:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 43:13/0/physics_layer_0/angular_velocity = 0.0
-44:13/size_in_atlas = Vector2i(3, 1)
 44:13/0 = 0
 44:13/0/modulate = Color(0.54902, 0.54902, 0.54902, 1)
 44:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -9393,7 +9308,6 @@ texture_region_size = Vector2i(32, 32)
 47:15/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nf5ii"]
-texture = ExtResource("8_bgoa1")
 texture_region_size = Vector2i(32, 32)
 2:0/0 = 0
 2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -11832,7 +11746,6 @@ texture_region_size = Vector2i(32, 32)
 10:31/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_opcmh"]
-texture = ExtResource("9_nlfhj")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
