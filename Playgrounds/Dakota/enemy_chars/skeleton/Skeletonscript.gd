@@ -5,24 +5,18 @@ const ACCEL = 400
 const ATTACK_DISTANCE = 30
 
 var player = null
-var health = 10
 var current_dir = "none"
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var detection_zone = $PlayerDetection
-@onready var nav_agent = $NavigationAgent2D
+
+
 
 func _physics_process(delta):
-	#print("player: ", player, ", Type: ", typeof(player))
+	print("player: ", player, ", Type: ", typeof(player))
 	if player:
-		# get distance to player
 		#chase the player
-		# old direction code
-		# var direction = (player.global_position - global_position).normalized()
-		
-		# get new direction with nav agent
-		make_path()
-		var direction = to_local(nav_agent.get_next_path_position()).normalized()
+		var direction = (player.global_position - global_position).normalized()
 		velocity = direction * MAX_SPEED
 		update_animation(direction)
 	else:
@@ -33,11 +27,13 @@ func _physics_process(delta):
 
 func _on_player_detection_body_entered(body):
 	print("Entered: ", body, ", Type: ", typeof(body))
-	if body.name == "hero" || body.name == "player_nav":
+	if body.name == "hero":
+		print("here entered")
 		player = body
 		
 func _on_player_detection_body_exited(body):
-	if body.name == "hero" || body.name == "player_nav":
+	if body.name == "hero":
+		print("hero exited")
 		player = null
 		
 func update_animation(direction):
@@ -54,14 +50,12 @@ func update_animation(direction):
 			anim = "idle_" + current_dir
 	animated_sprite.play(anim)
 	current_dir = anim.replace("idle_", "").replace("walk_", "")
-func _on_attack_zone_body_entered(body):
-	if body.name == "hero":
-		print("player in attack zone")
+	
+	func _on_area_2d_body_entered(body):
+		if body.name == "hero":
+			start_attack(body)
 		
-func make_path():
-	if player:
-		nav_agent.target_position = player.global_position
+func start_attack(player):
+	$Sprite.play("")
+	player.play_attack_animation()
 
-func _on_timer_timeout():
-	#print("timer timed out")
-	make_path()

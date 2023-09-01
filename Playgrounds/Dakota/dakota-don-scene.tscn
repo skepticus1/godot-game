@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://76npnuiqdjy1"]
+[gd_scene load_steps=8 format=3 uid="uid://76npnuiqdjy1"]
 
 [ext_resource type="PackedScene" uid="uid://dsy0355es5nna" path="res://Playgrounds/dons-folder/hero/hero.tscn" id="1_sgo2m"]
 [ext_resource type="PackedScene" uid="uid://cwdu7k673i2rb" path="res://Playgrounds/dons-folder/enemies/enemy.tscn" id="2_aheuw"]
+[ext_resource type="PackedScene" uid="uid://dtpihiqtvpkc5" path="res://Playgrounds/Dakota/enemy_chars/skeleton/Skeleton.tscn" id="3_n7nlf"]
+[ext_resource type="Script" path="res://Playgrounds/Dakota/enemy_chars/skeleton/Skeletonscript.gd" id="4_eg8l1"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pxhby"]
 
@@ -267,7 +269,7 @@ texture = SubResource("CompressedTexture2D_pxhby")
 [sub_resource type="TileSet" id="TileSet_6kdiq"]
 sources/0 = SubResource("TileSetAtlasSource_qr81c")
 
-[node name="dons-scene" type="Node2D"]
+[node name="dakota-dons-scene" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_6kdiq")
@@ -281,3 +283,7 @@ position = Vector2(150, 148)
 
 [node name="enemy" parent="." instance=ExtResource("2_aheuw")]
 position = Vector2(486, 159)
+
+[node name="skeleton" parent="." instance=ExtResource("3_n7nlf")]
+position = Vector2(781, 303)
+script = ExtResource("4_eg8l1")
