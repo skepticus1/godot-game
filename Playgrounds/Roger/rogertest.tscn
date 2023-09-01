@@ -1,11 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://b1to570hfkeb8"]
+[gd_scene load_steps=14 format=3 uid="uid://b1to570hfkeb8"]
 
 [ext_resource type="Texture2D" uid="uid://bdwfrd51vuicl" path="res://Playgrounds/KT/Assets/RA_Ground_Tiles.png" id="1_w3pgg"]
 [ext_resource type="Texture2D" uid="uid://cckjw07sewx11" path="res://Playgrounds/KT/Assets/RA_Ruins.png" id="2_0lnds"]
 [ext_resource type="Texture2D" uid="uid://dr74k4aa8uqoa" path="res://Playgrounds/KT/Assets/RA_Jungle.png" id="3_a8h6t"]
 [ext_resource type="Texture2D" uid="uid://bdmtfvackuh4p" path="res://Playgrounds/KT/Assets/RA_Ruins_Animations.png" id="4_wuwp4"]
 [ext_resource type="Texture2D" uid="uid://dxdrn5pehbvq6" path="res://Playgrounds/KT/Assets/RA_Jungle_Animations.png" id="5_cjddl"]
-[ext_resource type="PackedScene" uid="uid://dcjvhl6hw64i1" path="res://Playgrounds/Roger/player.tscn" id="6_gpqss"]
+[ext_resource type="PackedScene" uid="uid://dcjvhl6hw64i1" path="res://Playgrounds/Roger/Hero/Hero.tscn" id="6_376by"]
+[ext_resource type="PackedScene" uid="uid://bfnyylh4j7tjo" path="res://Playgrounds/Roger/Mobs/Skeleton.tscn" id="7_kbixu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0p87v"]
 texture = ExtResource("1_w3pgg")
@@ -37210,5 +37211,8 @@ limit_right = 1450
 limit_bottom = 1150
 editor_draw_limits = true
 
-[node name="Hero" parent="." instance=ExtResource("6_gpqss")]
-position = Vector2(14, 23)
+[node name="Hero" parent="." instance=ExtResource("6_376by")]
+position = Vector2(15, 27)
+
+[node name="Skeleton" parent="." instance=ExtResource("7_kbixu")]
+position = Vector2(18, 449)

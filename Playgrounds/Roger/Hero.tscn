@@ -1,9 +1,9 @@
-[gd_scene load_steps=104 format=3 uid="uid://bngik176kaas"]
+[gd_scene load_steps=104 format=3 uid="uid://k1xiufw5ehy0"]
 
 [ext_resource type="Script" path="res://Playgrounds/Roger/Hero/Hero.gd" id="1_xd4bc"]
 [ext_resource type="Texture2D" uid="uid://cc4clnjex7rv0" path="res://Playgrounds/Roger/PlayerMovement/Idle/IdleDown.tres" id="2_v7c3x"]
 [ext_resource type="Texture2D" uid="uid://xqo2yq7d4wlq" path="res://Playgrounds/Roger/PlayerMovement/Idle/IdleLeft.tres" id="3_minmo"]
-[ext_resource type="Texture2D" path="res://Playgrounds/Roger/Hero/player-sprite/Download85103.png" id="4_t34jv"]
+[ext_resource type="Texture2D" uid="uid://cnruueoedjpau" path="res://Playgrounds/Roger/Hero/player-sprite/Download85103.png" id="4_t34jv"]
 [ext_resource type="Texture2D" uid="uid://dffydcrf675ci" path="res://Playgrounds/Roger/PlayerMovement/Idle/IdleUp.tres" id="5_t50hk"]
 [ext_resource type="Texture2D" uid="uid://cuyckghws16o2" path="res://Playgrounds/Roger/PlayerMovement/moveDown/moveDown1.tres" id="6_6dki1"]
 [ext_resource type="Texture2D" uid="uid://p004leeyne4q" path="res://Playgrounds/Roger/PlayerMovement/moveDown/moveDown2.tres" id="7_7aedi"]

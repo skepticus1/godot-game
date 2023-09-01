@@ -1,6 +1,5 @@
-[gd_scene load_steps=95 format=3 uid="uid://dcjvhl6hw64i1"]
+[gd_scene load_steps=95 format=3 uid="uid://bm4vnovksf0o5"]
 
-[ext_resource type="Script" path="res://Playgrounds/Roger/player.gd" id="1_ywtyd"]
 [ext_resource type="Texture2D" uid="uid://cnruueoedjpau" path="res://Playgrounds/Roger/player-sprite/Download85103.png" id="2_advac"]
 [ext_resource type="Texture2D" uid="uid://cc4clnjex7rv0" path="res://Playgrounds/Roger/PlayerMovement/Idle/IdleDown.tres" id="2_dglkj"]
 [ext_resource type="Texture2D" uid="uid://xqo2yq7d4wlq" path="res://Playgrounds/Roger/PlayerMovement/Idle/IdleLeft.tres" id="3_8dhr8"]
@@ -85,6 +84,73 @@
 [ext_resource type="Texture2D" uid="uid://dq7giaqob531d" path="res://Playgrounds/Roger/PlayerSwordAttack/PlayerSwordAttackUp/PlayerSwordAttackUp12.tres" id="58_2viq2"]
 [ext_resource type="Texture2D" uid="uid://diailshxtu0gd" path="res://Playgrounds/Roger/PlayerSwordAttack/PlayerSwordAttackUp/PlayerSwordAttackUp6.tres" id="58_4s20v"]
 [ext_resource type="Texture2D" uid="uid://col410p65q3x8" path="res://Playgrounds/Roger/PlayerSwordAttack/PlayerSwordAttackLeft/PlayerSwordAttackLeft12.tres" id="58_gy2lk"]
+
+[sub_resource type="GDScript" id="GDScript_inlnp"]
+script/source = "extends CharacterBody2D
+
+const max_speed = 300   # to lower speed change this
+const friction = 1400	# this affects how fast it slows down
+const idle_threshold = 10 # this is to determine when the character has stopped therefore changing it to standing animation
+
+var health = 100
+var kills = 0
+var gold = 0
+
+var input = Vector2.ZERO
+var last_movement = Vector2.ZERO
+
+func _physics_process(delta):
+	player_movement(delta)
+
+func get_input():
+	input.x = int(Input.is_action_pressed(\"ui_right\")) - int(Input.is_action_pressed(\"ui_left\"))
+	input.y = int(Input.is_action_pressed(\"ui_down\")) - int(Input.is_action_pressed(\"ui_up\"))
+
+	if input.x > 0:
+		last_movement = Vector2.RIGHT
+		get_node(\"AnimatedSprite2D\").play(\"MoveRight\")
+	elif input.x < 0:
+		last_movement = Vector2.LEFT
+		get_node(\"AnimatedSprite2D\").play(\"MoveLeft\")
+	elif input.y < 0:
+		last_movement = Vector2.DOWN
+		get_node(\"AnimatedSprite2D\").play(\"MoveUp\")
+	elif input.y > 0:
+		last_movement = Vector2.UP
+		get_node(\"AnimatedSprite2D\").play(\"MoveDown\")
+	else:
+		play_idle_animation()
+
+	return input.normalized()
+
+func play_idle_animation():
+	if velocity.length() < idle_threshold:
+		if last_movement == Vector2.RIGHT:
+			get_node(\"AnimatedSprite2D\").play(\"IdleRight\")
+		elif last_movement == Vector2.LEFT:
+			get_node(\"AnimatedSprite2D\").play(\"IdleLeft\")
+		elif last_movement == Vector2.DOWN:
+			get_node(\"AnimatedSprite2D\").play(\"IdleUp\")
+		elif last_movement == Vector2.UP:
+			get_node(\"AnimatedSprite2D\").play(\"IdleDown\")
+
+func player_movement(delta):
+	input = get_input()
+
+	if input == Vector2.ZERO:
+		if velocity.length() > (friction * delta):
+			velocity -= velocity.normalized() * (friction * delta)
+		else:
+			velocity = Vector2.ZERO
+	else:
+		velocity = input * max_speed
+		velocity = velocity.limit_length(max_speed)
+
+	move_and_slide()
+
+
+
+"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h8x15"]
 
@@ -500,7 +566,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_ywtyd")
+script = SubResource("GDScript_inlnp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -9)
