@@ -5,20 +5,25 @@ const ACCEL = 400
 const ATTACK_DISTANCE = 30
 
 var player = null
-var current_dir = "none"
+var current_dir = "down"
+var is_attacking = false
 
+var health = 30
+var damage = 5
+
+@onready var animation_player = $AnimationPlayer
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var detection_zone = $PlayerDetection
 @onready var nav_agent = $NavigationAgent2D
 
 func _physics_process(delta):
+	# prevent moving when attacking
+	if !animation_player.is_playing():
+		is_attacking = false
+	if is_attacking:
+		return
 	#print("player: ", player, ", Type: ", typeof(player))
 	if player:
-		# get distance to player
-		#chase the player
-		# old direction code
-		# var direction = (player.global_position - global_position).normalized()
-		
 		# get new direction with nav agent
 		make_path()
 		var direction = to_local(nav_agent.get_next_path_position()).normalized()
@@ -32,11 +37,11 @@ func _physics_process(delta):
 
 func _on_player_detection_body_entered(body):
 	print("Entered: ", body, ", Type: ", typeof(body))
-	if body.name == "hero" || body.name == "player_nav":
+	if body.name == "Hero" || body.name == "player_nav":
 		player = body
 		
 func _on_player_detection_body_exited(body):
-	if body.name == "hero" || body.name == "player_nav":
+	if body.name == "Hero" || body.name == "player_nav":
 		player = null
 		
 func update_animation(direction):
@@ -61,3 +66,25 @@ func make_path():
 func _on_timer_timeout():
 	#print("timer timed out")
 	make_path()
+	
+func _on_attack_zone_body_entered(body):
+	var anim_attack = ""
+	if body.name == "Hero" || body.name == "player_nav":
+		# set attacking mode
+		is_attacking = true
+		print("attack zone entered by", body.name)
+		#play animation
+		if current_dir in ["up", "down", "left", "right"]:
+			print("current direction:", current_dir)
+			anim_attack = "slash_" + current_dir
+			animation_player.play(anim_attack)
+
+func _on_attack_zone_body_exited(body):
+	if body.name == "Hero":
+		print("Hero out of attack zone")
+		is_attacking = false
+
+func _on_slash_hit_box_body_entered(body):
+	if body.name == "Hero":
+		print("Hero health: ", Game.HeroHealth)
+		Game.HeroHealth -= damage
