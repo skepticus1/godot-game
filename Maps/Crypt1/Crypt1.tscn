@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cpovwl727cam2"]
+[gd_scene load_steps=26 format=3 uid="uid://cpovwl727cam2"]
 
 [ext_resource type="Script" path="res://Playgrounds/Brenda/Crypt/Crypt.gd" id="1_rhwps"]
 [ext_resource type="Texture2D" uid="uid://0g1l18vcj26i" path="res://Playgrounds/Brenda/Art/Crypt32x32/RA_Crypt.png" id="2_ms33i"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://cxjctfc0ycisp" path="res://Playgrounds/Brenda/Audio/dungeonBackground.mp3" id="11_8pmj5"]
 [ext_resource type="PackedScene" uid="uid://b1lb2jhev3pir" path="res://Playgrounds/Brenda/Crypt/FirePit.tscn" id="12_xmjl0"]
 [ext_resource type="PackedScene" uid="uid://5l2jr68k0hau" path="res://Playgrounds/Brenda/Crypt/FirePillar.tscn" id="13_8ln06"]
+[ext_resource type="PackedScene" uid="uid://dcjvhl6hw64i1" path="res://Player/Hero.tscn" id="14_tache"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0x8q4"]
 texture = ExtResource("2_ms33i")
@@ -15076,5 +15077,8 @@ position = Vector2(1, 2)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(1023.5, 52)
 shape = SubResource("RectangleShape2D_5x3kl")
+
+[node name="Hero" parent="." instance=ExtResource("14_tache")]
+position = Vector2(78, 568)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

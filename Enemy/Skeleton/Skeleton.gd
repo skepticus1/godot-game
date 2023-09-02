@@ -7,16 +7,25 @@ const ATTACK_DISTANCE = 30
 var player = null
 var current_dir = "down"
 var is_attacking = false
-
-var health = 30
+var is_alive = true
 var damage = 5
+
+
+@export var health: int = 30
 
 @onready var animation_player = $AnimationPlayer
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var detection_zone = $PlayerDetection
 @onready var nav_agent = $NavigationAgent2D
+@onready var death_timer = $DeathTimer
+
+func _ready():
+	add_to_group("Enemy")
 
 func _physics_process(delta):
+	if !is_alive:
+		return
+	check_health()
 	# prevent moving when attacking
 	if !animation_player.is_playing():
 		is_attacking = false
@@ -69,7 +78,7 @@ func _on_timer_timeout():
 	
 func _on_attack_zone_body_entered(body):
 	var anim_attack = ""
-	if body.name == "Hero" || body.name == "player_nav":
+	if body.name == "Hero" and is_alive:
 		# set attacking mode
 		is_attacking = true
 		print("attack zone entered by", body.name)
@@ -88,3 +97,13 @@ func _on_slash_hit_box_body_entered(body):
 	if body.name == "Hero":
 		print("Hero health: ", Game.HeroHealth)
 		Game.HeroHealth -= damage
+
+func check_health():
+	if health <= 0:
+		is_alive = false
+		animation_player.play("death")
+		death_timer.start()
+
+func _on_death_timer_timeout():
+	Game.Kills += 1
+	queue_free()
