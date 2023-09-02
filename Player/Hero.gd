@@ -91,9 +91,11 @@ func sword_attack():
 	return is_attacking
 
 func _on_attack_hit_box_body_entered(body):
-	if body.name == "Skeleton":
-		print("hit skeleton")
+	print("Function is running! Entered body is: ", body.name) 
+	if body.is_in_group("Enemy"):
+		body.health -= Game.SwordDamage
+		print(body.name, " health is: ", body.health)
 	elif body.name == "Enemy":
-		print("hit enemy")
+		print("Hit enemy")
 	elif body.name == "Object":
-		print("hit object")
+		print("Hit object")
