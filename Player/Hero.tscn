@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=3 uid="uid://dcjvhl6hw64i1"]
+[gd_scene load_steps=112 format=3 uid="uid://dcjvhl6hw64i1"]
 
 [ext_resource type="Script" path="res://Player/Hero.gd" id="1_4sm72"]
 [ext_resource type="Texture2D" uid="uid://cc4clnjex7rv0" path="res://Player/HeroAssets/PlayerMovement/Idle/IdleDown.tres" id="2_qv67j"]
@@ -85,6 +85,7 @@
 [ext_resource type="Texture2D" uid="uid://5ikb4jnewasq" path="res://Player/HeroAssets/PlayerSwordAttack/PlayerSwordAttackUp/PlayerSwordAttackUp10.tres" id="82_7tvwe"]
 [ext_resource type="Texture2D" uid="uid://07h11i0sl2yr" path="res://Player/HeroAssets/PlayerSwordAttack/PlayerSwordAttackUp/PlayerSwordAttackUp11.tres" id="83_n3ytj"]
 [ext_resource type="Texture2D" uid="uid://dq7giaqob531d" path="res://Player/HeroAssets/PlayerSwordAttack/PlayerSwordAttackUp/PlayerSwordAttackUp12.tres" id="84_d6lij"]
+[ext_resource type="PackedScene" uid="uid://bp7k17r26iidj" path="res://Player/GUI/interface.tscn" id="86_x7nas"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h8x15"]
 
@@ -137,7 +138,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kja22")
 }],
-"loop": true,
+"loop": false,
 "name": &"Death",
 "speed": 10.0
 }, {
@@ -1038,13 +1039,6 @@ metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Label" type="Label" parent="Camera2D"]
-offset_left = -482.0
-offset_top = -228.0
-offset_right = -278.0
-offset_bottom = -205.0
-text = "HEALTH"
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_yenl1")
@@ -1055,5 +1049,9 @@ libraries = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitBox"]
 position = Vector2(4, -42.5)
 shape = SubResource("RectangleShape2D_g7gl0")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Interface" parent="Node2D" instance=ExtResource("86_x7nas")]
 
 [connection signal="body_entered" from="AttackHitBox" to="." method="_on_attack_hit_box_body_entered"]
