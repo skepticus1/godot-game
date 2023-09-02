@@ -89,14 +89,7 @@ func sword_attack():
 			await get_node("AnimationPlayer").animation_finished
 	is_attacking = false
 	return is_attacking
-<<<<<<< HEAD
-#test
 
-
-
-
-=======
->>>>>>> 5b8f6ed0ef4c539b395444b2fbbc5d91724a68cf
 
 func _on_attack_hit_box_body_entered(body):
 	print("Function is running! Entered body is: ", body.name) 
