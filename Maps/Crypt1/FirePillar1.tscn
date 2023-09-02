@@ -67,7 +67,7 @@ position = Vector2(0, 11)
 stream = ExtResource("2_hoia8")
 volume_db = 1.0
 autoplay = true
-max_distance = 130.0
+max_distance = 120.0
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(0, -5)
