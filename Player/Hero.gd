@@ -9,6 +9,7 @@ var input = Vector2.ZERO
 var last_movement = Vector2.ZERO
 var is_attacking = false
 var is_alive = true
+var nearby_interactable = null # used to know if the player is near an interactable object in the game world, such as a chest
 
 func _physics_process(delta):
 	if Game.HeroHealth >= 1:
@@ -99,3 +100,10 @@ func _on_attack_hit_box_body_entered(body):
 		print("Hit enemy")
 	elif body.name == "Object":
 		print("Hit object")
+
+# Interact with items in the world
+# Handle interact being pressed default "F" key
+func _input(event):
+	if event.is_action_pressed("interact"):
+		if nearby_interactable:
+			nearby_interactable.interact()

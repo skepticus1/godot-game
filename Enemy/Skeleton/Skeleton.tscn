@@ -1,6 +1,7 @@
-[gd_scene load_steps=90 format=3 uid="uid://c8d3c5jp6ofro"]
+[gd_scene load_steps=91 format=3 uid="uid://c8d3c5jp6ofro"]
 
 [ext_resource type="Script" path="res://Enemy/Skeleton/Skeleton.gd" id="1_vnsgm"]
+[ext_resource type="PackedScene" uid="uid://bxr4a61h8ybwd" path="res://Props/Key/key.tscn" id="2_dktak"]
 [ext_resource type="Texture2D" uid="uid://6uijdkdh4lij" path="res://Playgrounds/dons-folder/enemies/assets/Skeleton-naked-scimitar.png" id="2_fothd"]
 [ext_resource type="Texture2D" uid="uid://dvnj6mxj6tlio" path="res://Enemy/Skeleton/assets/Skeleton-naked-scimitar.png" id="2_rltsp"]
 
@@ -1007,6 +1008,7 @@ collision_mask = 7
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_vnsgm")
+key = ExtResource("2_dktak")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_mbycd")

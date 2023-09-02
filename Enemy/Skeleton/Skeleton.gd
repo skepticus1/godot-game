@@ -11,7 +11,9 @@ var is_alive = true
 var damage = 5
 
 
+
 @export var health: int = 30
+@export var key: PackedScene
 
 @onready var animation_player = $AnimationPlayer
 @onready var animated_sprite = $AnimatedSprite2D
@@ -106,4 +108,7 @@ func check_health():
 
 func _on_death_timer_timeout():
 	Game.Kills += 1
+	var inst = key.instantiate()
+	owner.add_child(inst) # owner is the level
+	inst.transform = self.global_transform
 	queue_free()
