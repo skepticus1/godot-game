@@ -8,6 +8,7 @@ const idle_threshold = 10 # this is to determine when the character has stopped 
 var input = Vector2.ZERO
 var last_movement = Vector2.ZERO
 var is_attacking = false
+var is_alive = true
 
 func _physics_process(delta):
 	if Game.HeroHealth >= 1:
@@ -18,9 +19,10 @@ func _physics_process(delta):
 		else:
 			if is_attacking == false:
 				player_movement(delta)
-	else:
+	elif is_alive == true:
+		is_alive = false
 		get_node("AnimationPlayer").play("Death")
-		get_tree().change_scene_to_file("res://Playgrounds/Roger/roger_start_scene.tscn")
+		#get_tree().change_scene_to_file("res://Playgrounds/Roger/roger_start_scene.tscn")
 
 func get_input():
 	input.x = int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left"))
@@ -87,11 +89,6 @@ func sword_attack():
 			await get_node("AnimationPlayer").animation_finished
 	is_attacking = false
 	return is_attacking
-
-
-
-
-
 
 func _on_attack_hit_box_body_entered(body):
 	if body.name == "Skeleton":
