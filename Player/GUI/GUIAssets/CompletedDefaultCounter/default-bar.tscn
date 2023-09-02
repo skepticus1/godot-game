@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6706heq6okgm"]
+
+[ext_resource type="Texture2D" uid="uid://bumgpdlemu6sy" path="res://Player/GUI/GUIAssets/Red/Health_background.tres" id="1_njbgo"]
+[ext_resource type="Texture2D" uid="uid://di1pq2x7v1jsx" path="res://Player/GUI/GUIAssets/Red/health_progress.tres" id="2_b56ui"]
+
+[node name="Bar" type="HBoxContainer"]
+offset_right = 101.0
+offset_bottom = 16.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "HP: "
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 2
+value = 90.0
+texture_over = ExtResource("1_njbgo")
+texture_progress = ExtResource("2_b56ui")
+texture_progress_offset = Vector2(9, 0)

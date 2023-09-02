@@ -89,11 +89,21 @@ func sword_attack():
 			await get_node("AnimationPlayer").animation_finished
 	is_attacking = false
 	return is_attacking
+<<<<<<< HEAD
+#test
+
+
+
+
+=======
+>>>>>>> 5b8f6ed0ef4c539b395444b2fbbc5d91724a68cf
 
 func _on_attack_hit_box_body_entered(body):
-	if body.name == "Skeleton":
-		print("hit skeleton")
+	print("Function is running! Entered body is: ", body.name) 
+	if body.is_in_group("Enemy"):
+		body.health -= Game.SwordDamage
+		print(body.name, " health is: ", body.health)
 	elif body.name == "Enemy":
-		print("hit enemy")
+		print("Hit enemy")
 	elif body.name == "Object":
-		print("hit object")
+		print("Hit object")
