@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://4fffjejvk41h"]
+
+[node name="CoinCounter"]
+offset_right = 83.0
+offset_bottom = 38.0
+
+[node name="Icon" parent="." index="0"]
+offset_top = -18.0
+offset_right = -3.0
+offset_bottom = 17.0
+
+[node name="Label" parent="." index="1"]
+text = "0"
