@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clgpb6tdoo5kg"
-path="res://.godot/imported/treasure chests.png-306e79fe20d5af53dfe3ced389c162c1.ctex"
+uid="uid://brprsk3jw8mvb"
+path="res://.godot/imported/key_32x32_24f.png-e0ceeaa96dbc29e59c95ef7365af01d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Props/Chest/treasure chests.png"
-dest_files=["res://.godot/imported/treasure chests.png-306e79fe20d5af53dfe3ced389c162c1.ctex"]
+source_file="res://Props/Key/key_32x32_24f.png"
+dest_files=["res://.godot/imported/key_32x32_24f.png-e0ceeaa96dbc29e59c95ef7365af01d3.ctex"]
 
 [params]
 
