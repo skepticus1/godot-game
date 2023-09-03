@@ -1,10 +1,11 @@
 extends Node2D
 
-
+@onready var musicPlayer = $MusicPlayer
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	Utilities.saveGame()
+	Utilities.loadGame()
+	musicPlayer.play(true)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -17,7 +18,7 @@ func _on_quit_pressed():
 
 func _on_play_pressed():
 	get_tree().change_scene_to_file("res://Maps/Crypt1/Crypt1.tscn")
-
+	musicPlayer.stream_paused = !musicPlayer.stream_paused
 
 func _on_credits_pressed():
 	pass # Replace with function body.

@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1u8d116l8jro"]
+[gd_scene load_steps=5 format=3 uid="uid://b1u8d116l8jro"]
 
 [ext_resource type="PackedScene" uid="uid://c8ugk7a4utsu5" path="res://Props/GUI/Counters/KillCounter/KillCounter.tscn" id="1_8oqf0"]
+[ext_resource type="PackedScene" uid="uid://du8yyh8dqs7uy" path="res://Props/GUI/ManaBar.tscn" id="2_l2k6i"]
 [ext_resource type="PackedScene" uid="uid://xw1qqo5uwm1j" path="res://Props/GUI/Counters/GoldCounter/GoldCounter.tscn" id="2_uo5d2"]
+[ext_resource type="PackedScene" uid="uid://cqa66c4acemet" path="res://Props/GUI/HealthBar.tscn" id="3_8reul"]
 
 [node name="GUI" type="CanvasLayer"]
 
@@ -13,11 +15,56 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="StatusBars" type="MarginContainer" parent="Control"]
+layout_mode = 2
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 335.0
+offset_bottom = 182.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="HealthAndMana" type="VBoxContainer" parent="Control/StatusBars"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="HealthContainer" type="HBoxContainer" parent="Control/StatusBars/HealthAndMana"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="Control/StatusBars/HealthAndMana/HealthContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "HEALTH
+"
+
+[node name="HealthBar" parent="Control/StatusBars/HealthAndMana/HealthContainer" instance=ExtResource("3_8reul")]
+offset = Vector2(98, 30)
+transform = Transform2D(1, 0, 0, 1, 98, 30)
+
+[node name="ManaContainer" type="HBoxContainer" parent="Control/StatusBars/HealthAndMana"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="Control/StatusBars/HealthAndMana/ManaContainer"]
+layout_mode = 2
+text = "MANA
+"
+
+[node name="ManaBar" parent="Control/StatusBars/HealthAndMana/ManaContainer" instance=ExtResource("2_l2k6i")]
+offset = Vector2(100, 60)
+transform = Transform2D(1, 0, 0, 1, 100, 60)
+
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 1.0
+offset_bottom = -492.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 32
@@ -25,29 +72,30 @@ theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+[node name="GameCounters" type="VBoxContainer" parent="Control/MarginContainer"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
+size_flags_horizontal = 8
 size_flags_vertical = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/GameCounters"]
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 
-[node name="KillCounter" parent="Control/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_8oqf0")]
+[node name="KillCounter" parent="Control/MarginContainer/GameCounters/HBoxContainer" instance=ExtResource("1_8oqf0")]
 custom_minimum_size = Vector2(200, 70)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/MarginContainer/GameCounters"]
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 
-[node name="GoldCounter" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("2_uo5d2")]
+[node name="GoldCounter" parent="Control/MarginContainer/GameCounters/HBoxContainer2" instance=ExtResource("2_uo5d2")]
 custom_minimum_size = Vector2(200, 70)
 layout_mode = 2
 size_flags_vertical = 4
