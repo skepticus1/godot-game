@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://c10jy67of3hfg"]
+
+[ext_resource type="Texture2D" uid="uid://b0q0h4j5gd4vk" path="res://Props/Coins/CoinAssets/label_bg.png" id="1_bogo1"]
+[ext_resource type="Texture2D" uid="uid://dywikbjf403gf" path="res://Props/Coins/CoinAssets/coin_1.png" id="2_gdqme"]
+
+[sub_resource type="Theme" id="Theme_0k54c"]
+default_font_size = 30
+
+[node name="Counter" type="NinePatchRect"]
+offset_right = 163.0
+offset_bottom = 85.0
+texture = ExtResource("1_bogo1")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -42.0
+offset_right = 3.0
+offset_bottom = 42.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("2_gdqme")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -41.5
+offset_right = 92.0
+offset_bottom = 41.5
+grow_vertical = 2
+scale = Vector2(1.00287, 1)
+theme = SubResource("Theme_0k54c")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

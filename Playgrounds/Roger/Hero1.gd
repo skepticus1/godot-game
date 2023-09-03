@@ -4,8 +4,6 @@ const max_speed = 300   # to lower speed change this
 const friction = 1400	# this affects how fast it slows down
 const idle_threshold = 10 # this is to determine when the character has stopped therefore changing it to standing animation
 
-signal collected(collectable):
-
 var input = Vector2.ZERO
 var last_movement = Vector2.ZERO
 var is_attacking = false
@@ -101,6 +99,4 @@ func _on_attack_hit_box_body_entered(body):
 		print("hit enemy")
 	elif body.name == "Object":
 		print("hit object")
-		
-func collect(collectable):
-	collected.emit(collectable)
+

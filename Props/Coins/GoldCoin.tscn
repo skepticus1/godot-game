@@ -1,0 +1,58 @@
+[gd_scene load_steps=12 format=3 uid="uid://bj81tcud6o8oo"]
+
+[ext_resource type="Script" path="res://Props/Coins/GoldCoin.gd" id="1_6vkb2"]
+[ext_resource type="Texture2D" uid="uid://dywikbjf403gf" path="res://Props/Coins/CoinAssets/coin_1.png" id="2_k4dx6"]
+[ext_resource type="Texture2D" uid="uid://c5tp4i07qjm1v" path="res://Props/Coins/CoinAssets/coin_2.png" id="3_rj7f8"]
+[ext_resource type="Texture2D" uid="uid://dufl1utldpehx" path="res://Props/Coins/CoinAssets/coin_3.png" id="4_a430q"]
+[ext_resource type="Texture2D" uid="uid://n01q6p2dqnaj" path="res://Props/Coins/CoinAssets/coin_4.png" id="5_leyf0"]
+[ext_resource type="Texture2D" uid="uid://c6ej4aopvb6wm" path="res://Props/Coins/CoinAssets/coin_5.png" id="6_s3iyb"]
+[ext_resource type="Texture2D" uid="uid://c04hgf6av4b30" path="res://Props/Coins/CoinAssets/coin_6.png" id="7_x6l2n"]
+[ext_resource type="Texture2D" uid="uid://ctbbu3nu2fwkl" path="res://Props/Coins/CoinAssets/coin_7.png" id="8_ponx4"]
+[ext_resource type="Texture2D" uid="uid://x4h6i3me21ex" path="res://Props/Coins/CoinAssets/coin_8.png" id="9_u61gu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wxwyy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t4tj6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_k4dx6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rj7f8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_a430q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_leyf0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_s3iyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_x6l2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ponx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_u61gu")
+}],
+"loop": true,
+"name": &"coinSpin",
+"speed": 10.0
+}]
+
+[node name="GoldCoin" type="Area2D"]
+script = ExtResource("1_6vkb2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_wxwyy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_t4tj6")
+animation = &"coinSpin"
+autoplay = "coinSpin"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
