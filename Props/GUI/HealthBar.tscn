@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqa66c4acemet"]
+
+[ext_resource type="Texture2D" path="res://Props/GUI/GUIAssets/Red/health_bar_background.tres" id="1_2ms1c"]
+[ext_resource type="Script" path="res://Props/GUI/HealthBar.gd" id="1_bqwju"]
+[ext_resource type="Texture2D" path="res://Props/GUI/GUIAssets/Red/health_bar_progress.tres" id="2_4yyvp"]
+
+[node name="HealthBar" type="CanvasLayer"]
+script = ExtResource("1_bqwju")
+
+[node name="HealthBarEmpty" type="TextureRect" parent="."]
+offset_right = 200.0
+offset_bottom = 30.0
+texture = ExtResource("1_2ms1c")
+metadata/_edit_lock_ = true
+
+[node name="HealthBarProgress" type="TextureProgressBar" parent="."]
+custom_minimum_size = Vector2(100, 12)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 7.0
+offset_right = -1100.0
+offset_bottom = -699.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_top = 1
+stretch_margin_right = 1
+stretch_margin_bottom = 7
+texture_progress = ExtResource("2_4yyvp")

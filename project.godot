@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Game="*res://Global/Game.gd"
 Utilities="*res://Global/Utilities.gd"
+StartScene="*res://Menu/start_scene.tscn"
 
 [display]
 
