@@ -30,14 +30,9 @@ layout_mode = 2
 size_flags_vertical = 0
 
 [node name="HealthContainer" type="HBoxContainer" parent="Control/StatusBars/HealthAndMana"]
-custom_minimum_size = Vector2(300, 25)
 layout_mode = 2
 size_flags_horizontal = 0
-size_flags_vertical = 4
-
-[node name="HealthBar" parent="Control/StatusBars/HealthAndMana/HealthContainer" instance=ExtResource("3_8reul")]
-offset = Vector2(100, 30)
-transform = Transform2D(1, 0, 0, 1, 100, 30)
+size_flags_vertical = 0
 
 [node name="Label" type="Label" parent="Control/StatusBars/HealthAndMana/HealthContainer"]
 layout_mode = 2
@@ -45,19 +40,23 @@ size_flags_vertical = 0
 text = "HEALTH
 "
 
+[node name="HealthBar" parent="Control/StatusBars/HealthAndMana/HealthContainer" instance=ExtResource("3_8reul")]
+offset = Vector2(98, 30)
+transform = Transform2D(1, 0, 0, 1, 98, 30)
+
 [node name="ManaContainer" type="HBoxContainer" parent="Control/StatusBars/HealthAndMana"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="ManaBar" parent="Control/StatusBars/HealthAndMana/ManaContainer" instance=ExtResource("2_l2k6i")]
-offset = Vector2(100, 60)
-transform = Transform2D(1, 0, 0, 1, 100, 60)
-
 [node name="Label" type="Label" parent="Control/StatusBars/HealthAndMana/ManaContainer"]
 layout_mode = 2
 text = "MANA
 "
+
+[node name="ManaBar" parent="Control/StatusBars/HealthAndMana/ManaContainer" instance=ExtResource("2_l2k6i")]
+offset = Vector2(100, 60)
+transform = Transform2D(1, 0, 0, 1, 100, 60)
 
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
 layout_mode = 1
