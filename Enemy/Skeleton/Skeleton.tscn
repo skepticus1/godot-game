@@ -1,9 +1,35 @@
-[gd_scene load_steps=82 format=3 uid="uid://c8d3c5jp6ofro"]
+[gd_scene load_steps=91 format=3 uid="uid://c8d3c5jp6ofro"]
 
 [ext_resource type="Script" path="res://Enemy/Skeleton/Skeleton.gd" id="1_vnsgm"]
+[ext_resource type="PackedScene" uid="uid://bxr4a61h8ybwd" path="res://Props/Key/key.tscn" id="2_dktak"]
 [ext_resource type="Texture2D" uid="uid://6uijdkdh4lij" path="res://Playgrounds/dons-folder/enemies/assets/Skeleton-naked-scimitar.png" id="2_fothd"]
+[ext_resource type="Texture2D" uid="uid://dvnj6mxj6tlio" path="res://Enemy/Skeleton/assets/Skeleton-naked-scimitar.png" id="2_rltsp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mbycd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7aj8a"]
+atlas = ExtResource("2_rltsp")
+region = Rect2(0, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4601"]
+atlas = ExtResource("2_rltsp")
+region = Rect2(64, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xipkd"]
+atlas = ExtResource("2_rltsp")
+region = Rect2(128, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0xy1"]
+atlas = ExtResource("2_rltsp")
+region = Rect2(192, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ml4f"]
+atlas = ExtResource("2_rltsp")
+region = Rect2(256, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmls6"]
+atlas = ExtResource("2_rltsp")
+region = Rect2(320, 1280, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c818f"]
 atlas = ExtResource("2_fothd")
@@ -279,6 +305,29 @@ region = Rect2(512, 512, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s6ila"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7aj8a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4601")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xipkd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0xy1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ml4f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmls6")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_c818f")
@@ -639,6 +688,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(6.25, -30.5)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimatedSprite2D:animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"death"]
+}
 
 [sub_resource type="Animation" id="Animation_8irdt"]
 resource_name = "slash_down"
@@ -902,9 +963,39 @@ tracks/4/keys = {
 "values": [Vector2(6.25, -30.5), Vector2(6.25, -30.5), Vector2(6.25, -30.5)]
 }
 
+[sub_resource type="Animation" id="Animation_e8gkm"]
+resource_name = "death"
+length = 5.0
+step = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"death"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1no27"]
 _data = {
 "RESET": SubResource("Animation_1q3qh"),
+"death": SubResource("Animation_e8gkm"),
 "slash_down": SubResource("Animation_8irdt"),
 "slash_left": SubResource("Animation_7t12e"),
 "slash_right": SubResource("Animation_0g2iv"),
@@ -913,10 +1004,11 @@ _data = {
 
 [node name="Skeleton" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 3
+collision_mask = 7
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_vnsgm")
+key = ExtResource("2_dktak")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_mbycd")
@@ -925,7 +1017,7 @@ metadata/_edit_lock_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -20)
 sprite_frames = SubResource("SpriteFrames_s6ila")
-animation = &"slash_left"
+animation = &"death"
 frame = 1
 metadata/_edit_lock_ = true
 
@@ -954,10 +1046,14 @@ libraries = {
 }
 
 [node name="SlashHitBox" type="Area2D" parent="."]
+collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SlashHitBox"]
 position = Vector2(6.25, -30.5)
 shape = SubResource("RectangleShape2D_a0aub")
+
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 4.9
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
@@ -965,3 +1061,4 @@ shape = SubResource("RectangleShape2D_a0aub")
 [connection signal="body_entered" from="AttackZone" to="." method="_on_attack_zone_body_entered"]
 [connection signal="body_exited" from="AttackZone" to="." method="_on_attack_zone_body_exited"]
 [connection signal="body_entered" from="SlashHitBox" to="." method="_on_slash_hit_box_body_entered"]
+[connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]
