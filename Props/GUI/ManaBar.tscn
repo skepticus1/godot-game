@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dr8dwrvj5egyy"]
+
+[ext_resource type="Texture2D" path="res://Props/GUI/GUIAssets/Blue/mana_bar_background_2.tres" id="1_h6gix"]
+
+[node name="ManaBar" type="CanvasLayer"]
+
+[node name="ManaBarEmpty" type="TextureRect" parent="."]
+offset_right = 200.0
+offset_bottom = 30.0
+texture = ExtResource("1_h6gix")
+
+[node name="ManaBarProgress" type="TextureProgressBar" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
