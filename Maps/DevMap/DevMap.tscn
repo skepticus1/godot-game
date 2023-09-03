@@ -90,12 +90,3 @@ position = Vector2(362, 394)
 
 [node name="Skeleton2" parent="." instance=ExtResource("3_r72ea")]
 position = Vector2(1213, 161)
-
-[node name="Skeleton3" parent="." instance=ExtResource("3_r72ea")]
-position = Vector2(1054, 95)
-
-[node name="Skeleton4" parent="." instance=ExtResource("3_r72ea")]
-position = Vector2(1134, 93)
-
-[node name="Skeleton5" parent="." instance=ExtResource("3_r72ea")]
-position = Vector2(1207, 91)
