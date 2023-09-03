@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="godot-game"
-run/main_scene="res://Player/GUI/GUIAssets/CompletedDefaultCounter/default_theme.tscn"
+run/main_scene="res://Menu/start_scene.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
 
@@ -19,7 +19,6 @@ config/icon="res://icon.svg"
 
 Game="*res://Global/Game.gd"
 Utilities="*res://Global/Utilities.gd"
-StartScene="*res://Menu/start_scene.tscn"
 
 [display]
 

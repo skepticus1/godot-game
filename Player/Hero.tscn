@@ -453,6 +453,11 @@ animations = [{
 "loop": true,
 "name": &"SwordAttackUp",
 "speed": 40.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
 }]
 
 [sub_resource type="Animation" id="Animation_8qi81"]
