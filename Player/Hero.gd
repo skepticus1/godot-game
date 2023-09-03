@@ -91,6 +91,7 @@ func sword_attack():
 	is_attacking = false
 	return is_attacking
 
+
 func _on_attack_hit_box_body_entered(body):
 	print("Function is running! Entered body is: ", body.name) 
 	if body.is_in_group("Enemy"):
