@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=3 uid="uid://bc38ckh2p3k87"]
+[gd_scene load_steps=123 format=3 uid="uid://bc38ckh2p3k87"]
 
 [ext_resource type="Texture2D" uid="uid://bdwfrd51vuicl" path="res://Playgrounds/KT/Assets/RA_Ground_Tiles.png" id="1_javcd"]
 [ext_resource type="Texture2D" uid="uid://cckjw07sewx11" path="res://Playgrounds/KT/Assets/RA_Ruins.png" id="2_a385p"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://de1rfcicwaw5b" path="res://Playgrounds/KT/Assets/decorative_props.png" id="5_3qxpt"]
 [ext_resource type="Texture2D" uid="uid://dxdrn5pehbvq6" path="res://Playgrounds/KT/Assets/RA_Jungle_Animations.png" id="5_auxye"]
 [ext_resource type="AudioStream" uid="uid://cnw1nrrvy2esx" path="res://Playgrounds/KT/Assets/Light Ambience 3.mp3" id="8_c8gi0"]
+[ext_resource type="PackedScene" uid="uid://dcjvhl6hw64i1" path="res://Player/Hero.tscn" id="9_ptipu"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_tue6v"]
 vertices = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -39512,3 +39513,6 @@ texture = SubResource("GradientTexture2D_nqepk")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_c8gi0")
 autoplay = true
+
+[node name="Hero" parent="." instance=ExtResource("9_ptipu")]
+position = Vector2(9, -199)

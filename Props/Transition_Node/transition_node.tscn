@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cm78jovpvufpv"]
+
+[ext_resource type="Script" path="res://Props/Transition_Node/transition_node.gd" id="1_jnw15"]
+[ext_resource type="Texture2D" uid="uid://cy2mcirk6xawr" path="res://Props/Transition_Node/DungeonDoor.png" id="1_oc3qr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rv7xv"]
+size = Vector2(32, 35)
+
+[node name="Transition_Node" type="Area2D"]
+collision_layer = 128
+script = ExtResource("1_jnw15")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_oc3qr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_rv7xv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
