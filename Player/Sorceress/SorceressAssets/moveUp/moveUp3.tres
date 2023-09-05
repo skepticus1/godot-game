@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cmu7o72sb1e7x"]
+
+[ext_resource type="Texture2D" uid="uid://cp44t0kyyp0u8" path="res://Player/Sorceress/SorceressAssets/Sorceress.png" id="1_ttiov"]
+
+[resource]
+atlas = ExtResource("1_ttiov")
+region = Rect2(256, 512, 64, 64)
