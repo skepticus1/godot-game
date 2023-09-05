@@ -1,0 +1,73 @@
+[gd_scene load_steps=10 format=3 uid="uid://bhyl0juf3qouq"]
+
+[ext_resource type="Texture2D" uid="uid://bdmtfvackuh4p" path="res://Playgrounds/KT/Assets/RA_Ruins_Animations.png" id="1_pn7f2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_salmw"]
+size = Vector2(12, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8e21f"]
+atlas = ExtResource("1_pn7f2")
+region = Rect2(32, 332, 32, 83)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iegm8"]
+atlas = ExtResource("1_pn7f2")
+region = Rect2(64, 332, 32, 83)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4x8n"]
+atlas = ExtResource("1_pn7f2")
+region = Rect2(96, 332, 32, 83)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eaesj"]
+atlas = ExtResource("1_pn7f2")
+region = Rect2(128, 332, 32, 83)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ce50v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8e21f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iegm8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4x8n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eaesj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_ytx2i"]
+offsets = PackedFloat32Array(0, 0.732258)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_u4s6i"]
+gradient = SubResource("Gradient_ytx2i")
+fill = 1
+fill_from = Vector2(0.504587, 0.486239)
+
+[node name="LightPost" type="StaticBody2D"]
+collision_layer = 7
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10.5)
+shape = SubResource("RectangleShape2D_salmw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1.75)
+scale = Vector2(1, 0.957831)
+sprite_frames = SubResource("SpriteFrames_ce50v")
+autoplay = "default"
+frame = 3
+frame_progress = 0.380524
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-1, -30)
+scale = Vector2(1.26562, 1.15625)
+color = Color(1, 0.858824, 0.337255, 0.843137)
+texture = SubResource("GradientTexture2D_u4s6i")

@@ -66,7 +66,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5gohl"]
-radius = 51.0098
+radius = 39.0
 
 [sub_resource type="Animation" id="Animation_fhbsi"]
 resource_name = "Break"
@@ -109,14 +109,15 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cmvn0"]
-radius = 12.0416
+radius = 13.1529
 
 [node name="BreakablePots" type="StaticBody2D"]
-collision_layer = 7
-collision_mask = 3
+collision_layer = 256
 physics_material_override = SubResource("PhysicsMaterial_7t06l")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 8
 script = ExtResource("2_6f2w8")
 
 [node name="breaking" type="AnimatedSprite2D" parent="Area2D"]
@@ -125,7 +126,7 @@ sprite_frames = SubResource("SpriteFrames_wysvc")
 animation = &"Pot"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(3, 5)
+position = Vector2(1, 6)
 shape = SubResource("CircleShape2D_5gohl")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
