@@ -13,7 +13,7 @@ func _ready():
 
 func _on_body_entered(body):
 	#skeleton
-	var hero = get_parent().get_parent().get_node("Hero")
+	var _hero = get_parent().get_parent().get_node("Hero")
 	if body.name == "Hero" and not isBroken:
 		#print("here")
 		#var is_attacking = true
