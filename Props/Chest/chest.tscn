@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckvrr2s2gydkq"]
+[gd_scene load_steps=8 format=3 uid="uid://ckvrr2s2gydkq"]
 
 [ext_resource type="Script" path="res://Props/Chest/chest.gd" id="1_f7ud6"]
+[ext_resource type="PackedScene" uid="uid://bxr4a61h8ybwd" path="res://Props/Key/key.tscn" id="2_odxkl"]
 [ext_resource type="Texture2D" uid="uid://b5pqi0f3v2mxt" path="res://Props/Chest/chest01-open.png" id="2_wu1wi"]
 [ext_resource type="Texture2D" uid="uid://qa0bem0bdj6f" path="res://Props/Chest/chest01-close.png" id="3_htafh"]
+[ext_resource type="AudioStream" uid="uid://dgbrddsr1gvls" path="res://Props/Chest/01_chest_open_1.wav" id="5_hjyqf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3aejn"]
 size = Vector2(20, 19)
@@ -15,6 +17,7 @@ scale = Vector2(2, 2)
 collision_layer = 16
 collision_mask = 3
 script = ExtResource("1_f7ud6")
+key = ExtResource("2_odxkl")
 
 [node name="open" type="Sprite2D" parent="."]
 visible = false
@@ -34,4 +37,36 @@ collision_layer = 8
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_21nk5")
 
+[node name="OpenSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_hjyqf")
+
+[node name="Unlocked" type="Panel" parent="."]
+visible = false
+offset_left = -28.0
+offset_top = -19.0
+offset_right = 96.0
+offset_bottom = 4.0
+scale = Vector2(0.5, 0.5)
+
+[node name="Label" type="Label" parent="Unlocked"]
+layout_mode = 0
+offset_right = 121.0
+offset_bottom = 26.0
+text = "Press F to Open"
+
+[node name="Locked" type="Panel" parent="."]
+visible = false
+offset_left = -28.0
+offset_top = -19.0
+offset_right = 114.0
+offset_bottom = 4.0
+scale = Vector2(0.5, 0.5)
+
+[node name="Label" type="Label" parent="Locked"]
+layout_mode = 0
+offset_right = 121.0
+offset_bottom = 26.0
+text = "Press F to use Key"
+
 [connection signal="body_entered" from="InteractionArea" to="." method="_on_trigger_area_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]
