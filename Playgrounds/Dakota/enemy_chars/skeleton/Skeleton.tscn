@@ -1,9 +1,34 @@
-[gd_scene load_steps=82 format=3 uid="uid://dtpihiqtvpkc5"]
+[gd_scene load_steps=89 format=3 uid="uid://dtpihiqtvpkc5"]
 
 [ext_resource type="Script" path="res://Playgrounds/dons-folder/enemies/enemy.gd" id="1_4kjbq"]
+[ext_resource type="Texture2D" uid="uid://b1e1olhmp6v4b" path="res://Playgrounds/Dakota/enemy_chars/skeleton/assets/Skeleton-naked-scimitar.png" id="2_dla2w"]
 [ext_resource type="Texture2D" uid="uid://6uijdkdh4lij" path="res://Playgrounds/dons-folder/enemies/assets/Skeleton-naked-scimitar.png" id="2_tgiot"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mbycd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljuu5"]
+atlas = ExtResource("2_dla2w")
+region = Rect2(0, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjj5w"]
+atlas = ExtResource("2_dla2w")
+region = Rect2(64, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4fqf"]
+atlas = ExtResource("2_dla2w")
+region = Rect2(128, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urmce"]
+atlas = ExtResource("2_dla2w")
+region = Rect2(192, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcdal"]
+atlas = ExtResource("2_dla2w")
+region = Rect2(256, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqfxb"]
+atlas = ExtResource("2_dla2w")
+region = Rect2(320, 1280, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c818f"]
 atlas = ExtResource("2_tgiot")
@@ -279,6 +304,29 @@ region = Rect2(512, 512, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s6ila"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljuu5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjj5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4fqf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urmce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcdal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqfxb")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_c818f")
