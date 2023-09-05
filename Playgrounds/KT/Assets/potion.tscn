@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://rnh5gklt5bm4"]
+
+[ext_resource type="Texture2D" uid="uid://ckjrxaqsqv0rc" path="res://Playgrounds/KT/Assets/Purplepot8fps-Sheet.png" id="1_l6ygf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrx8b"]
+atlas = ExtResource("1_l6ygf")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44htg"]
+atlas = ExtResource("1_l6ygf")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjyaj"]
+atlas = ExtResource("1_l6ygf")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n55il"]
+atlas = ExtResource("1_l6ygf")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20hxc"]
+atlas = ExtResource("1_l6ygf")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_go5mb"]
+atlas = ExtResource("1_l6ygf")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxha2"]
+atlas = ExtResource("1_l6ygf")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2eeiq"]
+atlas = ExtResource("1_l6ygf")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ibtb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrx8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44htg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjyaj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n55il")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20hxc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_go5mb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxha2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2eeiq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dbpaf"]
+radius = 7.0
+
+[node name="Potion" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_2ibtb")
+frame_progress = 0.592063
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_dbpaf")

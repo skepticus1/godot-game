@@ -1,4 +1,4 @@
-[gd_scene load_steps=123 format=3 uid="uid://bc38ckh2p3k87"]
+[gd_scene load_steps=124 format=3 uid="uid://bc38ckh2p3k87"]
 
 [ext_resource type="Texture2D" uid="uid://bdwfrd51vuicl" path="res://Playgrounds/KT/Assets/RA_Ground_Tiles.png" id="1_javcd"]
 [ext_resource type="Texture2D" uid="uid://cckjw07sewx11" path="res://Playgrounds/KT/Assets/RA_Ruins.png" id="2_a385p"]
@@ -8,7 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://de1rfcicwaw5b" path="res://Playgrounds/KT/Assets/decorative_props.png" id="5_3qxpt"]
 [ext_resource type="Texture2D" uid="uid://dxdrn5pehbvq6" path="res://Playgrounds/KT/Assets/RA_Jungle_Animations.png" id="5_auxye"]
 [ext_resource type="AudioStream" uid="uid://cnw1nrrvy2esx" path="res://Playgrounds/KT/Assets/Light Ambience 3.mp3" id="8_c8gi0"]
-[ext_resource type="PackedScene" uid="uid://dcjvhl6hw64i1" path="res://Player/Hero.tscn" id="9_ptipu"]
+[ext_resource type="PackedScene" uid="uid://bi0pw6xt8sqit" path="res://Playgrounds/KT/Assets/pots.tscn" id="9_6wq7s"]
+[ext_resource type="PackedScene" uid="uid://rnh5gklt5bm4" path="res://Playgrounds/KT/Assets/potion.tscn" id="10_wh6ut"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_tue6v"]
 vertices = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -39514,5 +39515,24 @@ texture = SubResource("GradientTexture2D_nqepk")
 stream = ExtResource("8_c8gi0")
 autoplay = true
 
-[node name="Hero" parent="." instance=ExtResource("9_ptipu")]
-position = Vector2(9, -199)
+[node name="Potion" parent="." instance=ExtResource("10_wh6ut")]
+y_sort_enabled = true
+position = Vector2(381, 254)
+frame_progress = 0.371653
+
+[node name="BreakablePots" parent="." instance=ExtResource("9_6wq7s")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(379, 249)
+
+[node name="BreakablePots2" parent="." instance=ExtResource("9_6wq7s")]
+position = Vector2(513, 237)
+
+[node name="BreakablePots3" parent="." instance=ExtResource("9_6wq7s")]
+position = Vector2(956, 111)
+
+[node name="BreakablePots4" parent="." instance=ExtResource("9_6wq7s")]
+position = Vector2(-361, 59)
+
+[node name="BreakablePots5" parent="." instance=ExtResource("9_6wq7s")]
+position = Vector2(882, 802)
