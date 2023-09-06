@@ -1,10 +1,9 @@
-[gd_scene load_steps=92 format=3 uid="uid://c8d3c5jp6ofro"]
+[gd_scene load_steps=91 format=3 uid="uid://c8d3c5jp6ofro"]
 
 [ext_resource type="Script" path="res://Enemy/Skeleton/Skeleton.gd" id="1_vnsgm"]
 [ext_resource type="PackedScene" uid="uid://bxr4a61h8ybwd" path="res://Props/Key/key.tscn" id="2_dktak"]
 [ext_resource type="Texture2D" uid="uid://6uijdkdh4lij" path="res://Playgrounds/dons-folder/enemies/assets/Skeleton-naked-scimitar.png" id="2_fothd"]
 [ext_resource type="Texture2D" uid="uid://dvnj6mxj6tlio" path="res://Enemy/Skeleton/assets/Skeleton-naked-scimitar.png" id="2_rltsp"]
-[ext_resource type="PackedScene" uid="uid://k5uhejnxu1wj" path="res://Player/HeroAssets/HeroSounds/Hurt.tscn" id="3_2bujo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mbycd"]
 
@@ -1055,8 +1054,6 @@ shape = SubResource("RectangleShape2D_a0aub")
 
 [node name="DeathTimer" type="Timer" parent="."]
 wait_time = 4.9
-
-[node name="Injured" parent="." instance=ExtResource("3_2bujo")]
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]

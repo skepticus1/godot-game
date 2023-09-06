@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfku8ah5m17yo"]
+
+[ext_resource type="Texture2D" uid="uid://cop00l142jr88" path="res://Props/Lights/BasicLight/light-texture-omni.jpg" id="1_08vxv"]
+[ext_resource type="Script" path="res://Props/Lights/OrbitLight/orbit_light.gd" id="1_jceyo"]
+
+[node name="OrbitLight" type="Node2D"]
+scale = Vector2(2.5, 2.5)
+script = ExtResource("1_jceyo")
+
+[node name="light" type="PointLight2D" parent="."]
+energy = 0.35
+shadow_filter = 1
+shadow_filter_smooth = 5.0
+texture = ExtResource("1_08vxv")
+texture_scale = 0.9
+
+[node name="shadow" type="PointLight2D" parent="."]
+energy = 0.7
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 3.0
+texture = ExtResource("1_08vxv")

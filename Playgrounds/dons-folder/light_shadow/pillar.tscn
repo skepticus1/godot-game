@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpnjnmghtxyh0"]
+
+[ext_resource type="Texture2D" uid="uid://bmeypb0jw00x5" path="res://Maps/Dons_Dungeon/Assets/FD_Dungeon.png" id="1_l7bf1"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_fcbo5"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_vrl0k"]
+polygon = PackedVector2Array(-12, -32, -12, -30, -14, -30, -14, -28, -16, -28, -16, -4, -14, -4, -14, -2, -12, -2, -12, 2, -14, 2, -14, 4, -16, 4, -16, 28, -14, 28, -14, 30, -12, 30, -12, 32, 12, 32, 12, 30, 14, 30, 14, 28, 16, 28, 16, 4, 14, 4, 14, 2, 12, 2, 12, -1, 12, -2, 14, -2, 14, -4, 16, -4, 16, -28, 14, -28, 14, -30, 12, -30, 12, -32)
+
+[node name="Pillar" type="Sprite2D"]
+texture = ExtResource("1_l7bf1")
+region_enabled = true
+region_rect = Rect2(352, 832, 32, 64)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+material = SubResource("CanvasItemMaterial_fcbo5")
+occluder = SubResource("OccluderPolygon2D_vrl0k")
