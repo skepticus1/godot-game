@@ -39471,3 +39471,9 @@ collision_layer = 7
 
 [node name="Hero" parent="." instance=ExtResource("13_y1yfm")]
 position = Vector2(10, 68)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Hero"]
+remote_path = NodePath("../../OverworldCamera")
+
+[node name="OverworldCamera" type="Camera2D" parent="."]
+position = Vector2(10, 68)

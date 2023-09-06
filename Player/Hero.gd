@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var indoor_walking = $IndoorWalking
+@onready var sword_slash = $SwordSlashSound
 
 const max_speed = 300   # to lower speed change this
 const friction = 1400	# this affects how fast it slows down
@@ -19,6 +19,10 @@ func _physics_process(delta):
 			is_attacking = true
 			sword_attack()
 			await sword_attack()
+		elif Input.is_action_just_pressed("attack2"):
+			is_attacking = true
+			sword_thrust()
+			await sword_thrust()
 		else:
 			if is_attacking == false:
 				player_movement(delta)
@@ -34,19 +38,15 @@ func get_input():
 	if input.x > 0:
 		last_movement = Vector2.RIGHT
 		get_node("AnimatedSprite2D").play("MoveRight")
-		indoor_walking.get_node("AudioStreamPlayer/AnimationPlayer").play("indoorWalking")
 	elif input.x < 0:
 		last_movement = Vector2.LEFT
 		get_node("AnimatedSprite2D").play("MoveLeft")
-		indoor_walking.get_node("AudioStreamPlayer/AnimationPlayer").play("indoorWalking")
 	elif input.y < 0:
 		last_movement = Vector2.DOWN
 		get_node("AnimatedSprite2D").play("MoveUp")
-		indoor_walking.get_node("AudioStreamPlayer/AnimationPlayer").play("indoorWalking")
 	elif input.y > 0:
 		last_movement = Vector2.UP
 		get_node("AnimatedSprite2D").play("MoveDown")
-		indoor_walking.get_node("AudioStreamPlayer/AnimationPlayer").play("indoorWalking")
 	else:
 		play_idle_animation()
 
@@ -57,20 +57,12 @@ func play_idle_animation():
 		if is_attacking == false:
 			if last_movement == Vector2.RIGHT:
 				get_node("AnimatedSprite2D").play("IdleRight")
-				indoor_walking.get_node("AudioStreamPlayer/AnimationPlayer").stop(true)
-				indoor_walking.get_node("AudioStreamPlayer").playing = false
 			elif last_movement == Vector2.LEFT:
 				get_node("AnimatedSprite2D").play("IdleLeft")
-				indoor_walking.get_node("AudioStreamPlayer/AnimationPlayer").stop(true)
-				indoor_walking.get_node("AudioStreamPlayer").playing = false
 			elif last_movement == Vector2.DOWN:
 				get_node("AnimatedSprite2D").play("IdleUp")
-				indoor_walking.get_node("AudioStreamPlayer/AnimationPlayer").stop(true)
-				indoor_walking.get_node("AudioStreamPlayer").playing = false
 			elif last_movement == Vector2.UP:
 				get_node("AnimatedSprite2D").play("IdleDown")
-				indoor_walking.get_node("AudioStreamPlayer/AnimationPlayer").stop(true)
-				indoor_walking.get_node("AudioStreamPlayer").playing = false
 		else:
 			sword_attack()
 
@@ -92,18 +84,44 @@ func sword_attack():
 	if is_attacking == true:
 		if last_movement == Vector2.RIGHT:
 			get_node("AnimationPlayer").play("SwordAttackRight")
+			sword_slash.get_node("AudioStreamPlayer/AnimationPlayer").play("swordSlash1")
 			await get_node("AnimationPlayer").animation_finished
 		elif last_movement == Vector2.LEFT:
 			get_node("AnimationPlayer").play("SwordAttackLeft")
+			sword_slash.get_node("AudioStreamPlayer/AnimationPlayer").play("swordSlash1")
 			await get_node("AnimationPlayer").animation_finished
 		elif last_movement == Vector2.DOWN:
 			get_node("AnimationPlayer").play("SwordAttackUp")
+			sword_slash.get_node("AudioStreamPlayer/AnimationPlayer").play("swordSlash1")
 			await get_node("AnimationPlayer").animation_finished
 		elif last_movement == Vector2.UP:
+			sword_slash.get_node("AudioStreamPlayer/AnimationPlayer").play("swordSlash1")
 			get_node("AnimationPlayer").play("SwordAttackDown")
 			await get_node("AnimationPlayer").animation_finished
 	is_attacking = false
 	return is_attacking
+	
+func sword_thrust():
+	if is_attacking == true:
+		if last_movement == Vector2.RIGHT:
+			get_node("AnimationPlayer").play("SwordThrustRight")
+			sword_slash.get_node("AudioStreamPlayer/AnimationPlayer").play("swordSlash1")
+			await get_node("AnimationPlayer").animation_finished
+		elif last_movement == Vector2.LEFT:
+			get_node("AnimationPlayer").play("SwordThrustLeft")
+			sword_slash.get_node("AudioStreamPlayer/AnimationPlayer").play("swordSlash1")
+			await get_node("AnimationPlayer").animation_finished
+		elif last_movement == Vector2.DOWN:
+			get_node("AnimationPlayer").play("SwordThrustUp")
+			sword_slash.get_node("AudioStreamPlayer/AnimationPlayer").play("swordSlash1")
+			await get_node("AnimationPlayer").animation_finished
+		elif last_movement == Vector2.UP:
+			sword_slash.get_node("AudioStreamPlayer/AnimationPlayer").play("swordSlash1")
+			get_node("AnimationPlayer").play("SwordThrustDown")
+			await get_node("AnimationPlayer").animation_finished
+	is_attacking = false
+	return is_attacking
+	
 
 func _on_attack_hit_box_body_entered(body):
 	print("Function is running! Entered body is: ", body.name) 
