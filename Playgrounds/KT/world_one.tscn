@@ -1,4 +1,4 @@
-[gd_scene load_steps=125 format=3 uid="uid://bc38ckh2p3k87"]
+[gd_scene load_steps=124 format=3 uid="uid://bc38ckh2p3k87"]
 
 [ext_resource type="Texture2D" uid="uid://bdwfrd51vuicl" path="res://Playgrounds/KT/Assets/RA_Ground_Tiles.png" id="1_javcd"]
 [ext_resource type="Texture2D" uid="uid://cckjw07sewx11" path="res://Playgrounds/KT/Assets/RA_Ruins.png" id="2_a385p"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://rnh5gklt5bm4" path="res://Playgrounds/KT/Assets/potion.tscn" id="10_wh6ut"]
 [ext_resource type="PackedScene" uid="uid://bhyl0juf3qouq" path="res://Playgrounds/KT/Assets/light_post.tscn" id="11_13ma6"]
 [ext_resource type="PackedScene" uid="uid://b28q14lgbpibd" path="res://Playgrounds/KT/Assets/light_square.tscn" id="12_dsw76"]
-[ext_resource type="PackedScene" uid="uid://dcjvhl6hw64i1" path="res://Player/Hero.tscn" id="13_y1yfm"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_tue6v"]
 vertices = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -39464,10 +39463,10 @@ position = Vector2(112, -354)
 [node name="BreakablePots" parent="." instance=ExtResource("9_6wq7s")]
 position = Vector2(395, 255)
 
-[node name="potion2" parent="." instance=ExtResource("10_wh6ut")]
+[node name="potion2" parent="BreakablePots" instance=ExtResource("10_wh6ut")]
 z_index = -1
-position = Vector2(397, 265)
+position = Vector2(2, 10)
 collision_layer = 7
 
-[node name="Hero" parent="." instance=ExtResource("13_y1yfm")]
-position = Vector2(10, 68)
+[node name="BreakablePots9" parent="." instance=ExtResource("9_6wq7s")]
+position = Vector2(590, 528)
