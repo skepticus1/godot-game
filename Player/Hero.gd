@@ -28,6 +28,7 @@ func _physics_process(delta):
 				player_movement(delta)
 	elif is_alive == true:
 		is_alive = false
+		Game.is_alive = false
 		get_node("AnimationPlayer").play("Death")
 		#get_tree().change_scene_to_file("res://Playgrounds/Roger/roger_start_scene.tscn")
 
