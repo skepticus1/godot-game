@@ -1,7 +1,0 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://806ugjynr1at"]
-
-[ext_resource type="Texture2D" uid="uid://435hgkxgk00d" path="res://Player/GUI/GUIAssets/Healthbars_and_Potions.png" id="1_qyj6l"]
-
-[resource]
-atlas = ExtResource("1_qyj6l")
-region = Rect2(0, 91, 13, 12)
