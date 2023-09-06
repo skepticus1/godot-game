@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1u8d116l8jro"]
+[gd_scene load_steps=7 format=3 uid="uid://b1u8d116l8jro"]
 
 [ext_resource type="PackedScene" uid="uid://c8ugk7a4utsu5" path="res://Props/GUI/Counters/KillCounter/KillCounter.tscn" id="1_8oqf0"]
+[ext_resource type="Script" path="res://Props/GUI.gd" id="1_qsh22"]
 [ext_resource type="PackedScene" uid="uid://du8yyh8dqs7uy" path="res://Props/GUI/ManaBar.tscn" id="2_l2k6i"]
 [ext_resource type="PackedScene" uid="uid://xw1qqo5uwm1j" path="res://Props/GUI/Counters/GoldCounter/GoldCounter.tscn" id="2_uo5d2"]
 [ext_resource type="PackedScene" uid="uid://cqa66c4acemet" path="res://Props/GUI/HealthBar.tscn" id="3_8reul"]
+[ext_resource type="PackedScene" uid="uid://dbpyahacn65qp" path="res://Maps/Death/death_scene.tscn" id="5_d5h4f"]
 
 [node name="GUI" type="CanvasLayer"]
+script = ExtResource("1_qsh22")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -99,3 +102,6 @@ size_flags_vertical = 4
 custom_minimum_size = Vector2(200, 70)
 layout_mode = 2
 size_flags_vertical = 4
+
+[node name="DeathScene" parent="." instance=ExtResource("5_d5h4f")]
+visible = false
