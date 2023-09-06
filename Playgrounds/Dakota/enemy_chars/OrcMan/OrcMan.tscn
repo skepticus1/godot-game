@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://8nspni5owgyg"]
+[gd_scene load_steps=75 format=3 uid="uid://8nspni5owgyg"]
 
 [ext_resource type="Texture2D" uid="uid://dcxwyy22asuok" path="res://Playgrounds/Dakota/enemy_chars/OrcMan/jacked_orc_enemy_spritesheet.png" id="1_f1y44"]
 
@@ -563,6 +563,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_et8yd"]
+radius = 168.146
+
 [node name="orc_man" type="CharacterBody2D"]
 
 [node name="OrcManHitBox" type="CollisionShape2D" parent="."]
@@ -572,3 +575,8 @@ shape = SubResource("CapsuleShape2D_xhp72")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rgytu")
 animation = &"death"
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+shape = SubResource("CircleShape2D_et8yd")
