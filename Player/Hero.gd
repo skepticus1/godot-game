@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var indoor_walking = $IndoorWalking
+
 const max_speed = 300   # to lower speed change this
 const friction = 1400	# this affects how fast it slows down
 const idle_threshold = 10 # this is to determine when the character has stopped therefore changing it to standing animation
@@ -32,15 +34,19 @@ func get_input():
 	if input.x > 0:
 		last_movement = Vector2.RIGHT
 		get_node("AnimatedSprite2D").play("MoveRight")
+		indoor_walking.get_node("AudioStreamPlayer/AnimationPlayer").play("indoorWalking")
 	elif input.x < 0:
 		last_movement = Vector2.LEFT
 		get_node("AnimatedSprite2D").play("MoveLeft")
+		indoor_walking.get_node("AudioStreamPlayer/AnimationPlayer").play("indoorWalking")
 	elif input.y < 0:
 		last_movement = Vector2.DOWN
 		get_node("AnimatedSprite2D").play("MoveUp")
+		indoor_walking.get_node("AudioStreamPlayer/AnimationPlayer").play("indoorWalking")
 	elif input.y > 0:
 		last_movement = Vector2.UP
 		get_node("AnimatedSprite2D").play("MoveDown")
+		indoor_walking.get_node("AudioStreamPlayer/AnimationPlayer").play("indoorWalking")
 	else:
 		play_idle_animation()
 
@@ -51,12 +57,20 @@ func play_idle_animation():
 		if is_attacking == false:
 			if last_movement == Vector2.RIGHT:
 				get_node("AnimatedSprite2D").play("IdleRight")
+				indoor_walking.get_node("AudioStreamPlayer/AnimationPlayer").stop(true)
+				indoor_walking.get_node("AudioStreamPlayer").playing = false
 			elif last_movement == Vector2.LEFT:
 				get_node("AnimatedSprite2D").play("IdleLeft")
+				indoor_walking.get_node("AudioStreamPlayer/AnimationPlayer").stop(true)
+				indoor_walking.get_node("AudioStreamPlayer").playing = false
 			elif last_movement == Vector2.DOWN:
 				get_node("AnimatedSprite2D").play("IdleUp")
+				indoor_walking.get_node("AudioStreamPlayer/AnimationPlayer").stop(true)
+				indoor_walking.get_node("AudioStreamPlayer").playing = false
 			elif last_movement == Vector2.UP:
 				get_node("AnimatedSprite2D").play("IdleDown")
+				indoor_walking.get_node("AudioStreamPlayer/AnimationPlayer").stop(true)
+				indoor_walking.get_node("AudioStreamPlayer").playing = false
 		else:
 			sword_attack()
 
