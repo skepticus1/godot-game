@@ -1,8 +1,9 @@
-[gd_scene load_steps=124 format=3 uid="uid://dcjvhl6hw64i1"]
+[gd_scene load_steps=125 format=3 uid="uid://dcjvhl6hw64i1"]
 
 [ext_resource type="Script" path="res://Player/Hero.gd" id="1_4sm72"]
 [ext_resource type="Texture2D" uid="uid://3fe0rpwuivv3" path="res://Player/HeroAssets/player-sprite/Knight.png" id="2_677o6"]
 [ext_resource type="PackedScene" uid="uid://boqs3qjly38tk" path="res://Player/HeroAssets/HeroSounds/SwordSlashSound.tscn" id="3_gxrp8"]
+[ext_resource type="PackedScene" uid="uid://k5uhejnxu1wj" path="res://Player/HeroAssets/HeroSounds/Hurt.tscn" id="4_r4xua"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h8x15"]
 
@@ -1715,7 +1716,10 @@ collision_mask = 258
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitBox"]
 position = Vector2(4, -42.5)
 shape = SubResource("RectangleShape2D_g7gl0")
+metadata/_edit_lock_ = true
 
 [node name="SwordSlashSound" parent="." instance=ExtResource("3_gxrp8")]
+
+[node name="Injured" parent="." instance=ExtResource("4_r4xua")]
 
 [connection signal="body_entered" from="AttackHitBox" to="." method="_on_attack_hit_box_body_entered"]
