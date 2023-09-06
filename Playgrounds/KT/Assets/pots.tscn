@@ -1,9 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://bi0pw6xt8sqit"]
+[gd_scene load_steps=13 format=3 uid="uid://bi0pw6xt8sqit"]
 
 [ext_resource type="Texture2D" uid="uid://b81b4e40hofoe" path="res://Playgrounds/KT/Assets/breakable pots (yellow).png" id="1_dw5rk"]
 [ext_resource type="Script" path="res://Playgrounds/KT/Assets/PotAnimation.gd" id="2_6f2w8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7t06l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cmvn0"]
+radius = 20.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c0ty4"]
 atlas = ExtResource("1_dw5rk")
@@ -66,59 +69,20 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5gohl"]
-radius = 39.0
-
-[sub_resource type="Animation" id="Animation_fhbsi"]
-resource_name = "Break"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Area2D/breaking:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-
-[sub_resource type="Animation" id="Animation_mm4d7"]
-length = 0.001
-
-[sub_resource type="Animation" id="Animation_dr4lv"]
-resource_name = "broken"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Area2D/breaking:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_m4n80"]
-_data = {
-"Break": SubResource("Animation_fhbsi"),
-"RESET": SubResource("Animation_mm4d7"),
-"broken": SubResource("Animation_dr4lv")
-}
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_cmvn0"]
-radius = 13.1529
+radius = 43.0
 
 [node name="BreakablePots" type="StaticBody2D"]
-collision_layer = 256
+collision_layer = 257
 physics_material_override = SubResource("PhysicsMaterial_7t06l")
+script = ExtResource("2_6f2w8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 7)
+shape = SubResource("CircleShape2D_cmvn0")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 256
 collision_mask = 8
-script = ExtResource("2_6f2w8")
 
 [node name="breaking" type="AnimatedSprite2D" parent="Area2D"]
 position = Vector2(2, 3)
@@ -126,17 +90,8 @@ sprite_frames = SubResource("SpriteFrames_wysvc")
 animation = &"Pot"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1, 6)
+position = Vector2(3, 6)
 shape = SubResource("CircleShape2D_5gohl")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_m4n80")
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 7)
-shape = SubResource("CircleShape2D_cmvn0")
-
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
