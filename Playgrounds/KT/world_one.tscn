@@ -1,4 +1,4 @@
-[gd_scene load_steps=126 format=3 uid="uid://bc38ckh2p3k87"]
+[gd_scene load_steps=127 format=3 uid="uid://bc38ckh2p3k87"]
 
 [ext_resource type="Texture2D" uid="uid://bdwfrd51vuicl" path="res://Playgrounds/KT/Assets/RA_Ground_Tiles.png" id="1_javcd"]
 [ext_resource type="Texture2D" uid="uid://cckjw07sewx11" path="res://Playgrounds/KT/Assets/RA_Ruins.png" id="2_a385p"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b28q14lgbpibd" path="res://Playgrounds/KT/Assets/light_square.tscn" id="12_dsw76"]
 [ext_resource type="PackedScene" uid="uid://dcjvhl6hw64i1" path="res://Player/Hero.tscn" id="13_y1yfm"]
 [ext_resource type="PackedScene" uid="uid://b1u8d116l8jro" path="res://Props/GUI.tscn" id="14_jyuax"]
+[ext_resource type="PackedScene" uid="uid://c8d3c5jp6ofro" path="res://Enemy/Skeleton/Skeleton.tscn" id="15_rt6k0"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_tue6v"]
 vertices = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -39484,3 +39485,6 @@ limit_right = 1500
 limit_bottom = 1150
 
 [node name="GUI" parent="OverworldCamera" instance=ExtResource("14_jyuax")]
+
+[node name="Skeleton" parent="." instance=ExtResource("15_rt6k0")]
+position = Vector2(-1019, 206)
