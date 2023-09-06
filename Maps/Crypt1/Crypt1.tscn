@@ -15103,6 +15103,9 @@ remote_path = NodePath("../../CryptCamera")
 [node name="Skeleton" parent="." instance=ExtResource("15_4ehy8")]
 position = Vector2(665, 259)
 
+[node name="Skeleton2" parent="." instance=ExtResource("15_4ehy8")]
+position = Vector2(775, 555)
+
 [node name="SkullFountain" parent="." instance=ExtResource("16_wqhsl")]
 position = Vector2(45, 454)
 metadata/_edit_lock_ = true

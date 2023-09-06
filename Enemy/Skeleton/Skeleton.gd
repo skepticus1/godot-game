@@ -8,13 +8,13 @@ var player = null
 var current_dir = "down"
 var is_attacking = false
 var is_alive = true
-var damage = 5
+var damage = 25
 
 
 
 @export var health: int = 30
 @export var key: PackedScene
-
+@onready var hero_hurt_track = $Injured
 @onready var animation_player = $AnimationPlayer
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var detection_zone = $PlayerDetection
@@ -96,9 +96,11 @@ func _on_attack_zone_body_exited(body):
 		is_attacking = false
 
 func _on_slash_hit_box_body_entered(body):
-	if body.name == "Hero":
+	if body.name == "Hero" and Game.is_alive:
 		print("Hero health: ", Game.HeroHealth)
 		Game.HeroHealth -= damage
+		hero_hurt_track.get_node("AudioStreamPlayer/AnimationPlayer").play("hurt")
+		
 
 func check_health():
 	if health <= 0:
