@@ -1598,6 +1598,10 @@ tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 0]
 }
 
 [sub_resource type="Animation" id="Animation_hsasi"]
@@ -1658,6 +1662,11 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
 
+[sub_resource type="Animation" id="Animation_n7nx0"]
+resource_name = "walkingSound"
+length = 3.68
+loop_mode = 1
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yenl1"]
 _data = {
 "Death": SubResource("Animation_8qi81"),
@@ -1682,7 +1691,6 @@ _data = {
 }
 
 [node name="Hero" type="CharacterBody2D"]
-y_sort_enabled = true
 collision_mask = 150
 script = ExtResource("1_4sm72")
 
