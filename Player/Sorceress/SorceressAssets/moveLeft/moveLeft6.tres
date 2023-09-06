@@ -1,7 +1,0 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bwiclj75luw5c"]
-
-[ext_resource type="Texture2D" uid="uid://cp44t0kyyp0u8" path="res://Player/Sorceress/SorceressAssets/Sorceress.png" id="1_8hdn6"]
-
-[resource]
-atlas = ExtResource("1_8hdn6")
-region = Rect2(448, 576, 64, 64)
