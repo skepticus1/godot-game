@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfqfsdp522gb"]
+
+[ext_resource type="Texture2D" uid="uid://cop00l142jr88" path="res://Props/Lights/BasicLight/light-texture-omni.jpg" id="1_uxr03"]
+
+[node name="BasicLight" type="Node2D"]
+
+[node name="light" type="PointLight2D" parent="."]
+energy = 0.35
+shadow_filter = 1
+shadow_filter_smooth = 5.0
+texture = ExtResource("1_uxr03")
+texture_scale = 0.9
+
+[node name="shadow" type="PointLight2D" parent="."]
+energy = 0.7
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 3.0
+texture = ExtResource("1_uxr03")

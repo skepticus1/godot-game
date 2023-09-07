@@ -14,7 +14,6 @@ var damage = 25
 
 @export var health: int = 30
 @export var key: PackedScene
-@onready var hero_hurt_track = $Injured
 @onready var animation_player = $AnimationPlayer
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var detection_zone = $PlayerDetection
@@ -113,7 +112,6 @@ func _on_slash_hit_box_body_entered(body):
 	if body.name == "Hero" and Game.is_alive:
 		print("Hero health: ", Game.HeroHealth)
 		Game.HeroHealth -= damage
-
 		
 
 func check_health():
