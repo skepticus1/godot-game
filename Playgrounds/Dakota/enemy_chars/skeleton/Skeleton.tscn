@@ -1,6 +1,6 @@
 [gd_scene load_steps=90 format=3 uid="uid://dtpihiqtvpkc5"]
 
-[ext_resource type="Script" path="res://Playgrounds/dons-folder/enemies/enemy.gd" id="1_4kjbq"]
+[ext_resource type="Script" path="res://Enemy/Skeleton/Skeleton.gd" id="1_u4b1f"]
 [ext_resource type="Texture2D" uid="uid://b1e1olhmp6v4b" path="res://Playgrounds/Dakota/enemy_chars/skeleton/assets/Skeleton-naked-scimitar.png" id="2_dla2w"]
 [ext_resource type="Texture2D" uid="uid://6uijdkdh4lij" path="res://Playgrounds/dons-folder/enemies/assets/Skeleton-naked-scimitar.png" id="2_tgiot"]
 [ext_resource type="AudioStream" uid="uid://d2gn0rae643j4" path="res://Enemy/Skeleton/Skeleton_walk_sound.mp3" id="4_tdcum"]
@@ -959,7 +959,7 @@ radius = 157.003
 radius = 37.054
 
 [node name="Skeleton" type="CharacterBody2D"]
-script = ExtResource("1_4kjbq")
+script = ExtResource("1_u4b1f")
 
 [node name="CollisionShape2D enemy hitbox" type="CollisionShape2D" parent="."]
 visible = false
