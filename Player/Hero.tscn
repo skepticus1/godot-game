@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://Player/Hero.gd" id="1_4sm72"]
 [ext_resource type="Shader" uid="uid://sn3dfectddn3" path="res://Player/HitFlash.tres" id="2_52m56"]
 [ext_resource type="Texture2D" uid="uid://3fe0rpwuivv3" path="res://Player/HeroAssets/player-sprite/Knight.png" id="2_677o6"]
-
 [ext_resource type="PackedScene" uid="uid://dkvrhsl2rjf88" path="res://Player/HeroSounds/HeroSoundEffects.tscn" id="3_5hnux"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_36b75"]
