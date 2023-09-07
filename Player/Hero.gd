@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-@onready var sword_slash = $SwordSlashSound
 @onready var sword_sound = $HeroSoundEffects/SwordSlash
 @onready var hurt_sound = $HeroSoundEffects/Hurt
 @onready var walking_sound = $HeroSoundEffects/Walking

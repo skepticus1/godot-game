@@ -1,8 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://bix4lcbfvtkvf"]
+[gd_scene load_steps=11 format=3 uid="uid://bix4lcbfvtkvf"]
 
 [ext_resource type="Texture2D" uid="uid://cmcx2uxkifecg" path="res://Playgrounds/dons-folder/nav_test/bkgr.png" id="1_hing5"]
-[ext_resource type="PackedScene" uid="uid://c8d3c5jp6ofro" path="res://Enemy/Skeleton/Skeleton.tscn" id="3_r72ea"]
-[ext_resource type="PackedScene" uid="uid://dcjvhl6hw64i1" path="res://Player/Hero.tscn" id="3_vi40c"]
 [ext_resource type="PackedScene" uid="uid://bxr4a61h8ybwd" path="res://Props/Key/key.tscn" id="4_2je3r"]
 [ext_resource type="PackedScene" uid="uid://ckvrr2s2gydkq" path="res://Props/Chest/chest.tscn" id="5_0s8ti"]
 [ext_resource type="PackedScene" uid="uid://cm78jovpvufpv" path="res://Props/Transition_Node/transition_node.tscn" id="6_a83ot"]
@@ -83,14 +81,5 @@ position = Vector2(322, 176)
 [node name="Key" parent="." instance=ExtResource("4_2je3r")]
 position = Vector2(73, 352)
 
-[node name="Skeleton" parent="." instance=ExtResource("3_r72ea")]
-position = Vector2(760, 356)
-
-[node name="Skeleton2" parent="." instance=ExtResource("3_r72ea")]
-position = Vector2(1213, 161)
-
 [node name="Transition_Node" parent="." instance=ExtResource("6_a83ot")]
 position = Vector2(63, 569)
-
-[node name="Hero" parent="." instance=ExtResource("3_vi40c")]
-position = Vector2(368, 385)
