@@ -20,6 +20,8 @@ var damage = 25
 @onready var detection_zone = $PlayerDetection
 @onready var nav_agent = $NavigationAgent2D
 @onready var death_timer = $DeathTimer
+@onready var walking_sound = $SkeletonSounds/SkeletonMoving
+
 
 func _ready():
 	add_to_group("Enemy")
@@ -40,10 +42,15 @@ func _physics_process(delta):
 		var direction = to_local(nav_agent.get_next_path_position()).normalized()
 		velocity = direction * MAX_SPEED
 		update_animation(direction)
+	
+	if velocity != Vector2.ZERO:
+		walking_sound.play()
+		
 	else:
 		# Stop and play idle animation
 		velocity = Vector2.ZERO
 		update_animation(Vector2.ZERO)
+		walking_sound.stop()
 	move_and_slide()
 
 func _on_player_detection_body_entered(body):
@@ -61,13 +68,14 @@ func update_animation(direction):
 		#walking animations
 		if abs(direction.x) > abs(direction.y):
 			anim = "walk_" + ("right" if direction.x > 0 else "left")
-		else:
+		else:			
 			anim = "walk_" + ("down" if direction.y > 0 else "up")
-	else:
+	else:		
 		# idle animations based on last known direction
 		if current_dir in ["up", "down", "left", "right"]:
 			anim = "idle_" + current_dir
 	animated_sprite.play(anim)
+		
 	current_dir = anim.replace("idle_", "").replace("walk_", "")
 
 func make_path():
@@ -99,7 +107,7 @@ func _on_slash_hit_box_body_entered(body):
 	if body.name == "Hero" and Game.is_alive:
 		print("Hero health: ", Game.HeroHealth)
 		Game.HeroHealth -= damage
-		hero_hurt_track.get_node("AudioStreamPlayer/AnimationPlayer").play("hurt")
+
 		
 
 func check_health():
