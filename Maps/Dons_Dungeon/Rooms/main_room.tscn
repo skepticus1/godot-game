@@ -3056,7 +3056,6 @@ layer_2/z_index = 1
 layer_2/tile_data = PackedInt32Array(983056, 720902, 26)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.0117647, 0.0235294, 0.172549, 1)
 
 [node name="BasicLight" parent="." instance=ExtResource("3_1q04h")]
