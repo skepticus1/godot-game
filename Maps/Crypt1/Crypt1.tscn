@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cpovwl727cam2"]
+[gd_scene load_steps=31 format=3 uid="uid://cpovwl727cam2"]
 
 [ext_resource type="Script" path="res://Maps/Crypt1/Crypt1.gd" id="1_lykcl"]
 [ext_resource type="Texture2D" uid="uid://0g1l18vcj26i" path="res://Playgrounds/Brenda/Art/Crypt32x32/RA_Crypt.png" id="2_ms33i"]
@@ -13,8 +13,11 @@
 [ext_resource type="AudioStream" uid="uid://cxjctfc0ycisp" path="res://Playgrounds/Brenda/Audio/dungeonBackground.mp3" id="11_8pmj5"]
 [ext_resource type="PackedScene" uid="uid://b1lb2jhev3pir" path="res://Playgrounds/Brenda/Crypt/FirePit.tscn" id="12_xmjl0"]
 [ext_resource type="PackedScene" uid="uid://5l2jr68k0hau" path="res://Playgrounds/Brenda/Crypt/FirePillar.tscn" id="13_8ln06"]
+[ext_resource type="PackedScene" uid="uid://dcjvhl6hw64i1" path="res://Player/Hero.tscn" id="16_rt23y"]
 [ext_resource type="PackedScene" uid="uid://ccamn5o2jtneh" path="res://Maps/Crypt1/SkullFountain.tscn" id="16_wqhsl"]
 [ext_resource type="PackedScene" uid="uid://b1u8d116l8jro" path="res://Props/GUI.tscn" id="17_1lvue"]
+[ext_resource type="PackedScene" uid="uid://c8d3c5jp6ofro" path="res://Enemy/Skeleton/Skeleton.tscn" id="17_vn63n"]
+[ext_resource type="PackedScene" uid="uid://dkrxb1xcrgcyh" path="res://Maps/Crypt1/Lectern.tscn" id="18_f5e00"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0x8q4"]
 texture = ExtResource("2_ms33i")
@@ -14972,116 +14975,188 @@ autoplay = true
 
 [node name="FirePit" parent="." instance=ExtResource("12_xmjl0")]
 position = Vector2(207, 591)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePit2" parent="." instance=ExtResource("12_xmjl0")]
 position = Vector2(-51, 591)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePit3" parent="." instance=ExtResource("12_xmjl0")]
 position = Vector2(495, 592)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePit4" parent="." instance=ExtResource("12_xmjl0")]
 position = Vector2(623, 592)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePit5" parent="." instance=ExtResource("12_xmjl0")]
 position = Vector2(752, 592)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePit6" parent="." instance=ExtResource("12_xmjl0")]
 position = Vector2(878, 592)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePit7" parent="." instance=ExtResource("12_xmjl0")]
 position = Vector2(1008, 592)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePit8" parent="." instance=ExtResource("12_xmjl0")]
 position = Vector2(879, 266)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePit9" parent="." instance=ExtResource("12_xmjl0")]
 position = Vector2(942, 266)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePit10" parent="." instance=ExtResource("12_xmjl0")]
 position = Vector2(1102, 265)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePit11" parent="." instance=ExtResource("12_xmjl0")]
 position = Vector2(1167, 266)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePit12" parent="." instance=ExtResource("12_xmjl0")]
 position = Vector2(943, 78)
-metadata/_edit_lock_ = true
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePit13" parent="." instance=ExtResource("12_xmjl0")]
 position = Vector2(1103, 78)
-metadata/_edit_lock_ = true
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePit14" parent="." instance=ExtResource("12_xmjl0")]
 position = Vector2(622, 74)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePit15" parent="." instance=ExtResource("12_xmjl0")]
 position = Vector2(718, 74)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePit16" parent="." instance=ExtResource("12_xmjl0")]
 position = Vector2(751, 45)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePit17" parent="." instance=ExtResource("12_xmjl0")]
 position = Vector2(591, 46)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePit18" parent="." instance=ExtResource("12_xmjl0")]
 position = Vector2(557, 304)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePit19" parent="." instance=ExtResource("12_xmjl0")]
 position = Vector2(750, 299)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePit20" parent="." instance=ExtResource("12_xmjl0")]
 position = Vector2(15, 461)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePit21" parent="." instance=ExtResource("12_xmjl0")]
 position = Vector2(144, 461)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePillar" parent="." instance=ExtResource("13_8ln06")]
 position = Vector2(-50, 370)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePillar2" parent="." instance=ExtResource("13_8ln06")]
 position = Vector2(209, 370)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePillar3" parent="." instance=ExtResource("13_8ln06")]
 position = Vector2(-114, 50)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePillar4" parent="." instance=ExtResource("13_8ln06")]
 position = Vector2(431, 47)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePillar5" parent="." instance=ExtResource("13_8ln06")]
 position = Vector2(79, 69)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePillar6" parent="." instance=ExtResource("13_8ln06")]
 position = Vector2(285, 73)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePillar7" parent="." instance=ExtResource("13_8ln06")]
 position = Vector2(363, 283)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePillar8" parent="." instance=ExtResource("13_8ln06")]
 position = Vector2(362, 394)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePillar9" parent="." instance=ExtResource("13_8ln06")]
 position = Vector2(362, 534)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePillar10" parent="." instance=ExtResource("13_8ln06")]
 position = Vector2(527, 452)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePillar11" parent="." instance=ExtResource("13_8ln06")]
 position = Vector2(718, 454)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePillar12" parent="." instance=ExtResource("13_8ln06")]
 position = Vector2(911, 450)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePillar13" parent="." instance=ExtResource("13_8ln06")]
 position = Vector2(1139, 516)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePillar14" parent="." instance=ExtResource("13_8ln06")]
 position = Vector2(877, 82)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePillar15" parent="." instance=ExtResource("13_8ln06")]
 position = Vector2(1167, 81)
+collision_layer = 16
+collision_mask = 3
 
 [node name="FirePit22" parent="." instance=ExtResource("12_xmjl0")]
 position = Vector2(-50, 208)
+collision_layer = 16
+collision_mask = 3
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(1, 2)
@@ -15093,18 +15168,26 @@ shape = SubResource("RectangleShape2D_5x3kl")
 
 [node name="SkullFountain" parent="." instance=ExtResource("16_wqhsl")]
 position = Vector2(45, 454)
-metadata/_edit_lock_ = true
+collision_layer = 16
+collision_mask = 3
 
 [node name="SkullFountain2" parent="." instance=ExtResource("16_wqhsl")]
 position = Vector2(113, 454)
-metadata/_edit_lock_ = true
+collision_layer = 16
+collision_mask = 3
 
 [node name="SkullFountain3" parent="." instance=ExtResource("16_wqhsl")]
 position = Vector2(924, 206)
-metadata/_edit_lock_ = true
+collision_layer = 16
+collision_mask = 3
 
 [node name="SkullFountain4" parent="." instance=ExtResource("16_wqhsl")]
 position = Vector2(1116, 205)
+collision_layer = 16
+collision_mask = 3
+
+[node name="Lectern" parent="." instance=ExtResource("18_f5e00")]
+position = Vector2(79, 265)
 
 [node name="CryptCamera" type="Camera2D" parent="."]
 position = Vector2(79, 561)
@@ -15114,5 +15197,14 @@ limit_right = 1425
 limit_bottom = 750
 
 [node name="GUI" parent="CryptCamera" instance=ExtResource("17_1lvue")]
+
+[node name="Hero" parent="." instance=ExtResource("16_rt23y")]
+position = Vector2(84, 569)
+
+[node name="Skeleton" parent="." instance=ExtResource("17_vn63n")]
+position = Vector2(668, 263)
+
+[node name="Skeleton2" parent="." instance=ExtResource("17_vn63n")]
+position = Vector2(1025, 522)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
