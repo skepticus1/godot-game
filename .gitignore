@@ -2,3 +2,4 @@
 .godot/
 world.tscn
 *.translation
+.DS_Store

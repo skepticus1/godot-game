@@ -8,9 +8,11 @@ var player = null
 var health = 10
 var current_dir = "none"
 
+@onready var walking_sound = $SkeletonWalkingSound
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var detection_zone = $PlayerDetection
 @onready var nav_agent = $NavigationAgent2D
+
 
 func _physics_process(delta):
 	#print("player: ", player, ", Type: ", typeof(player))
@@ -25,10 +27,18 @@ func _physics_process(delta):
 		var direction = to_local(nav_agent.get_next_path_position()).normalized()
 		velocity = direction * MAX_SPEED
 		update_animation(direction)
+		
+	if velocity != Vector2.ZERO:
+		if !$SkeletonWalkingSound.is_playing():  # Check if the sound is not already playing to avoid overlapping sounds
+			$SkeletonWalkingSound.play()
+		else:
+			$SkeletonWalkingSound.stop()  # Stop the sound when the character is not walking
+			update_animation(Vector2.ZERO)
 	else:
-		# Stop and play idle animation
 		velocity = Vector2.ZERO
+		$SkeletonWalkingSound.stop()  # Stop the sound when the player is not present
 		update_animation(Vector2.ZERO)
+		
 	move_and_slide()
 
 func _on_player_detection_body_entered(body):
@@ -54,6 +64,7 @@ func update_animation(direction):
 			anim = "idle_" + current_dir
 	animated_sprite.play(anim)
 	current_dir = anim.replace("idle_", "").replace("walk_", "")
+	
 func _on_attack_zone_body_entered(body):
 	if body.name == "hero":
 		print("player in attack zone")

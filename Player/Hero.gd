@@ -1,6 +1,10 @@
 extends CharacterBody2D
 
-@onready var sword_slash = $SwordSlashSound
+@onready var hit_flash = $HitFlash
+@onready var sword_sound = $HeroSoundEffects/SwordSlash
+@onready var hurt_sound = $HeroSoundEffects/Hurt
+@onready var walking_sound = $HeroSoundEffects/Walking
+@onready var current_health = Game.HeroHealth
 
 const max_speed = 300   # to lower speed change this
 const friction = 1400	# this affects how fast it slows down
@@ -14,12 +18,18 @@ var is_alive = true
 var nearby_interactable = null # used to know if the player is near an interactable object in the game world, such as a chest
 
 func _physics_process(delta):
+	if current_health != Game.HeroHealth:
+		frameFreeze(0.05, 0.6)
+		hurt_sound.play()
+		current_health = Game.HeroHealth
 	if Game.HeroHealth >= 1:
 		if Input.is_action_just_pressed("attack1"):
+			velocity = Vector2.ZERO
 			is_attacking = true
 			sword_attack()
 			await sword_attack()
 		elif Input.is_action_just_pressed("attack2"):
+			velocity = Vector2.ZERO
 			is_attacking = true
 			sword_thrust()
 			await sword_thrust()
@@ -75,7 +85,11 @@ func player_movement(delta):
 			velocity -= velocity.normalized() * (friction * delta)
 		else:
 			velocity = Vector2.ZERO
+			if walking_sound.playing:
+				walking_sound.stop()
 	else:
+		if !walking_sound.playing:
+			walking_sound.play()
 		velocity = input * max_speed
 		velocity = velocity.limit_length(max_speed)
 
@@ -85,20 +99,25 @@ func sword_attack():
 	if is_attacking == true:
 		if last_movement == Vector2.RIGHT:
 			get_node("AnimationPlayer").play("SwordAttackRight")
-			sword_slash.get_node("AudioStreamPlayer/AnimationPlayer").play("swordSlash1")
+			if !sword_sound.playing:
+				sword_sound.play()
 			await get_node("AnimationPlayer").animation_finished
 		elif last_movement == Vector2.LEFT:
 			get_node("AnimationPlayer").play("SwordAttackLeft")
-			sword_slash.get_node("AudioStreamPlayer/AnimationPlayer").play("swordSlash1")
+			if !sword_sound.playing:
+				sword_sound.play()
 			await get_node("AnimationPlayer").animation_finished
 		elif last_movement == Vector2.DOWN:
 			get_node("AnimationPlayer").play("SwordAttackUp")
-			sword_slash.get_node("AudioStreamPlayer/AnimationPlayer").play("swordSlash1")
+			if !sword_sound.playing:
+				sword_sound.play()
 			await get_node("AnimationPlayer").animation_finished
 		elif last_movement == Vector2.UP:
-			sword_slash.get_node("AudioStreamPlayer/AnimationPlayer").play("swordSlash1")
+			if !sword_sound.playing:
+				sword_sound.play()
 			get_node("AnimationPlayer").play("SwordAttackDown")
 			await get_node("AnimationPlayer").animation_finished
+
 	is_attacking = false
 	return is_attacking
 	
@@ -106,18 +125,22 @@ func sword_thrust():
 	if is_attacking == true:
 		if last_movement == Vector2.RIGHT:
 			get_node("AnimationPlayer").play("SwordThrustRight")
-			sword_slash.get_node("AudioStreamPlayer/AnimationPlayer").play("swordSlash1")
+			if !sword_sound.playing:
+				sword_sound.play()
 			await get_node("AnimationPlayer").animation_finished
 		elif last_movement == Vector2.LEFT:
 			get_node("AnimationPlayer").play("SwordThrustLeft")
-			sword_slash.get_node("AudioStreamPlayer/AnimationPlayer").play("swordSlash1")
+			if !sword_sound.playing:
+				sword_sound.play()
 			await get_node("AnimationPlayer").animation_finished
 		elif last_movement == Vector2.DOWN:
 			get_node("AnimationPlayer").play("SwordThrustUp")
-			sword_slash.get_node("AudioStreamPlayer/AnimationPlayer").play("swordSlash1")
+			if !sword_sound.playing:
+				sword_sound.play()
 			await get_node("AnimationPlayer").animation_finished
 		elif last_movement == Vector2.UP:
-			sword_slash.get_node("AudioStreamPlayer/AnimationPlayer").play("swordSlash1")
+			if !sword_sound.playing:
+				sword_sound.play()
 			get_node("AnimationPlayer").play("SwordThrustDown")
 			await get_node("AnimationPlayer").animation_finished
 	is_attacking = false
@@ -140,5 +163,11 @@ func _input(event):
 	if event.is_action_pressed("interact"):
 		if nearby_interactable:
 			nearby_interactable.interact()
+			
+func frameFreeze(timeScale, duration):
+	Engine.time_scale = timeScale
+	hit_flash.play("hitFlash")
+	await(get_tree().create_timer(duration * timeScale).timeout)
+	Engine.time_scale = 1.0
 
 
