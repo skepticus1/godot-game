@@ -123,6 +123,11 @@ func check_health():
 func _on_death_timer_timeout():
 	Game.Kills += 1
 	var inst = key.instantiate()
-	owner.add_child(inst) # owner is the level
-	inst.transform = self.global_transform
+	inst.global_position = self.global_position
+	
+	var map = self.get_parent().get_parent()
+	if map:
+		map.add_child(inst)
+	else:
+		printerr("Couldn't find map to put key in")
 	queue_free()
