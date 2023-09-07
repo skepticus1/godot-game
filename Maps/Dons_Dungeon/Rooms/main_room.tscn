@@ -1,6 +1,5 @@
-[gd_scene load_steps=11 format=3 uid="uid://c2jl1at0ym326"]
+[gd_scene load_steps=10 format=3 uid="uid://c2jl1at0ym326"]
 
-[ext_resource type="PackedScene" uid="uid://dcjvhl6hw64i1" path="res://Player/Hero.tscn" id="2_bt8e8"]
 [ext_resource type="PackedScene" uid="uid://dfqfsdp522gb" path="res://Props/Lights/BasicLight/basic_light.tscn" id="3_1q04h"]
 [ext_resource type="Texture2D" uid="uid://bmeypb0jw00x5" path="res://Maps/Dons_Dungeon/Assets/FD_Dungeon.png" id="3_g03uw"]
 
@@ -3056,12 +3055,7 @@ layer_2/y_sort_origin = 0
 layer_2/z_index = 1
 layer_2/tile_data = PackedInt32Array(983056, 720902, 26)
 
-[node name="Hero" parent="." instance=ExtResource("2_bt8e8")]
-y_sort_enabled = false
-position = Vector2(328, 299)
-
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.0117647, 0.0235294, 0.172549, 1)
 
 [node name="BasicLight" parent="." instance=ExtResource("3_1q04h")]

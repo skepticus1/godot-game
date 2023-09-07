@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Player/Hero.gd" id="1_4sm72"]
 [ext_resource type="Texture2D" uid="uid://3fe0rpwuivv3" path="res://Player/HeroAssets/player-sprite/Knight.png" id="2_677o6"]
-[ext_resource type="PackedScene" uid="uid://boqs3qjly38tk" path="res://Player/HeroAssets/HeroSounds/SwordSlashSound.tscn" id="3_gxrp8"]
-[ext_resource type="PackedScene" uid="uid://k5uhejnxu1wj" path="res://Player/HeroAssets/HeroSounds/Hurt.tscn" id="4_r4xua"]
+[ext_resource type="PackedScene" uid="uid://ceotolxmo6sll" path="res://Player/HeroAssets/HeroSounds/HeroSoundEffects.tscn" id="3_gxrp8"]
+[ext_resource type="PackedScene" uid="uid://ceotolxmo6sll" path="res://Player/HeroAssets/HeroSounds/HeroSoundEffects.tscn" id="4_r4xua"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h8x15"]
 
