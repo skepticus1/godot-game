@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://vprihaqmocbx"]
+
+[ext_resource type="Script" path="res://Player/PlayerSpawner/player_spawn.gd" id="1_w3fv6"]
+[ext_resource type="Texture2D" uid="uid://3fe0rpwuivv3" path="res://Player/HeroAssets/player-sprite/Knight.png" id="2_nooky"]
+
+[node name="PlayerSpawn" type="Marker2D"]
+script = ExtResource("1_w3fv6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_nooky")
+region_enabled = true
+region_rect = Rect2(256, 128, 64, 64)
