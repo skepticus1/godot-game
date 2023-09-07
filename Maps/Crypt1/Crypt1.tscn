@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cpovwl727cam2"]
+[gd_scene load_steps=28 format=3 uid="uid://cpovwl727cam2"]
 
 [ext_resource type="Script" path="res://Maps/Crypt1/Crypt1.gd" id="1_lykcl"]
 [ext_resource type="Texture2D" uid="uid://0g1l18vcj26i" path="res://Playgrounds/Brenda/Art/Crypt32x32/RA_Crypt.png" id="2_ms33i"]
@@ -13,9 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://cxjctfc0ycisp" path="res://Playgrounds/Brenda/Audio/dungeonBackground.mp3" id="11_8pmj5"]
 [ext_resource type="PackedScene" uid="uid://b1lb2jhev3pir" path="res://Playgrounds/Brenda/Crypt/FirePit.tscn" id="12_xmjl0"]
 [ext_resource type="PackedScene" uid="uid://5l2jr68k0hau" path="res://Playgrounds/Brenda/Crypt/FirePillar.tscn" id="13_8ln06"]
-[ext_resource type="PackedScene" uid="uid://dcjvhl6hw64i1" path="res://Player/Hero.tscn" id="14_dy7f7"]
-[ext_resource type="PackedScene" uid="uid://c8d3c5jp6ofro" path="res://Enemy/Skeleton/Skeleton.tscn" id="15_4ehy8"]
-[ext_resource type="PackedScene" path="res://Maps/Crypt1/SkullFountain.tscn" id="16_wqhsl"]
+[ext_resource type="PackedScene" uid="uid://ccamn5o2jtneh" path="res://Maps/Crypt1/SkullFountain.tscn" id="16_wqhsl"]
 [ext_resource type="PackedScene" uid="uid://b1u8d116l8jro" path="res://Props/GUI.tscn" id="17_1lvue"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0x8q4"]
@@ -15092,19 +15090,6 @@ collision_layer = 128
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(1023, 81)
 shape = SubResource("RectangleShape2D_5x3kl")
-
-[node name="Hero" parent="." instance=ExtResource("14_dy7f7")]
-position = Vector2(79, 561)
-metadata/_edit_lock_ = true
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Hero"]
-remote_path = NodePath("../../CryptCamera")
-
-[node name="Skeleton" parent="." instance=ExtResource("15_4ehy8")]
-position = Vector2(665, 259)
-
-[node name="Skeleton2" parent="." instance=ExtResource("15_4ehy8")]
-position = Vector2(775, 555)
 
 [node name="SkullFountain" parent="." instance=ExtResource("16_wqhsl")]
 position = Vector2(45, 454)
