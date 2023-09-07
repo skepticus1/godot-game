@@ -43,6 +43,10 @@ func _physics_process(delta):
 		var direction = to_local(nav_agent.get_next_path_position()).normalized()
 		velocity = direction * MAX_SPEED
 		update_animation(direction)
+	else:
+		# Stop and play idle animation
+		velocity = Vector2.ZERO
+		update_animation(Vector2.ZERO)
 	
 	if velocity != Vector2.ZERO and !walking_sound_playing:
 		print("playing walking sound now")
@@ -51,6 +55,7 @@ func _physics_process(delta):
 	elif velocity == Vector2.ZERO and walking_sound_playing:
 		walking_sound.stop()
 		walking_sound_playing = false
+	
 		
 	move_and_slide()
 
