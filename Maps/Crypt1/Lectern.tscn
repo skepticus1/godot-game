@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkrxb1xcrgcyh"]
+
+[ext_resource type="Script" path="res://Maps/Crypt1/Lectern.gd" id="1_65k0f"]
+[ext_resource type="Texture2D" uid="uid://ctkqsd7gyqgvm" path="res://Maps/Crypt1/Assets/Crypt32x32/RA_Crypt.png" id="2_qjck4"]
+[ext_resource type="Texture2D" uid="uid://bg1lwkxsxl0wv" path="res://Maps/Crypt1/Assets/RA_Graveyard.png" id="3_sitn3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_68u84"]
+size = Vector2(26, 51)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2qa0w"]
+radius = 106.042
+
+[node name="Lectern" type="StaticBody2D"]
+collision_layer = 16
+script = ExtResource("1_65k0f")
+
+[node name="Stand" type="Sprite2D" parent="."]
+texture = ExtResource("2_qjck4")
+hframes = 32
+vframes = 8
+frame = 250
+
+[node name="LeftBook" type="Sprite2D" parent="."]
+position = Vector2(-9, -11)
+texture = ExtResource("3_sitn3")
+flip_v = true
+hframes = 82
+vframes = 16
+frame = 550
+
+[node name="RightBook" type="Sprite2D" parent="."]
+position = Vector2(9, -11)
+texture = ExtResource("3_sitn3")
+flip_h = true
+flip_v = true
+hframes = 82
+vframes = 16
+frame = 550
+
+[node name="Skull" type="Sprite2D" parent="."]
+position = Vector2(2.38419e-07, 13)
+scale = Vector2(0.703125, 0.703125)
+texture = ExtResource("2_qjck4")
+hframes = 32
+vframes = 16
+frame = 310
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_68u84")
+
+[node name="InteractionZone" type="Area2D" parent="."]
+collision_layer = 19
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone"]
+shape = SubResource("CircleShape2D_2qa0w")
+
+[node name="Message" type="Panel" parent="."]
+visible = false
+offset_left = -73.0
+offset_top = -72.0
+offset_right = 73.0
+offset_bottom = -22.0
+
+[node name="Label" type="Label" parent="Message"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -1.0
+offset_right = 141.0
+offset_bottom = 51.0
+text = "Press left mouse button to attack"
+autowrap_mode = 2
+
+[connection signal="body_entered" from="InteractionZone" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="InteractionZone" to="." method="_on_area_2d_body_exited"]
