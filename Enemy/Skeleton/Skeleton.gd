@@ -21,6 +21,7 @@ var damage = 25
 @onready var nav_agent = $NavigationAgent2D
 @onready var death_timer = $DeathTimer
 @onready var walking_sound = $SkeletonSounds/SkeletonMoving
+@onready var walking_sound_playing = false
 
 
 func _ready():
@@ -43,14 +44,14 @@ func _physics_process(delta):
 		velocity = direction * MAX_SPEED
 		update_animation(direction)
 	
-	if velocity != Vector2.ZERO:
+	if velocity != Vector2.ZERO and !walking_sound_playing:
+		print("playing walking sound now")
 		walking_sound.play()
-		
-	else:
-		# Stop and play idle animation
-		velocity = Vector2.ZERO
-		update_animation(Vector2.ZERO)
+		walking_sound_playing = true
+	elif velocity == Vector2.ZERO and walking_sound_playing:
 		walking_sound.stop()
+		walking_sound_playing = false
+		
 	move_and_slide()
 
 func _on_player_detection_body_entered(body):
