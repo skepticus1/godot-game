@@ -1057,7 +1057,7 @@ shape = SubResource("RectangleShape2D_a0aub")
 [node name="DeathTimer" type="Timer" parent="."]
 wait_time = 4.9
 
-[node name="Injured" parent="." instance=ExtResource("3_2bujo")]
+
 
 [node name="SkeletonSounds" parent="." instance=ExtResource("6_jkh31")]
 
