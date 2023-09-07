@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ceotolxmo6sll"]
+
+[ext_resource type="AudioStream" uid="uid://crh4xcmri2fis" path="res://Player/HeroAssets/HeroSounds/slash-21834.mp3" id="1_u6jba"]
+[ext_resource type="AudioStream" uid="uid://dajsyhaswutk7" path="res://Player/HeroAssets/HeroSounds/hurt.mp3" id="2_7ktry"]
+[ext_resource type="AudioStream" uid="uid://cptyree51oxbx" path="res://Player/HeroAssets/HeroSounds/generic-walking.mp3" id="3_na4di"]
+
+[node name="HeroSoundEffects" type="Node2D"]
+
+[node name="SwordAttack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_u6jba")
+
+[node name="Hurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_7ktry")
+
+[node name="Walking" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_na4di")
