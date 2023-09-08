@@ -2303,8 +2303,5 @@ libraries = {
 "": SubResource("AnimationLibrary_8wup4")
 }
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
-script = ExtResource("4_dpkv0")
-
 [connection signal="body_entered" from="AttackHitBox" to="." method="_on_attack_hit_box_body_entered"]
 [connection signal="timeout" from="SwordDashTimer" to="." method="_on_sword_dash_timer_timeout"]
