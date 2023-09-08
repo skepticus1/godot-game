@@ -37,8 +37,9 @@ func handle_death():
 	fade_tween.tween_property(fade_rect, "color:a", 1, 5)
 	
 	# stop parent audio
-	grandparent_audio.stop()
-	# start death music
-	death_music.play()
+	if grandparent_audio:
+		grandparent_audio.stop()
+	else: # start death music
+		death_music.play()
 		
 		

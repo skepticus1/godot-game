@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://g3ljynywqgdv"]
+
+[ext_resource type="Texture2D" uid="uid://bmeypb0jw00x5" path="res://Maps/Dons_Dungeon/Assets/FD_Dungeon.png" id="1_e7s6v"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_v8yed"]
+polygon = PackedVector2Array(12, 16, -12, 16, -16, 12, -16, -12, -12, -16, 12, -16, 16, -12, 16, 12)
+
+[node name="Pillar-01" type="Sprite2D"]
+texture = ExtResource("1_e7s6v")
+region_enabled = true
+region_rect = Rect2(352, 864, 32, 32)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_v8yed")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
+texture = ExtResource("1_e7s6v")
+region_enabled = true
+region_rect = Rect2(352, 832, 32, 32)
