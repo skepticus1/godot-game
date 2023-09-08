@@ -1720,4 +1720,7 @@ metadata/_edit_lock_ = true
 
 [node name="HeroSoundEffects" parent="." instance=ExtResource("2_hyk4h")]
 
+[node name="SwordDashTimer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="AttackHitBox" to="." method="_on_attack_hit_box_body_entered"]
+[connection signal="timeout" from="SwordDashTimer" to="." method="_on_sword_dash_timer_timeout"]
