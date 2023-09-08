@@ -39664,7 +39664,7 @@ position = Vector2(10, 68)
 remote_path = NodePath("../../OverworldCamera")
 
 [node name="OverworldCamera" type="Camera2D" parent="."]
-position = Vector2(10, 68)
+position = Vector2(21, 106)
 limit_left = -1400
 limit_top = -1250
 limit_right = 1500

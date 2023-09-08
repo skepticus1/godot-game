@@ -3,18 +3,24 @@ extends CharacterBody2D
 @onready var sword_sound = $HeroSoundEffects/SwordSlash
 @onready var hurt_sound = $HeroSoundEffects/Hurt
 @onready var walking_sound = $HeroSoundEffects/Walking
+@onready var dash_sound = $HeroSoundEffects/SwordDash
 @onready var current_health = Game.HeroHealth
+@onready var sword_dash_count = 3
+@onready var sword_dash_timer = $SwordDashTimer
+@onready var effects_animation = $EffectsAnimation
 
 const max_speed = 300   # to lower speed change this
-const friction = 1400	# this affects how fast it slows down
+var friction = 1400	# this affects how fast it slows down
 const idle_threshold = 10 # this is to determine when the character has stopped therefore changing it to standing animation
-
 
 var input = Vector2.ZERO
 var last_movement = Vector2.ZERO
 var is_attacking = false
 var is_alive = true
 var nearby_interactable = null # used to know if the player is near an interactable object in the game world, such as a chest
+
+func _ready():
+	sword_dash_timer.set_wait_time(3)
 
 func _physics_process(delta):
 	if current_health != Game.HeroHealth:
@@ -26,7 +32,10 @@ func _physics_process(delta):
 			is_attacking = true
 			sword_attack()
 			await sword_attack()
-		elif Input.is_action_just_pressed("attack2"):
+		elif Input.is_action_just_pressed("attack2") && sword_dash_count > 0:
+			sword_dash_count -= 1
+			print(sword_dash_count)
+			sword_dash_timer.start()
 			velocity = Vector2.ZERO
 			is_attacking = true
 			sword_thrust()
@@ -100,13 +109,11 @@ func sword_attack():
 			if !sword_sound.playing:
 				sword_sound.play()
 			await get_node("AnimationPlayer").animation_finished
-			await sword_sound
 		elif last_movement == Vector2.LEFT:
 			get_node("AnimationPlayer").play("SwordAttackLeft")
 			if !sword_sound.playing:
 				sword_sound.play()
 			await get_node("AnimationPlayer").animation_finished
-			await sword_sound
 		elif last_movement == Vector2.DOWN:
 			get_node("AnimationPlayer").play("SwordAttackUp")
 			if !sword_sound.playing:
@@ -118,36 +125,47 @@ func sword_attack():
 				sword_sound.play()
 			get_node("AnimationPlayer").play("SwordAttackDown")
 			await get_node("AnimationPlayer").animation_finished
-			await sword_sound
 	is_attacking = false
 	return is_attacking
 	
 func sword_thrust():
 	if is_attacking == true:
 		if last_movement == Vector2.RIGHT:
+			effects_animation.play("dashRight")
+			dash_sound.play()
 			get_node("AnimationPlayer").play("SwordThrustRight")
+			friction = 50000
+			velocity = last_movement * (max_speed * 25)
 			if !sword_sound.playing:
 				sword_sound.play()
 			await get_node("AnimationPlayer").animation_finished
-			await sword_sound
 		elif last_movement == Vector2.LEFT:
+			effects_animation.play("dashLeft")
+			dash_sound.play()
 			get_node("AnimationPlayer").play("SwordThrustLeft")
+			friction = 50000
+			velocity = last_movement * (max_speed * 25)
 			if !sword_sound.playing:
 				sword_sound.play()
 			await get_node("AnimationPlayer").animation_finished
-			await sword_sound
 		elif last_movement == Vector2.DOWN:
+			effects_animation.play("dashUp")
+			dash_sound.play()
 			get_node("AnimationPlayer").play("SwordThrustUp")
+			friction = 50000
+			velocity = last_movement * (max_speed * -25)
 			if !sword_sound.playing:
 				sword_sound.play()
 			await get_node("AnimationPlayer").animation_finished
-			await sword_sound
 		elif last_movement == Vector2.UP:
+			friction = 50000
+			velocity = last_movement * (max_speed * -25)
 			if !sword_sound.playing:
 				sword_sound.play()
+			effects_animation.play("dashDown")
+			dash_sound.play()
 			get_node("AnimationPlayer").play("SwordThrustDown")
 			await get_node("AnimationPlayer").animation_finished
-			await sword_sound
 	is_attacking = false
 	return is_attacking
 	
@@ -169,4 +187,11 @@ func _input(event):
 		if nearby_interactable:
 			nearby_interactable.interact()
 
+
+
+
+func _on_sword_dash_timer_timeout():
+	if sword_dash_count < 3:
+		sword_dash_count += 1
+		print(sword_dash_count)
 
