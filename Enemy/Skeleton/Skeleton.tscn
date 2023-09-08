@@ -1,10 +1,9 @@
-[gd_scene load_steps=93 format=3 uid="uid://c8d3c5jp6ofro"]
+[gd_scene load_steps=92 format=3 uid="uid://c8d3c5jp6ofro"]
 
 [ext_resource type="Script" path="res://Enemy/Skeleton/Skeleton.gd" id="1_vnsgm"]
 [ext_resource type="PackedScene" uid="uid://bxr4a61h8ybwd" path="res://Props/Key/key.tscn" id="2_dktak"]
 [ext_resource type="Texture2D" uid="uid://6uijdkdh4lij" path="res://Playgrounds/dons-folder/enemies/assets/Skeleton-naked-scimitar.png" id="2_fothd"]
 [ext_resource type="Texture2D" uid="uid://dvnj6mxj6tlio" path="res://Enemy/Skeleton/assets/Skeleton-naked-scimitar.png" id="2_rltsp"]
-
 [ext_resource type="PackedScene" uid="uid://bx4i8t8vsmmx1" path="res://Enemy/Skeleton/SkeletonSounds.tscn" id="6_jkh31"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mbycd"]
@@ -1056,8 +1055,6 @@ shape = SubResource("RectangleShape2D_a0aub")
 
 [node name="DeathTimer" type="Timer" parent="."]
 wait_time = 4.9
-
-
 
 [node name="SkeletonSounds" parent="." instance=ExtResource("6_jkh31")]
 
