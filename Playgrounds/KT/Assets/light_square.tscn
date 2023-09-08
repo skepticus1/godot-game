@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bdmtfvackuh4p" path="res://Playgrounds/KT/Assets/RA_Ruins_Animations.png" id="1_bl6gp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0mnul"]
-size = Vector2(13, 13)
+size = Vector2(26, 27)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5k260"]
 atlas = ExtResource("1_bl6gp")
@@ -52,11 +52,11 @@ fill_from = Vector2(0.504587, 0.486239)
 
 [node name="LightSquare" type="StaticBody2D"]
 z_index = 2
-collision_layer = 7
-collision_mask = 3
+collision_layer = 263
+collision_mask = 23
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
+position = Vector2(1, -0.5)
 shape = SubResource("RectangleShape2D_0mnul")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
