@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cnruueoedjpau"
-path="res://.godot/imported/Download85103.png-9bd283cab9d1ffb136c81095a58cb821.ctex"
+path="res://.godot/imported/BeginnerHero.png-bdeac1e73501868058413b4dcc2030fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/HeroAssets/player-sprite/Download85103.png"
-dest_files=["res://.godot/imported/Download85103.png-9bd283cab9d1ffb136c81095a58cb821.ctex"]
+source_file="res://Player/HeroAssets/player-sprite/BeginnerHero.png"
+dest_files=["res://.godot/imported/BeginnerHero.png-bdeac1e73501868058413b4dcc2030fe.ctex"]
 
 [params]
 
