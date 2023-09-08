@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cpovwl727cam2"]
+[gd_scene load_steps=32 format=3 uid="uid://cpovwl727cam2"]
 
 [ext_resource type="Script" path="res://Maps/Crypt1/Crypt1.gd" id="1_lykcl"]
 [ext_resource type="Texture2D" uid="uid://0g1l18vcj26i" path="res://Playgrounds/Brenda/Art/Crypt32x32/RA_Crypt.png" id="2_ms33i"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b1lb2jhev3pir" path="res://Playgrounds/Brenda/Crypt/FirePit.tscn" id="12_xmjl0"]
 [ext_resource type="PackedScene" uid="uid://5l2jr68k0hau" path="res://Playgrounds/Brenda/Crypt/FirePillar.tscn" id="13_8ln06"]
 [ext_resource type="PackedScene" uid="uid://dcjvhl6hw64i1" path="res://Player/Hero.tscn" id="16_rt23y"]
+[ext_resource type="PackedScene" uid="uid://c5ubh0h1jqubt" path="res://Maps/Crypt1/Dialogues/Messages/Coffin.tscn" id="16_ugmu2"]
 [ext_resource type="PackedScene" uid="uid://ccamn5o2jtneh" path="res://Maps/Crypt1/SkullFountain.tscn" id="16_wqhsl"]
 [ext_resource type="PackedScene" uid="uid://b1u8d116l8jro" path="res://Props/GUI.tscn" id="17_1lvue"]
 [ext_resource type="PackedScene" uid="uid://c8d3c5jp6ofro" path="res://Enemy/Skeleton/Skeleton.tscn" id="17_vn63n"]
@@ -15188,6 +15189,10 @@ collision_mask = 3
 
 [node name="Lectern" parent="." instance=ExtResource("18_f5e00")]
 position = Vector2(79, 265)
+
+[node name="Coffin" parent="." instance=ExtResource("16_ugmu2")]
+position = Vector2(79, 495)
+collision_layer = 16
 
 [node name="CryptCamera" type="Camera2D" parent="."]
 position = Vector2(84, 569)
