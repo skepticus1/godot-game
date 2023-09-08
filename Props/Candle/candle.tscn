@@ -24,6 +24,7 @@ animations = [{
 }]
 
 [node name="Candle" type="Node2D"]
+z_index = -1
 script = ExtResource("1_yv61s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

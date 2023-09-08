@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://42ulesky5y6c"]
+
+[ext_resource type="TileSet" uid="uid://de2qum2e7y5tv" path="res://Maps/Dons_Dungeon/Tilesets/dungeon_tileset.tres" id="1_nxv64"]
+
+[node name="DoorWayRight" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_nxv64")
+format = 2
+layer_0/name = "Ground"
+layer_0/z_index = -1
+layer_1/name = "Wall"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array()
+layer_2/name = "Roof"
+layer_2/enabled = true
+layer_2/modulate = Color(1, 1, 1, 1)
+layer_2/y_sort_enabled = false
+layer_2/y_sort_origin = 0
+layer_2/z_index = 1
+layer_2/tile_data = PackedInt32Array()
