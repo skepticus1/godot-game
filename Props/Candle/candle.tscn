@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://cqwxe2yfa4eip"]
+
+[ext_resource type="Texture2D" uid="uid://neseasnkrklr" path="res://Props/Candle/C300-1.png" id="1_qsct0"]
+[ext_resource type="Script" path="res://Props/Candle/candle.gd" id="1_yv61s"]
+[ext_resource type="Texture2D" uid="uid://dkvge0gndou87" path="res://Props/Candle/C300-2.png" id="2_kwcfj"]
+[ext_resource type="Texture2D" uid="uid://d3re43a58pu6i" path="res://Props/Candle/C300-3.png" id="3_585ht"]
+[ext_resource type="Texture2D" uid="uid://crj01x4lmsfln" path="res://Props/Candle/Circular 1 - 128x128.png" id="5_8d6sy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iloom"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qsct0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kwcfj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_585ht")
+}],
+"loop": true,
+"name": &"candle",
+"speed": 5.0
+}]
+
+[node name="Candle" type="Node2D"]
+script = ExtResource("1_yv61s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_iloom")
+animation = &"candle"
+autoplay = "candle"
+frame_progress = 0.0879001
+
+[node name="light" type="PointLight2D" parent="."]
+scale = Vector2(2.5, 2.5)
+energy = 0.35
+texture = ExtResource("5_8d6sy")
+texture_scale = 0.9
+
+[node name="shadow" type="PointLight2D" parent="."]
+scale = Vector2(3, 3)
+energy = 0.7
+shadow_enabled = true
+texture = ExtResource("5_8d6sy")
