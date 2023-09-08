@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctmoiev76gvav"]
+
+[ext_resource type="Texture2D" uid="uid://bmeypb0jw00x5" path="res://Maps/Dons_Dungeon/Assets/FD_Dungeon.png" id="1_3xypd"]
+[ext_resource type="Script" path="res://Props/SpikeTrap/spike_trap.gd" id="1_gkkp4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4iava"]
+size = Vector2(28, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6wj75"]
+size = Vector2(28, 28)
+
+[node name="SpikeTrap" type="Node2D"]
+script = ExtResource("1_gkkp4")
+
+[node name="spike_trap_trigger_area" type="Area2D" parent="."]
+
+[node name="spike_trap_down" type="Sprite2D" parent="spike_trap_trigger_area"]
+texture = ExtResource("1_3xypd")
+region_enabled = true
+region_rect = Rect2(704, 992, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spike_trap_trigger_area"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_4iava")
+
+[node name="spike_trap_hit_area" type="Area2D" parent="."]
+visible = false
+
+[node name="spike_trap_up" type="Sprite2D" parent="spike_trap_hit_area"]
+texture = ExtResource("1_3xypd")
+region_enabled = true
+region_rect = Rect2(768, 992, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spike_trap_hit_area"]
+shape = SubResource("RectangleShape2D_6wj75")
+
+[connection signal="body_entered" from="spike_trap_trigger_area" to="." method="_on_spike_trap_trigger_area_body_entered"]

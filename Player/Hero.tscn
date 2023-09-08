@@ -1,4 +1,4 @@
-[gd_scene load_steps=124 format=3 uid="uid://dcjvhl6hw64i1"]
+[gd_scene load_steps=125 format=3 uid="uid://dcjvhl6hw64i1"]
 
 [ext_resource type="Script" path="res://Player/Hero.gd" id="1_4sm72"]
 [ext_resource type="Texture2D" uid="uid://3fe0rpwuivv3" path="res://Player/HeroAssets/player-sprite/Knight.png" id="2_677o6"]
@@ -1684,6 +1684,9 @@ _data = {
 "moveUp": SubResource("Animation_vvvox")
 }
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jhgrg"]
+polygon = PackedVector2Array(8, -3, 10, -8, 9, -12, 5, -14, -2, -14, -7, -12, -9, -8, -6, -3)
+
 [node name="Hero" type="CharacterBody2D"]
 y_sort_enabled = true
 collision_mask = 150
@@ -1719,5 +1722,8 @@ shape = SubResource("RectangleShape2D_g7gl0")
 metadata/_edit_lock_ = true
 
 [node name="HeroSoundEffects" parent="." instance=ExtResource("3_5hnux")]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_jhgrg")
 
 [connection signal="body_entered" from="AttackHitBox" to="." method="_on_attack_hit_box_body_entered"]
