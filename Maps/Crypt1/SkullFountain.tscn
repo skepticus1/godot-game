@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://ccamn5o2jtneh"]
 
 [ext_resource type="Texture2D" uid="uid://br52fdvs8vx43" path="res://Maps/Crypt1/Assets/Crypt32x32/RA_Crypt_Animations.png" id="1_g7ak0"]
-[ext_resource type="AudioStream" uid="uid://qcatbux14ss7" path="res://Maps/Crypt1/Audio1/waterFountain.mp3" id="2_k55m6"]
+[ext_resource type="AudioStream" uid="uid://c00g6gg0qthfk" path="res://Maps/Crypt1/Audio1/waterFountain.mp3" id="2_k55m6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_235q6"]
 size = Vector2(32, 33.5)
@@ -43,6 +43,8 @@ animations = [{
 }]
 
 [node name="SkullFountain" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -16.25)
