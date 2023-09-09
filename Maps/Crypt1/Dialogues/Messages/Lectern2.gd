@@ -4,19 +4,19 @@ var is_player_in_area = false
 
 
 func _on_area_2d_body_entered(body):
-	print('player has entered coffin zone')
+	print('player has entered lectern2 zone')
 	
 	if body.name == "Hero":
-	
-		$Message1.visible = true
+		
+		$Message4.visible = true
 		is_player_in_area = true
 		
 
 
 func _on_area_2d_body_exited(body):
-	print('player has exited coffin zone')
+	print('player has exited lectern2 zone')
 	
 	if body.name == "Hero":
 		
-		$Message1.visible = false
+		$Message4.visible = false
 		is_player_in_area = false
