@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bx4i8t8vsmmx1"]
+[gd_scene load_steps=8 format=3 uid="uid://bx4i8t8vsmmx1"]
 
 [ext_resource type="AudioStream" uid="uid://d2gn0rae643j4" path="res://Enemy/Skeleton/Skeleton_walk_sound.mp3" id="1_s7o5g"]
 [ext_resource type="AudioStream" uid="uid://0sqit0iye263" path="res://Enemy/Skeleton/assets/SkeletonSounds/bones-breaking.mp3" id="2_47edx"]
+[ext_resource type="AudioStream" uid="uid://ddtsknrmor5ec" path="res://Enemy/Skeleton/assets/SkeletonSounds/skeleton_hurt_sound.mp3" id="2_ufwhv"]
 
 [sub_resource type="Animation" id="Animation_k3dp4"]
 resource_name = "skeletonMoving"
@@ -37,7 +38,7 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_1btlt"]
 resource_name = "skeletonHurt"
-length = 0.2
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -79,7 +80,7 @@ libraries = {
 }
 
 [node name="SkeletonHurt" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_47edx")
+stream = ExtResource("2_ufwhv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SkeletonHurt"]
 libraries = {
