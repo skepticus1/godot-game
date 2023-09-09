@@ -6,7 +6,7 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7t06l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cmvn0"]
-radius = 19.4165
+radius = 12.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c0ty4"]
 atlas = ExtResource("1_dw5rk")
