@@ -1,17 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkrxb1xcrgcyh"]
+[gd_scene load_steps=7 format=3 uid="uid://dkrxb1xcrgcyh"]
 
 [ext_resource type="Script" path="res://Maps/Crypt1/Lectern.gd" id="1_65k0f"]
 [ext_resource type="Texture2D" uid="uid://ctkqsd7gyqgvm" path="res://Maps/Crypt1/Assets/Crypt32x32/RA_Crypt.png" id="2_qjck4"]
 [ext_resource type="Texture2D" uid="uid://bg1lwkxsxl0wv" path="res://Maps/Crypt1/Assets/RA_Graveyard.png" id="3_sitn3"]
+[ext_resource type="FontFile" uid="uid://dq83y3i8frkqq" path="res://Maps/Crypt1/Dialogues/Fonts/GIMENELL.TTF" id="4_45744"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_68u84"]
 size = Vector2(26, 51)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_2qa0w"]
-radius = 106.042
+[sub_resource type="CircleShape2D" id="CircleShape2D_40u14"]
+radius = 86.0058
 
 [node name="Lectern" type="StaticBody2D"]
 collision_layer = 16
+collision_mask = 3
 script = ExtResource("1_65k0f")
 
 [node name="Stand" type="Sprite2D" parent="."]
@@ -21,7 +23,7 @@ vframes = 8
 frame = 250
 
 [node name="LeftBook" type="Sprite2D" parent="."]
-position = Vector2(-9, -11)
+position = Vector2(-10, -11)
 texture = ExtResource("3_sitn3")
 flip_v = true
 hframes = 82
@@ -53,22 +55,28 @@ shape = SubResource("RectangleShape2D_68u84")
 collision_layer = 19
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone"]
-shape = SubResource("CircleShape2D_2qa0w")
+position = Vector2(0, 46)
+shape = SubResource("CircleShape2D_40u14")
 
-[node name="Message" type="Panel" parent="."]
+[node name="Message2" type="Panel" parent="."]
 visible = false
-offset_left = -73.0
-offset_top = -72.0
-offset_right = 73.0
-offset_bottom = -22.0
+offset_left = -51.0
+offset_top = -65.0
+offset_right = 64.0
+offset_bottom = -25.0
 
-[node name="Label" type="Label" parent="Message"]
+[node name="Label" type="Label" parent="Message2"]
 layout_mode = 0
-offset_left = 6.0
-offset_top = -1.0
-offset_right = 141.0
-offset_bottom = 51.0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 113.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0.823924, 0.823924, 0.823924, 1)
+theme_override_fonts/font = ExtResource("4_45744")
+theme_override_font_sizes/font_size = 14
 text = "Press left mouse button to attack"
+horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [connection signal="body_entered" from="InteractionZone" to="." method="_on_area_2d_body_entered"]

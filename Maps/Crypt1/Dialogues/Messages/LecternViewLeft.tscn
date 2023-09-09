@@ -1,0 +1,90 @@
+[gd_scene load_steps=7 format=3 uid="uid://bsneha22ky31i"]
+
+[ext_resource type="Texture2D" uid="uid://ctkqsd7gyqgvm" path="res://Maps/Crypt1/Assets/Crypt32x32/RA_Crypt.png" id="1_olm4u"]
+[ext_resource type="Script" path="res://Maps/Crypt1/Dialogues/Messages/LecternViewLeft.gd" id="1_xvk5u"]
+[ext_resource type="Texture2D" uid="uid://bg1lwkxsxl0wv" path="res://Maps/Crypt1/Assets/RA_Graveyard.png" id="2_gk7w3"]
+[ext_resource type="FontFile" uid="uid://dq83y3i8frkqq" path="res://Maps/Crypt1/Dialogues/Fonts/GIMENELL.TTF" id="3_lfuwb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rsg3v"]
+size = Vector2(24, 46)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ybmcc"]
+radius = 97.0
+
+[node name="LecternViewLeft" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("1_xvk5u")
+
+[node name="Stand" type="Sprite2D" parent="."]
+texture = ExtResource("1_olm4u")
+hframes = 32
+vframes = 8
+frame = 250
+
+[node name="BookLeft" type="Sprite2D" parent="."]
+position = Vector2(0.650159, -7.5761)
+rotation = 1.5708
+scale = Vector2(1.03296, 0.834036)
+skew = -0.0872665
+texture = ExtResource("2_gk7w3")
+flip_h = true
+hframes = 82
+vframes = 16
+frame = 468
+
+[node name="BookRight" type="Sprite2D" parent="."]
+position = Vector2(0.628458, -5.70112)
+rotation = 4.71239
+scale = Vector2(0.586958, 0.844304)
+skew = -0.125664
+texture = ExtResource("2_gk7w3")
+flip_h = true
+hframes = 82
+vframes = 16
+frame = 468
+
+[node name="SkullLeft" type="Sprite2D" parent="."]
+position = Vector2(-15.0522, 13)
+rotation = -1.5708
+scale = Vector2(0.620542, 0.456472)
+texture = ExtResource("2_gk7w3")
+flip_h = true
+hframes = 82
+vframes = 16
+frame = 865
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_rsg3v")
+
+[node name="InteractionZone" type="Area2D" parent="."]
+collision_layer = 19
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone"]
+position = Vector2(-65, 10)
+shape = SubResource("CircleShape2D_ybmcc")
+
+[node name="Message3" type="Panel" parent="."]
+visible = false
+offset_left = -73.0
+offset_top = -61.0
+offset_right = 78.0
+offset_bottom = -20.0
+
+[node name="Label" type="Label" parent="Message3"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 149.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0.823529, 0.823529, 0.823529, 1)
+theme_override_fonts/font = ExtResource("3_lfuwb")
+theme_override_font_sizes/font_size = 14
+text = "Defeat the monster before he catches you!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="body_entered" from="InteractionZone" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="InteractionZone" to="." method="_on_area_2d_body_exited"]
