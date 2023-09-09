@@ -23,8 +23,10 @@ func _ready():
 	sword_dash_timer.set_wait_time(3)
 
 func _physics_process(delta):
-	if current_health != Game.HeroHealth:
+	if current_health > Game.HeroHealth:
 		hurt_sound.play()
+		current_health = Game.HeroHealth
+	else:
 		current_health = Game.HeroHealth
 	if Game.HeroHealth >= 1:
 		if Input.is_action_just_pressed("attack1"):
