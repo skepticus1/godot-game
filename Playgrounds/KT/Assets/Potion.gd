@@ -1,7 +1,8 @@
 extends StaticBody2D
 
 var canInteract = false
-var wasPotionUsed = false  # Track if the potion was already used
+# Track if the potion was already used
+var wasPotionUsed = false  
 
 func _ready():
 	pass
