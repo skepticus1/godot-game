@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkvrhsl2rjf88"]
+[gd_scene load_steps=6 format=3 uid="uid://dkvrhsl2rjf88"]
 
 [ext_resource type="AudioStream" uid="uid://ctcmgi5tkr7jb" path="res://Player/HeroSounds/generic-walking.mp3" id="1_rupcq"]
 [ext_resource type="AudioStream" uid="uid://crh4xcmri2fis" path="res://Player/HeroSounds/slash-21834.mp3" id="2_t8sp8"]
 [ext_resource type="AudioStream" uid="uid://dajsyhaswutk7" path="res://Player/HeroSounds/hurt.mp3" id="3_xa3u0"]
 [ext_resource type="AudioStream" uid="uid://b4y4u0ssbdwg3" path="res://Player/HeroAssets/HeroSounds/dash-sound-1.mp3" id="4_htbf3"]
+[ext_resource type="AudioStream" uid="uid://b1ayx8cticws0" path="res://Player/HeroSounds/wind_slash.mp3" id="5_xs3ya"]
 
 [node name="HeroSoundEffects" type="Node2D"]
 
@@ -18,3 +19,6 @@ stream = ExtResource("2_t8sp8")
 
 [node name="SwordDash" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_htbf3")
+
+[node name="WindSlash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_xs3ya")

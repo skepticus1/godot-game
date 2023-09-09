@@ -1,10 +1,11 @@
-[gd_scene load_steps=141 format=3 uid="uid://dcjvhl6hw64i1"]
+[gd_scene load_steps=142 format=3 uid="uid://dcjvhl6hw64i1"]
 
 [ext_resource type="Script" path="res://Player/Hero.gd" id="1_4sm72"]
 [ext_resource type="Texture2D" uid="uid://3fe0rpwuivv3" path="res://Player/HeroAssets/player-sprite/Knight.png" id="2_677o6"]
 [ext_resource type="Texture2D" uid="uid://dahx3itknbwpp" path="res://Player/HeroAssets/player-sprite/Dash1.png" id="3_1lie6"]
 [ext_resource type="PackedScene" uid="uid://dkvrhsl2rjf88" path="res://Player/HeroSounds/HeroSoundEffects.tscn" id="3_5hnux"]
 [ext_resource type="Texture2D" uid="uid://q8r1qgv1vuav" path="res://Player/HeroAssets/player-sprite/Dash2.png" id="4_xpw7i"]
+[ext_resource type="PackedScene" uid="uid://dls3d5bafi3q7" path="res://Props/PowerUps/WindSlash.tscn" id="6_xl3ss"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h8x15"]
 
@@ -2303,5 +2304,8 @@ libraries = {
 "": SubResource("AnimationLibrary_8wup4")
 }
 
+[node name="WindSlash" parent="." instance=ExtResource("6_xl3ss")]
+
 [connection signal="body_entered" from="AttackHitBox" to="." method="_on_attack_hit_box_body_entered"]
 [connection signal="timeout" from="SwordDashTimer" to="." method="_on_sword_dash_timer_timeout"]
+[connection signal="body_entered" from="WindSlash" to="." method="_on_wind_slash_body_entered"]
