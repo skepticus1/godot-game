@@ -2,7 +2,7 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://qcatbux14ss7"
+uid="uid://c00g6gg0qthfk"
 path="res://.godot/imported/waterFountain.mp3-c91a93ba686d46191ba1c6a76bb1976a.mp3str"
 
 [deps]
@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/waterFountain.mp3-c91a93ba686d46191ba1c6a76bb
 [params]
 
 loop=true
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

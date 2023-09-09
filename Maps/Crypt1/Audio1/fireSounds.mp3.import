@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/fireSounds.mp3-98a231bc263d834012e64483596668
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
