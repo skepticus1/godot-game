@@ -14,6 +14,8 @@ var damage = 25
 
 @export var health: int = 30
 @export var key: PackedScene
+
+@onready var hurt_sound = $SkeletonSounds/SkeletonHurt
 @onready var animation_player = $AnimationPlayer
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var detection_zone = $PlayerDetection
@@ -118,7 +120,10 @@ func check_health():
 	if health <= 0:
 		is_alive = false
 		animation_player.play("death")
+		walking_sound.stop()
 		death_timer.start()
+	else:
+		hurt_sound.play()
 
 func _on_death_timer_timeout():
 	Game.Kills += 1
