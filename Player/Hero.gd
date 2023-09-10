@@ -4,10 +4,13 @@ extends CharacterBody2D
 @onready var hurt_sound = $HeroSoundEffects/Hurt
 @onready var walking_sound = $HeroSoundEffects/Walking
 @onready var dash_sound = $HeroSoundEffects/SwordDash
+@onready var wind_slash_sound = $HeroSoundEffects/WindSlash
 @onready var current_health = Game.HeroHealth
 @onready var sword_dash_count = 3
+@onready var wind_slash_count = 20
 @onready var sword_dash_timer = $SwordDashTimer
 @onready var effects_animation = $EffectsAnimation
+@onready var wind_slash_animation = $WindSlash/AnimationPlayer
 
 const max_speed = 300   # to lower speed change this
 var friction = 1400	# this affects how fast it slows down
@@ -23,8 +26,10 @@ func _ready():
 	sword_dash_timer.set_wait_time(3)
 
 func _physics_process(delta):
-	if current_health != Game.HeroHealth:
+	if current_health > Game.HeroHealth:
 		hurt_sound.play()
+		current_health = Game.HeroHealth
+	else:
 		current_health = Game.HeroHealth
 	if Game.HeroHealth >= 1:
 		if Input.is_action_just_pressed("attack1"):
@@ -40,6 +45,15 @@ func _physics_process(delta):
 			is_attacking = true
 			sword_thrust()
 			await sword_thrust()
+		elif Input.is_action_just_pressed("wind slash") && wind_slash_count > 0:
+			is_attacking = true
+			print(wind_slash_count)
+			velocity = Vector2.ZERO
+			wind_slash()
+			sword_attack()
+			await sword_attack()
+			wind_slash_count -= 1
+			print(wind_slash_count)
 		else:
 			if is_attacking == false:
 				player_movement(delta)
@@ -169,7 +183,32 @@ func sword_thrust():
 	is_attacking = false
 	return is_attacking
 	
-
+	
+func wind_slash():
+	if is_attacking == true:
+		if last_movement == Vector2.RIGHT:
+			wind_slash_animation.play("windSlashRight")
+			wind_slash_sound.play()
+			get_node("AnimationPlayer").play("SwordAttackRight")
+			await get_node("AnimationPlayer").animation_finished
+		elif last_movement == Vector2.LEFT:
+			wind_slash_animation.play("windSlashLeft")
+			wind_slash_sound.play()
+			get_node("AnimationPlayer").play("SwordAttackLeft")
+			await get_node("AnimationPlayer").animation_finished
+		elif last_movement == Vector2.DOWN:
+			wind_slash_animation.play("windSlashUp")
+			wind_slash_sound.play()
+			get_node("AnimationPlayer").play("SwordAttackUp")
+			await get_node("AnimationPlayer").animation_finished
+		elif last_movement == Vector2.UP:
+			wind_slash_animation.play("windSlashDown")
+			wind_slash_sound.play()
+			get_node("AnimationPlayer").play("SwordAttackDown")
+			await get_node("AnimationPlayer").animation_finished
+	is_attacking = false
+	return is_attacking
+	
 func _on_attack_hit_box_body_entered(body):
 	print("Function is running! Entered body is: ", body.name) 
 	if body.is_in_group("Enemy"):
@@ -195,3 +234,13 @@ func _on_sword_dash_timer_timeout():
 		sword_dash_count += 1
 		print(sword_dash_count)
 
+
+
+func _on_wind_slash_body_entered(body):
+	if body.is_in_group("Enemy"):
+		body.health -= Game.WindSlashDamage
+		print(body.name, " health is: ", body.health)
+	elif body.name == "Enemy":
+		print("Hit enemy")
+	elif body.name == "Object":
+		print("Hit object")
