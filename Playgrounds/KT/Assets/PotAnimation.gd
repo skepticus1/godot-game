@@ -10,6 +10,7 @@ func _ready():
 		var potStatus = $Area2D/breaking
 		if potStatus:
 			potStatus.play("Broken")
+			call_deferred("disableCollisionShape")
 	else:
 		var potStatus = $Area2D/breaking
 		potStatus.play("Pot")
@@ -21,6 +22,7 @@ func _on_area_2d_area_entered(area):
 		if potStatus:
 			potStatus.play("Break")
 			isBroken = true
+			call_deferred("disableCollisionShape")
 			
 			# Random chance to spawn a potion (40% chance)
 			if randf() <= potionSpawnChance:
@@ -28,6 +30,9 @@ func _on_area_2d_area_entered(area):
 
 func isPotBroken():
 	return isBroken
+	
+func disableCollisionShape():
+	get_node("CollisionShape2D").disabled = true
 	
 func spawnPotion():
 	if potionReference:
