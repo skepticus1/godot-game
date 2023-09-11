@@ -597,6 +597,8 @@ _data = {
 }
 
 [node name="WindSlash" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
 
 [node name="WindSlashCollision" type="CollisionShape2D" parent="."]
 position = Vector2(4, -288)
