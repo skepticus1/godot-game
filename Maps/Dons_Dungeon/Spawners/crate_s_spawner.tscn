@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bckf6jaq6eqdl"]
+
+[ext_resource type="Script" path="res://Maps/Dons_Dungeon/Spawners/crate_s_spawner.gd" id="1_c18n0"]
+[ext_resource type="Texture2D" uid="uid://bmeypb0jw00x5" path="res://Maps/Dons_Dungeon/Assets/FD_Dungeon.png" id="2_ixdto"]
+
+[node name="crate_s_spawner" type="Node2D"]
+script = ExtResource("1_c18n0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ixdto")
+region_enabled = true
+region_rect = Rect2(288, 864, 32, 32)
