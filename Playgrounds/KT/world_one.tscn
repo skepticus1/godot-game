@@ -1,4 +1,4 @@
-[gd_scene load_steps=127 format=3 uid="uid://bc38ckh2p3k87"]
+[gd_scene load_steps=128 format=3 uid="uid://bc38ckh2p3k87"]
 
 [ext_resource type="Texture2D" uid="uid://bdwfrd51vuicl" path="res://Playgrounds/KT/Assets/RA_Ground_Tiles.png" id="1_javcd"]
 [ext_resource type="Texture2D" uid="uid://cckjw07sewx11" path="res://Playgrounds/KT/Assets/RA_Ruins.png" id="2_a385p"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://b1u8d116l8jro" path="res://Props/GUI.tscn" id="14_jyuax"]
 [ext_resource type="PackedScene" uid="uid://c8d3c5jp6ofro" path="res://Enemy/Skeleton/Skeleton.tscn" id="15_rt6k0"]
 [ext_resource type="PackedScene" uid="uid://ckvrr2s2gydkq" path="res://Props/Chest/chest.tscn" id="15_sofv1"]
+[ext_resource type="PackedScene" uid="uid://drrqidemgvpm0" path="res://Props/Pots_Detached/Deatched_Pots.tscn" id="16_6whrv"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_tue6v"]
 vertices = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -39695,3 +39696,6 @@ position = Vector2(193, -638)
 
 [node name="Chest" parent="." instance=ExtResource("15_sofv1")]
 position = Vector2(1223, -748)
+
+[node name="BreakablePots16" parent="." instance=ExtResource("16_6whrv")]
+position = Vector2(-12, 374)

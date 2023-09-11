@@ -10,6 +10,7 @@ size = Vector2(28, 26)
 size = Vector2(28, 28)
 
 [node name="SpikeTrap" type="Node2D"]
+z_index = -1
 script = ExtResource("1_gkkp4")
 
 [node name="spike_trap_trigger_area" type="Area2D" parent="."]
