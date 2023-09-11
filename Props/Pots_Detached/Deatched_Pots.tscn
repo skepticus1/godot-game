@@ -1,0 +1,99 @@
+[gd_scene load_steps=13 format=3 uid="uid://drrqidemgvpm0"]
+
+[ext_resource type="Script" path="res://Playgrounds/KT/Assets/PotAnimation.gd" id="1_v212g"]
+[ext_resource type="Texture2D" uid="uid://b81b4e40hofoe" path="res://Playgrounds/KT/Assets/breakable pots (yellow).png" id="2_4xsjx"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7t06l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cmvn0"]
+radius = 12.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0ty4"]
+atlas = ExtResource("2_4xsjx")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpcwx"]
+atlas = ExtResource("2_4xsjx")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otpsa"]
+atlas = ExtResource("2_4xsjx")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7o01"]
+atlas = ExtResource("2_4xsjx")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxnw7"]
+atlas = ExtResource("2_4xsjx")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fltq"]
+atlas = ExtResource("2_4xsjx")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wysvc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0ty4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpcwx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_otpsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7o01")
+}],
+"loop": false,
+"name": &"Break",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxnw7")
+}],
+"loop": true,
+"name": &"Broken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fltq")
+}],
+"loop": true,
+"name": &"Pot",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5gohl"]
+radius = 43.0
+
+[node name="BreakablePots" type="StaticBody2D"]
+y_sort_enabled = true
+collision_layer = 263
+collision_mask = 23
+physics_material_override = SubResource("PhysicsMaterial_7t06l")
+script = ExtResource("1_v212g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(2, 7)
+shape = SubResource("CircleShape2D_cmvn0")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 8
+
+[node name="breaking" type="AnimatedSprite2D" parent="Area2D"]
+position = Vector2(2, 3)
+sprite_frames = SubResource("SpriteFrames_wysvc")
+animation = &"Pot"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3, 6)
+shape = SubResource("CircleShape2D_5gohl")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
