@@ -183,7 +183,6 @@ func sword_thrust():
 	is_attacking = false
 	return is_attacking
 	
-	
 func wind_slash():
 	if is_attacking == true:
 		if last_movement == Vector2.RIGHT:
@@ -227,20 +226,18 @@ func _input(event):
 			nearby_interactable.interact()
 
 
-
-
 func _on_sword_dash_timer_timeout():
 	if sword_dash_count < 3:
 		sword_dash_count += 1
 		print(sword_dash_count)
 
-
-
 func _on_wind_slash_body_entered(body):
+	print(body)
 	if body.is_in_group("Enemy"):
 		body.health -= Game.WindSlashDamage
 		print(body.name, " health is: ", body.health)
-	elif body.name == "Enemy":
-		print("Hit enemy")
+	elif body.name == "Skeleton":
+		body.health -= Game.WindSlashDamage
 	elif body.name == "Object":
-		print("Hit object")
+		body.health -= Game.WindSlashDamage
+

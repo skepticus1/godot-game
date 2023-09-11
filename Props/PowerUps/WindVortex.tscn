@@ -1,0 +1,258 @@
+[gd_scene load_steps=26 format=3 uid="uid://rpwhgvi326k3"]
+
+[ext_resource type="Texture2D" uid="uid://ccortmklspwk3" path="res://Props/PowerUps/PowerUpAssets/Red Yellow Group Slashes/File1.png" id="1_1l14p"]
+[ext_resource type="Texture2D" uid="uid://db8ih3pkg06uc" path="res://Props/PowerUps/PowerUpAssets/Red Yellow Group Slashes/File2.png" id="2_g7ucg"]
+[ext_resource type="Texture2D" uid="uid://cvadwasnrg7dw" path="res://Props/PowerUps/PowerUpAssets/Red Yellow Group Slashes/File3.png" id="3_ow8cm"]
+[ext_resource type="Texture2D" uid="uid://boof60836biy" path="res://Props/PowerUps/PowerUpAssets/Red Yellow Group Slashes/File4.png" id="4_x6q0x"]
+[ext_resource type="Texture2D" uid="uid://cgkitdgnlj50h" path="res://Props/PowerUps/PowerUpAssets/Red Yellow Group Slashes/File5.png" id="5_kpmo1"]
+[ext_resource type="Texture2D" uid="uid://bpy1g46q2riga" path="res://Props/PowerUps/PowerUpAssets/Red Yellow Group Slashes/File6.png" id="6_s1myb"]
+[ext_resource type="Texture2D" uid="uid://d4gc23iepbebg" path="res://Props/PowerUps/PowerUpAssets/Red Yellow Group Slashes/File7.png" id="7_fng2f"]
+[ext_resource type="Texture2D" uid="uid://b1hkaf3ogofuf" path="res://Props/PowerUps/PowerUpAssets/Red Yellow Group Slashes/File8.png" id="8_pws1d"]
+[ext_resource type="Texture2D" uid="uid://dp2bk6b1u7okk" path="res://Props/PowerUps/PowerUpAssets/Red Yellow Group Slashes/File9.png" id="9_rbv2p"]
+[ext_resource type="Texture2D" uid="uid://cy064ohju3ddl" path="res://Props/PowerUps/PowerUpAssets/Red Yellow Group Slashes/File10.png" id="10_iethc"]
+[ext_resource type="Texture2D" uid="uid://dgm8oyi3nm7bd" path="res://Props/PowerUps/PowerUpAssets/Red Yellow Group Slashes/File11.png" id="11_kj8xr"]
+[ext_resource type="Texture2D" uid="uid://duyg3bedbxpif" path="res://Props/PowerUps/PowerUpAssets/Red Yellow Group Slashes/File12.png" id="12_vni47"]
+[ext_resource type="Texture2D" uid="uid://dfp44suenphgd" path="res://Props/PowerUps/PowerUpAssets/Red Yellow Group Slashes/File13.png" id="13_1dmsr"]
+[ext_resource type="Texture2D" uid="uid://d4c8yann03p2p" path="res://Props/PowerUps/PowerUpAssets/Red Yellow Group Slashes/File14.png" id="14_jlc2a"]
+[ext_resource type="Texture2D" uid="uid://cga3ranxx7alf" path="res://Props/PowerUps/PowerUpAssets/Red Yellow Group Slashes/File15.png" id="15_2mtym"]
+[ext_resource type="Texture2D" uid="uid://detlqk6bviwcl" path="res://Props/PowerUps/PowerUpAssets/Red Yellow Group Slashes/File16.png" id="16_63u48"]
+[ext_resource type="Texture2D" uid="uid://bgp2ax15kyrdo" path="res://Props/PowerUps/PowerUpAssets/Red Yellow Group Slashes/File17.png" id="17_aetf8"]
+[ext_resource type="Texture2D" uid="uid://bsmj2wi10gl82" path="res://Props/PowerUps/PowerUpAssets/Red Yellow Group Slashes/File18.png" id="18_a2dgm"]
+[ext_resource type="Texture2D" uid="uid://bibrdvjyms5ma" path="res://Props/PowerUps/PowerUpAssets/Red Yellow Group Slashes/File19.png" id="19_njnrh"]
+[ext_resource type="Texture2D" uid="uid://bbjy27cu857hs" path="res://Props/PowerUps/PowerUpAssets/Red Yellow Group Slashes/File20.png" id="20_73gu1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y3ekt"]
+radius = 187.417
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t6le6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1l14p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_g7ucg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ow8cm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x6q0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kpmo1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_s1myb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fng2f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pws1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rbv2p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_iethc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_kj8xr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vni47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_1dmsr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_jlc2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2mtym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_63u48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_aetf8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_a2dgm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_njnrh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_73gu1")
+}],
+"loop": true,
+"name": &"windVortex",
+"speed": 15.0
+}]
+
+[sub_resource type="Animation" id="Animation_ofqqc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:shape")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CircleShape2D_y3ekt")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimatedSprite2D:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_jsd5j"]
+resource_name = "windVortex"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"windVortex"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:shape")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [SubResource("CircleShape2D_y3ekt"), SubResource("CircleShape2D_y3ekt")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimatedSprite2D:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0wl88"]
+_data = {
+"RESET": SubResource("Animation_ofqqc"),
+"windVortex": SubResource("Animation_jsd5j")
+}
+
+[node name="WindVortex" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_y3ekt")
+disabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(8.00002, -1)
+scale = Vector2(1.17273, 1.135)
+sprite_frames = SubResource("SpriteFrames_t6le6")
+animation = &"windVortex"
+frame = 1
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0wl88")
+}

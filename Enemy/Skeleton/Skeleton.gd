@@ -61,6 +61,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _on_player_detection_body_entered(body):
+	print(body)
 	print("Entered: ", body, ", Type: ", typeof(body))
 	if body.name == "Hero" || body.name == "player_nav":
 		player = body
