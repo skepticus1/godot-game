@@ -1,6 +1,6 @@
 extends Marker2D
 
-var HeroScene: PackedScene = preload("res://Enemy/Skeleton/Skeleton.tscn")
+var EnemyScene: PackedScene = preload("res://Enemy/Skeleton/Skeleton.tscn")
 
 func _ready():
 	spawn_enemy()
@@ -9,7 +9,7 @@ func _ready():
 func spawn_enemy():
 	var spawn_point = self.global_position
 	
-	var enemy_instance = HeroScene.instantiate()
+	var enemy_instance = EnemyScene.instantiate()
 	add_child(enemy_instance)
 	
 	enemy_instance.global_position = spawn_point
