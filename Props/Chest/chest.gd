@@ -38,6 +38,7 @@ func _handle_interact():
 	$open.visible = true
 	is_open = true
 	$OpenSound.play()
+	
 	var inst = key.instantiate()
-	owner.add_child(inst) # owner is the level
+	get_parent().add_child(inst)
 	inst.global_position = self.global_position

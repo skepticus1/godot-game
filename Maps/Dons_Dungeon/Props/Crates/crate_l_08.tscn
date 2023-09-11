@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cn5amg2d8xgf8"]
+
+[ext_resource type="TileSet" uid="uid://de2qum2e7y5tv" path="res://Maps/Dons_Dungeon/Tilesets/dungeon_tileset.tres" id="1_0yqmq"]
+
+[node name="Crate-L-08" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_0yqmq")
+format = 2
+layer_0/name = "Wall"
+layer_0/tile_data = PackedInt32Array(65535, 1310720, 40, 0, 1376256, 40)
+layer_1/name = "Roof"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 1
+layer_1/tile_data = PackedInt32Array(-1, 1310720, 39, -65536, 1376256, 39)
