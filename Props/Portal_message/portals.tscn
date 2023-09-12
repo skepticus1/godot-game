@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://0dpd65boxo0o"]
+
+[ext_resource type="Script" path="res://Props/Portal_message/portals.gd" id="1_7vhnx"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xl2gt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_voluf"]
+radius = 71.0
+height = 142.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4n1jh"]
+size = Vector2(29, 5)
+
+[node name="Portals" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_xl2gt")
+script = ExtResource("1_7vhnx")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 17
+collision_mask = 31
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_voluf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -37)
+shape = SubResource("RectangleShape2D_4n1jh")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -144.0
+offset_top = -98.0
+offset_right = 182.0
+offset_bottom = -58.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 6.0
+offset_right = 327.0
+offset_bottom = 33.0
+text = "Sorry, teleportation device is out of order."
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
