@@ -17,6 +17,7 @@ func _ready():
 func _input(event):
 	if is_player_in_area and event.is_action_pressed("interact") and is_interactable:
 		if Game.Gold >= requiredGold:
+			$Enough_Gold/AudioStreamPlayer2D.play()
 			upgrade_attack()
 		else:
 			show_prompt_message("Not enough gold!")
