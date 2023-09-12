@@ -9,7 +9,7 @@
 size = Vector2(26, 51)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_40u14"]
-radius = 86.0058
+radius = 81.0
 
 [node name="Lectern" type="StaticBody2D"]
 collision_layer = 16
@@ -55,26 +55,25 @@ shape = SubResource("RectangleShape2D_68u84")
 collision_layer = 19
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone"]
-position = Vector2(0, 46)
+position = Vector2(0, 50)
 shape = SubResource("CircleShape2D_40u14")
 
-[node name="Message2" type="Panel" parent="."]
-visible = false
-offset_left = -51.0
-offset_top = -65.0
-offset_right = 64.0
-offset_bottom = -25.0
+[node name="Message" type="Panel" parent="."]
+offset_left = -68.0
+offset_top = -61.0
+offset_right = 79.0
+offset_bottom = -26.0
 
-[node name="Label" type="Label" parent="Message2"]
+[node name="Label" type="Label" parent="Message"]
 layout_mode = 0
-offset_left = 3.0
+offset_left = 2.0
 offset_top = 2.0
-offset_right = 113.0
-offset_bottom = 38.0
+offset_right = 145.0
+offset_bottom = 34.0
 theme_override_colors/font_color = Color(0.823924, 0.823924, 0.823924, 1)
 theme_override_fonts/font = ExtResource("4_45744")
-theme_override_font_sizes/font_size = 14
-text = "Press left mouse button to attack"
+theme_override_font_sizes/font_size = 12
+text = "Press right mouse button for sword dash attack"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

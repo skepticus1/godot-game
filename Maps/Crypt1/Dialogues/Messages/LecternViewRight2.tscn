@@ -1,0 +1,92 @@
+[gd_scene load_steps=7 format=3 uid="uid://dppxlc0isjfjq"]
+
+[ext_resource type="Script" path="res://Maps/Crypt1/Dialogues/Messages/LecternViewRight2.gd" id="1_ippnj"]
+[ext_resource type="Texture2D" uid="uid://ctkqsd7gyqgvm" path="res://Maps/Crypt1/Assets/Crypt32x32/RA_Crypt.png" id="1_n4chy"]
+[ext_resource type="Texture2D" uid="uid://bg1lwkxsxl0wv" path="res://Maps/Crypt1/Assets/RA_Graveyard.png" id="2_a6m2h"]
+[ext_resource type="FontFile" uid="uid://dq83y3i8frkqq" path="res://Maps/Crypt1/Dialogues/Fonts/GIMENELL.TTF" id="3_xsmln"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_53bpf"]
+size = Vector2(24, 45)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v5sxc"]
+radius = 124.036
+
+[node name="LecternViewRight2" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("1_ippnj")
+
+[node name="Stand" type="Sprite2D" parent="."]
+texture = ExtResource("1_n4chy")
+hframes = 32
+vframes = 8
+frame = 250
+
+[node name="LeftBook" type="Sprite2D" parent="."]
+position = Vector2(-0.035, -7.54)
+rotation = 1.5708
+scale = Vector2(1.033, 0.834)
+skew = 0.0872665
+texture = ExtResource("2_a6m2h")
+flip_h = true
+flip_v = true
+hframes = 82
+vframes = 16
+frame = 468
+
+[node name="RightBook" type="Sprite2D" parent="."]
+position = Vector2(-0.294, -5.651)
+rotation = 4.71239
+scale = Vector2(0.589, 0.844)
+skew = 0.125664
+texture = ExtResource("2_a6m2h")
+flip_h = true
+flip_v = true
+hframes = 82
+vframes = 16
+frame = 468
+
+[node name="SkullRight" type="Sprite2D" parent="."]
+position = Vector2(15.254, 13)
+rotation = -1.5708
+scale = Vector2(0.621, 0.458)
+texture = ExtResource("2_a6m2h")
+flip_h = true
+flip_v = true
+hframes = 82
+vframes = 16
+frame = 865
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_53bpf")
+
+[node name="InteractionZone" type="Area2D" parent="."]
+collision_layer = 19
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone"]
+position = Vector2(21, 63)
+shape = SubResource("CircleShape2D_v5sxc")
+
+[node name="Message" type="Panel" parent="."]
+offset_left = 13.0
+offset_top = -12.0
+offset_right = 169.0
+offset_bottom = 24.0
+
+[node name="Label" type="Label" parent="Message"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 153.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(0.823529, 0.823529, 0.823529, 1)
+theme_override_fonts/font = ExtResource("3_xsmln")
+theme_override_font_sizes/font_size = 12
+text = "Hurry! Use windslash to kill multiple monsters at once!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="body_entered" from="InteractionZone" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="InteractionZone" to="." method="_on_area_2d_body_exited"]

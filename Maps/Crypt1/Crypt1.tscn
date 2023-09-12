@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cpovwl727cam2"]
+[gd_scene load_steps=38 format=3 uid="uid://cpovwl727cam2"]
 
 [ext_resource type="Script" path="res://Maps/Crypt1/Crypt1.gd" id="1_lykcl"]
 [ext_resource type="Texture2D" uid="uid://0g1l18vcj26i" path="res://Playgrounds/Brenda/Art/Crypt32x32/RA_Crypt.png" id="2_ms33i"]
@@ -20,8 +20,11 @@
 [ext_resource type="PackedScene" uid="uid://c8d3c5jp6ofro" path="res://Enemy/Skeleton/Skeleton.tscn" id="17_vn63n"]
 [ext_resource type="PackedScene" uid="uid://dkrxb1xcrgcyh" path="res://Maps/Crypt1/Lectern.tscn" id="18_f5e00"]
 [ext_resource type="PackedScene" uid="uid://bsneha22ky31i" path="res://Maps/Crypt1/Dialogues/Messages/LecternViewLeft.tscn" id="20_4a86b"]
+[ext_resource type="PackedScene" uid="uid://dppxlc0isjfjq" path="res://Maps/Crypt1/Dialogues/Messages/LecternViewRight2.tscn" id="20_th0at"]
 [ext_resource type="PackedScene" uid="uid://bex1gokd3p08h" path="res://Maps/Crypt1/Dialogues/Messages/Lectern2.tscn" id="21_s07lf"]
 [ext_resource type="PackedScene" uid="uid://cpaqy2y6vt8to" path="res://Maps/Crypt1/Dialogues/Messages/LecternViewRight.tscn" id="22_dbbdw"]
+[ext_resource type="PackedScene" uid="uid://8qn12v0wnpod" path="res://Props/Pots/BreakablePots.tscn" id="23_sef2x"]
+[ext_resource type="PackedScene" uid="uid://dcjqgnaw0yoyw" path="res://Maps/Crypt1/Dialogues/Messages/LecternViewLeft2.tscn" id="25_qgc05"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0x8q4"]
 texture = ExtResource("2_ms33i")
@@ -15183,16 +15186,37 @@ position = Vector2(924, 206)
 position = Vector2(1116, 205)
 
 [node name="Lectern" parent="." instance=ExtResource("18_f5e00")]
-position = Vector2(78, 257)
+position = Vector2(80, 298)
 
 [node name="Coffin" parent="." instance=ExtResource("16_ugmu2")]
 position = Vector2(79, 495)
 
 [node name="LecternViewLeft" parent="." instance=ExtResource("20_4a86b")]
-position = Vector2(434, 150)
+position = Vector2(274, 481)
 
 [node name="Lectern2" parent="." instance=ExtResource("21_s07lf")]
 position = Vector2(495, 452)
+
+[node name="LecternViewRight" parent="." instance=ExtResource("22_dbbdw")]
+position = Vector2(-117, 479)
+
+[node name="LecternViewRight2" parent="." instance=ExtResource("20_th0at")]
+position = Vector2(972, 411)
+
+[node name="LecternViewLeft2" parent="." instance=ExtResource("25_qgc05")]
+position = Vector2(434, 141)
+
+[node name="BreakablePots" parent="." instance=ExtResource("23_sef2x")]
+position = Vector2(-19, 81)
+
+[node name="BreakablePots2" parent="." instance=ExtResource("23_sef2x")]
+position = Vector2(557, 196)
+
+[node name="BreakablePots3" parent="." instance=ExtResource("23_sef2x")]
+position = Vector2(359, 486)
+
+[node name="BreakablePots4" parent="." instance=ExtResource("23_sef2x")]
+position = Vector2(877, 455)
 
 [node name="CryptCamera" type="Camera2D" parent="."]
 position = Vector2(84, 569)
@@ -15204,15 +15228,18 @@ limit_bottom = 750
 [node name="GUI" parent="CryptCamera" instance=ExtResource("17_1lvue")]
 
 [node name="Hero" parent="." instance=ExtResource("16_rt23y")]
-position = Vector2(84, 569)
+position = Vector2(79, 566)
 
 [node name="Skeleton" parent="." instance=ExtResource("17_vn63n")]
-position = Vector2(669, 255)
+position = Vector2(672, 251)
 
 [node name="Skeleton2" parent="." instance=ExtResource("17_vn63n")]
-position = Vector2(1025, 522)
+position = Vector2(981, 202)
 
-[node name="LecternViewRight" parent="." instance=ExtResource("22_dbbdw")]
-position = Vector2(971, 369)
+[node name="Skeleton3" parent="." instance=ExtResource("17_vn63n")]
+position = Vector2(1003, 178)
+
+[node name="Skeleton4" parent="." instance=ExtResource("17_vn63n")]
+position = Vector2(1059, 225)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
