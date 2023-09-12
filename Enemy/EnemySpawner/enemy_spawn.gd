@@ -21,7 +21,7 @@ func spawn_enemies():
 	while enemies_spawned < NUM_OF_ENEMIES:
 		spawn_enemy()
 		enemies_spawned += 1
-		await get_tree().create_timer(0.66).timeout
+		await get_tree().create_timer(1.0).timeout
 	
 func spawn_enemy():
 	var spawn_point = random_position_around_marker()

@@ -274,9 +274,6 @@ position = Vector2(2059, 3110)
 [node name="SpikeTrap13" parent="." instance=ExtResource("13_np8yo")]
 position = Vector2(2240, 3433)
 
-[node name="EnemySpawn11" parent="." instance=ExtResource("9_hocj5")]
-position = Vector2(2342, 2977)
-
 [node name="Candle7" parent="." instance=ExtResource("20_uhgsf")]
 position = Vector2(590, 3206)
 
@@ -348,3 +345,18 @@ position = Vector2(1190, 3966)
 
 [node name="EnemySpawn29" parent="." instance=ExtResource("21_papdk")]
 position = Vector2(976, 363)
+
+[node name="Chest4" parent="." instance=ExtResource("11_ebnxh")]
+position = Vector2(2372, 3050)
+
+[node name="Chest5" parent="." instance=ExtResource("11_ebnxh")]
+position = Vector2(2375, 3169)
+
+[node name="Chest6" parent="." instance=ExtResource("11_ebnxh")]
+position = Vector2(2376, 3283)
+
+[node name="Chest7" parent="." instance=ExtResource("11_ebnxh")]
+position = Vector2(2376, 3398)
+
+[node name="EnemySpawn11" parent="." instance=ExtResource("21_papdk")]
+position = Vector2(1945, 3192)
