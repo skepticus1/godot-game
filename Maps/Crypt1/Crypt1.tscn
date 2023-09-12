@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cpovwl727cam2"]
+[gd_scene load_steps=42 format=3 uid="uid://cpovwl727cam2"]
 
 [ext_resource type="Script" path="res://Maps/Crypt1/Crypt1.gd" id="1_lykcl"]
 [ext_resource type="Texture2D" uid="uid://0g1l18vcj26i" path="res://Playgrounds/Brenda/Art/Crypt32x32/RA_Crypt.png" id="2_ms33i"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://dcjqgnaw0yoyw" path="res://Maps/Crypt1/Dialogues/Messages/LecternViewLeft2.tscn" id="25_qgc05"]
 [ext_resource type="PackedScene" uid="uid://bndbnasoe36p7" path="res://Maps/Crypt1/Dialogues/Messages/Lectern3.tscn" id="27_uhmp3"]
 [ext_resource type="PackedScene" uid="uid://brqc4ooa12nuy" path="res://Maps/Crypt1/Dialogues/Messages/Lectern4.tscn" id="28_s5nbv"]
+[ext_resource type="PackedScene" uid="uid://c3by2ri8vrfxa" path="res://Props/Health_Potion/Health_Potion_Detached.tscn" id="29_ha0s6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0x8q4"]
 texture = ExtResource("2_ms33i")
@@ -15204,7 +15205,7 @@ position = Vector2(80, 298)
 position = Vector2(434, 141)
 
 [node name="LecternViewRight3" parent="." instance=ExtResource("22_cua5o")]
-position = Vector2(588, 118)
+position = Vector2(590, 113)
 
 [node name="Lectern2" parent="." instance=ExtResource("21_s07lf")]
 position = Vector2(495, 452)
@@ -15222,7 +15223,7 @@ position = Vector2(1021, 157)
 position = Vector2(-19, 81)
 
 [node name="BreakablePots2" parent="." instance=ExtResource("23_sef2x")]
-position = Vector2(557, 196)
+position = Vector2(464, 191)
 
 [node name="BreakablePots3" parent="." instance=ExtResource("23_sef2x")]
 position = Vector2(364, 465)
@@ -15232,6 +15233,15 @@ position = Vector2(877, 455)
 
 [node name="BreakablePots5" parent="." instance=ExtResource("23_sef2x")]
 position = Vector2(1131, 580)
+
+[node name="potion" parent="." instance=ExtResource("29_ha0s6")]
+position = Vector2(590, 146)
+
+[node name="potion2" parent="." instance=ExtResource("29_ha0s6")]
+position = Vector2(590, 476)
+
+[node name="potion3" parent="." instance=ExtResource("29_ha0s6")]
+position = Vector2(1135, 255)
 
 [node name="CryptCamera" type="Camera2D" parent="."]
 position = Vector2(84, 569)
@@ -15246,8 +15256,7 @@ limit_bottom = 750
 position = Vector2(79, 566)
 
 [node name="Skeleton" parent="." instance=ExtResource("17_vn63n")]
-visible = false
-position = Vector2(672, 251)
+position = Vector2(638, 256)
 
 [node name="Skeleton2" parent="." instance=ExtResource("17_vn63n")]
 position = Vector2(967, 203)
