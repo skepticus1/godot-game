@@ -1,0 +1,69 @@
+[gd_scene load_steps=13 format=3 uid="uid://cpv6c4bfvtknq"]
+
+[ext_resource type="Texture2D" uid="uid://dywikbjf403gf" path="res://Props/Coins/CoinAssets/coin_1.png" id="1_hfeem"]
+[ext_resource type="Script" path="res://Props/Coins/Coin_with_Physics/coin_physics.gd" id="1_mo0r6"]
+[ext_resource type="Texture2D" uid="uid://c5tp4i07qjm1v" path="res://Props/Coins/CoinAssets/coin_2.png" id="2_hah8o"]
+[ext_resource type="Texture2D" uid="uid://dufl1utldpehx" path="res://Props/Coins/CoinAssets/coin_3.png" id="3_g1rov"]
+[ext_resource type="Texture2D" uid="uid://n01q6p2dqnaj" path="res://Props/Coins/CoinAssets/coin_4.png" id="4_krtx3"]
+[ext_resource type="Texture2D" uid="uid://c6ej4aopvb6wm" path="res://Props/Coins/CoinAssets/coin_5.png" id="5_kudef"]
+[ext_resource type="Texture2D" uid="uid://c04hgf6av4b30" path="res://Props/Coins/CoinAssets/coin_6.png" id="6_r5q7f"]
+[ext_resource type="Texture2D" uid="uid://ctbbu3nu2fwkl" path="res://Props/Coins/CoinAssets/coin_7.png" id="7_visd0"]
+[ext_resource type="Texture2D" uid="uid://x4h6i3me21ex" path="res://Props/Coins/CoinAssets/coin_8.png" id="8_2r2fn"]
+[ext_resource type="AudioStream" uid="uid://dd3an81un4dhy" path="res://Props/Coins/CoinAssets/Retro PickUp Coin 04.wav" id="10_2qnhs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ye8jp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hfeem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hah8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_g1rov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_krtx3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kudef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_r5q7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_visd0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2r2fn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ii7h2"]
+
+[node name="Coin_Physics" type="RigidBody2D"]
+collision_layer = 268
+script = ExtResource("1_mo0r6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ye8jp")
+autoplay = "default"
+frame_progress = 0.642846
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_2qnhs")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="Coin_Pickup_Area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin_Pickup_Area"]
+shape = SubResource("CircleShape2D_ii7h2")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Coin_Pickup_Area" to="." method="_on_coin_pickup_area_body_entered"]
