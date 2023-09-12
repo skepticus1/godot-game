@@ -55,26 +55,26 @@ shape = SubResource("RectangleShape2D_tv42b")
 collision_layer = 19
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone"]
-position = Vector2(-41, 0)
+position = Vector2(-67, -24)
 shape = SubResource("CircleShape2D_jdnol")
 
-[node name="Message4" type="Panel" parent="."]
+[node name="Message" type="Panel" parent="."]
 visible = false
-offset_left = -76.0
+offset_left = -68.0
 offset_top = -62.0
-offset_right = 77.0
+offset_right = 72.0
 offset_bottom = -26.0
 
-[node name="Label" type="Label" parent="Message4"]
+[node name="Label" type="Label" parent="Message"]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 2.0
-offset_right = 150.0
+offset_right = 136.0
 offset_bottom = 36.0
 theme_override_colors/font_color = Color(0.823529, 0.823529, 0.823529, 1)
 theme_override_fonts/font = ExtResource("3_uhkt3")
 theme_override_font_sizes/font_size = 12
-text = "Press right mouse button for sword dash attack"
+text = "Press spacebar for special windslash attack"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

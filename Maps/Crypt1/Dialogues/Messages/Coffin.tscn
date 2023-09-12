@@ -32,14 +32,14 @@ collision_layer = 19
 position = Vector2(0, 33)
 shape = SubResource("CircleShape2D_1j5s3")
 
-[node name="Message1" type="Panel" parent="."]
+[node name="Message" type="Panel" parent="."]
 visible = false
 offset_left = -65.0
 offset_top = -49.0
 offset_right = 62.0
 offset_bottom = -28.0
 
-[node name="Label" type="Label" parent="Message1"]
+[node name="Label" type="Label" parent="Message"]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 2.0

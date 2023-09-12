@@ -1,33 +1,33 @@
-[gd_scene load_steps=7 format=3 uid="uid://cpaqy2y6vt8to"]
+[gd_scene load_steps=7 format=3 uid="uid://b2bb3yjxe7bgg"]
 
-[ext_resource type="Script" path="res://Maps/Crypt1/Dialogues/Messages/LecternViewRight.gd" id="1_muw3j"]
-[ext_resource type="Texture2D" uid="uid://ctkqsd7gyqgvm" path="res://Maps/Crypt1/Assets/Crypt32x32/RA_Crypt.png" id="1_ngd07"]
-[ext_resource type="Texture2D" uid="uid://bg1lwkxsxl0wv" path="res://Maps/Crypt1/Assets/RA_Graveyard.png" id="2_ktuun"]
-[ext_resource type="FontFile" uid="uid://dq83y3i8frkqq" path="res://Maps/Crypt1/Dialogues/Fonts/GIMENELL.TTF" id="3_8pepi"]
+[ext_resource type="Texture2D" uid="uid://ctkqsd7gyqgvm" path="res://Maps/Crypt1/Assets/Crypt32x32/RA_Crypt.png" id="1_3sdev"]
+[ext_resource type="Script" path="res://Maps/Crypt1/Dialogues/Messages/LecternViewRight3tscn.gd" id="1_wjlml"]
+[ext_resource type="Texture2D" uid="uid://bg1lwkxsxl0wv" path="res://Maps/Crypt1/Assets/RA_Graveyard.png" id="2_1mltd"]
+[ext_resource type="FontFile" uid="uid://dq83y3i8frkqq" path="res://Maps/Crypt1/Dialogues/Fonts/GIMENELL.TTF" id="3_ngthh"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dng85"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wa2qb"]
 size = Vector2(24, 46)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_v1rbs"]
-radius = 68.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_qbuvg"]
+radius = 146.031
 
-[node name="LecternViewRight" type="StaticBody2D"]
+[node name="LecternViewRight3" type="StaticBody2D"]
 collision_layer = 16
 collision_mask = 3
-script = ExtResource("1_muw3j")
+script = ExtResource("1_wjlml")
 
 [node name="Stand" type="Sprite2D" parent="."]
-texture = ExtResource("1_ngd07")
+texture = ExtResource("1_3sdev")
 hframes = 32
 vframes = 8
 frame = 250
 
 [node name="LeftBook" type="Sprite2D" parent="."]
-position = Vector2(-0.350862, -7.53999)
+position = Vector2(-0.351, -7.54)
 rotation = 1.5708
 scale = Vector2(1.033, 0.834)
 skew = 0.0872665
-texture = ExtResource("2_ktuun")
+texture = ExtResource("2_1mltd")
 flip_h = true
 flip_v = true
 hframes = 82
@@ -35,11 +35,11 @@ vframes = 16
 frame = 468
 
 [node name="RightBook" type="Sprite2D" parent="."]
-position = Vector2(-0.293532, -5.65105)
+position = Vector2(-0.294, -5.651)
 rotation = 4.71239
-scale = Vector2(0.588749, 0.844449)
+scale = Vector2(0.589, 0.844)
 skew = 0.125664
-texture = ExtResource("2_ktuun")
+texture = ExtResource("2_1mltd")
 flip_h = true
 flip_v = true
 hframes = 82
@@ -47,10 +47,10 @@ vframes = 16
 frame = 468
 
 [node name="SkullRight" type="Sprite2D" parent="."]
-position = Vector2(15.2541, 13)
+position = Vector2(15.254, 13)
 rotation = -1.5708
-scale = Vector2(0.621, 0.457588)
-texture = ExtResource("2_ktuun")
+scale = Vector2(0.621, 0.458)
+texture = ExtResource("2_1mltd")
 flip_h = true
 flip_v = true
 hframes = 82
@@ -59,32 +59,32 @@ frame = 865
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)
-shape = SubResource("RectangleShape2D_dng85")
+shape = SubResource("RectangleShape2D_wa2qb")
 
 [node name="InteractionZone" type="Area2D" parent="."]
 collision_layer = 19
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone"]
-position = Vector2(43, 11)
-shape = SubResource("CircleShape2D_v1rbs")
+position = Vector2(42, 84)
+shape = SubResource("CircleShape2D_qbuvg")
 
 [node name="Message" type="Panel" parent="."]
 visible = false
-offset_left = 13.0
+offset_left = 15.0
 offset_top = -13.0
-offset_right = 155.0
-offset_bottom = 22.0
+offset_right = 123.0
+offset_bottom = 7.0
 
 [node name="Label" type="Label" parent="Message"]
 layout_mode = 0
-offset_left = 2.0
+offset_left = 3.0
 offset_top = 2.0
-offset_right = 140.0
-offset_bottom = 34.0
+offset_right = 106.0
+offset_bottom = 18.0
 theme_override_colors/font_color = Color(0.823529, 0.823529, 0.823529, 1)
-theme_override_fonts/font = ExtResource("3_8pepi")
+theme_override_fonts/font = ExtResource("3_ngthh")
 theme_override_font_sizes/font_size = 12
-text = "Press left mouse button for regular attack"
+text = "Use potions to heal"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
