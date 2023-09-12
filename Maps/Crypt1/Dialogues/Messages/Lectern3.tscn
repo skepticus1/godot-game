@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=3 uid="uid://bndbnasoe36p7"]
+
+[ext_resource type="Texture2D" uid="uid://ctkqsd7gyqgvm" path="res://Maps/Crypt1/Assets/Crypt32x32/RA_Crypt.png" id="1_lf6oi"]
+[ext_resource type="Script" path="res://Maps/Crypt1/Dialogues/Messages/Lectern3.gd" id="1_ogn0t"]
+[ext_resource type="Texture2D" uid="uid://bg1lwkxsxl0wv" path="res://Maps/Crypt1/Assets/RA_Graveyard.png" id="2_cjgr8"]
+[ext_resource type="FontFile" uid="uid://dq83y3i8frkqq" path="res://Maps/Crypt1/Dialogues/Fonts/GIMENELL.TTF" id="3_3jt2y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rojy4"]
+size = Vector2(26.5, 51.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7cp4d"]
+radius = 83.0
+
+[node name="Lectern3" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("1_ogn0t")
+
+[node name="Stand" type="Sprite2D" parent="."]
+texture = ExtResource("1_lf6oi")
+hframes = 32
+vframes = 8
+frame = 250
+
+[node name="LeftBook" type="Sprite2D" parent="."]
+position = Vector2(-10, -11)
+texture = ExtResource("2_cjgr8")
+flip_v = true
+hframes = 82
+vframes = 16
+frame = 550
+
+[node name="RightBook" type="Sprite2D" parent="."]
+position = Vector2(9, -11)
+texture = ExtResource("2_cjgr8")
+flip_h = true
+flip_v = true
+hframes = 82
+vframes = 16
+frame = 550
+
+[node name="Skull" type="Sprite2D" parent="."]
+position = Vector2(2.08165e-12, 13)
+scale = Vector2(0.703, 0.703)
+texture = ExtResource("1_lf6oi")
+hframes = 32
+vframes = 16
+frame = 310
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.25, 2.25)
+shape = SubResource("RectangleShape2D_rojy4")
+
+[node name="InteractionZone" type="Area2D" parent="."]
+collision_layer = 19
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone"]
+position = Vector2(0, 40)
+shape = SubResource("CircleShape2D_7cp4d")
+
+[node name="Message" type="Panel" parent="."]
+visible = false
+offset_left = -58.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = -26.0
+
+[node name="Label" type="Label" parent="Message"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 116.0
+offset_bottom = 33.0
+theme_override_colors/font_color = Color(0.823529, 0.823529, 0.823529, 1)
+theme_override_fonts/font = ExtResource("3_3jt2y")
+theme_override_font_sizes/font_size = 12
+text = "Use windslash attack to break pots"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="body_entered" from="InteractionZone" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="InteractionZone" to="." method="_on_area_2d_body_exited"]

@@ -59,6 +59,7 @@ position = Vector2(0, 50)
 shape = SubResource("CircleShape2D_40u14")
 
 [node name="Message" type="Panel" parent="."]
+visible = false
 offset_left = -68.0
 offset_top = -61.0
 offset_right = 79.0

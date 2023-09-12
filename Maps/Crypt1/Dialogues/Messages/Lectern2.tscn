@@ -55,10 +55,11 @@ shape = SubResource("RectangleShape2D_tv42b")
 collision_layer = 19
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone"]
-position = Vector2(-67, -8)
+position = Vector2(-67, -24)
 shape = SubResource("CircleShape2D_jdnol")
 
 [node name="Message" type="Panel" parent="."]
+visible = false
 offset_left = -68.0
 offset_top = -62.0
 offset_right = 72.0
