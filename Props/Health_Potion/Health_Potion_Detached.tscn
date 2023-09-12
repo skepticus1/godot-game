@@ -84,7 +84,6 @@ fill_to = Vector2(0.84633, 0.155963)
 radius = 23.0217
 
 [node name="potion" type="StaticBody2D"]
-z_index = -1
 y_sort_enabled = true
 script = ExtResource("1_kuivk")
 
