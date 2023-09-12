@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://ckvrr2s2gydkq"]
+[gd_scene load_steps=9 format=3 uid="uid://ckvrr2s2gydkq"]
 
 [ext_resource type="Script" path="res://Props/Chest/chest.gd" id="1_f7ud6"]
 [ext_resource type="PackedScene" uid="uid://bxr4a61h8ybwd" path="res://Props/Key/key.tscn" id="2_odxkl"]
 [ext_resource type="Texture2D" uid="uid://b5pqi0f3v2mxt" path="res://Props/Chest/chest01-open.png" id="2_wu1wi"]
 [ext_resource type="Texture2D" uid="uid://qa0bem0bdj6f" path="res://Props/Chest/chest01-close.png" id="3_htafh"]
 [ext_resource type="AudioStream" uid="uid://dgbrddsr1gvls" path="res://Props/Chest/01_chest_open_1.wav" id="5_hjyqf"]
+[ext_resource type="AudioStream" uid="uid://448ikadt7c0j" path="res://Props/Chest/MI_SFX 01.mp3" id="6_iuv36"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3aejn"]
 size = Vector2(20, 19)
@@ -68,6 +69,9 @@ layout_mode = 0
 offset_right = 121.0
 offset_bottom = 26.0
 text = "Press F to use Key"
+
+[node name="CoinSpawnSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_iuv36")
 
 [connection signal="body_entered" from="InteractionArea" to="." method="_on_trigger_area_body_entered"]
 [connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]

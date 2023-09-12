@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bj81tcud6o8oo"]
+[gd_scene load_steps=13 format=3 uid="uid://bj81tcud6o8oo"]
 
 [ext_resource type="Script" path="res://Props/Coins/GoldCoin.gd" id="1_6vkb2"]
 [ext_resource type="Texture2D" uid="uid://dywikbjf403gf" path="res://Props/Coins/CoinAssets/coin_1.png" id="2_k4dx6"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c04hgf6av4b30" path="res://Props/Coins/CoinAssets/coin_6.png" id="7_x6l2n"]
 [ext_resource type="Texture2D" uid="uid://ctbbu3nu2fwkl" path="res://Props/Coins/CoinAssets/coin_7.png" id="8_ponx4"]
 [ext_resource type="Texture2D" uid="uid://x4h6i3me21ex" path="res://Props/Coins/CoinAssets/coin_8.png" id="9_u61gu"]
+[ext_resource type="AudioStream" uid="uid://dd3an81un4dhy" path="res://Props/Coins/CoinAssets/Retro PickUp Coin 04.wav" id="10_mfaqq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wxwyy"]
 
@@ -45,6 +46,7 @@ animations = [{
 }]
 
 [node name="GoldCoin" type="Area2D"]
+collision_layer = 257
 script = ExtResource("1_6vkb2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -55,4 +57,11 @@ sprite_frames = SubResource("SpriteFrames_t4tj6")
 animation = &"coinSpin"
 autoplay = "coinSpin"
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_mfaqq")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

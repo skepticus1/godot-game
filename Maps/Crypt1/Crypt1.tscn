@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cpovwl727cam2"]
+[gd_scene load_steps=42 format=3 uid="uid://cpovwl727cam2"]
 
 [ext_resource type="Script" path="res://Maps/Crypt1/Crypt1.gd" id="1_lykcl"]
 [ext_resource type="Texture2D" uid="uid://0g1l18vcj26i" path="res://Playgrounds/Brenda/Art/Crypt32x32/RA_Crypt.png" id="2_ms33i"]
@@ -20,8 +20,15 @@
 [ext_resource type="PackedScene" uid="uid://c8d3c5jp6ofro" path="res://Enemy/Skeleton/Skeleton.tscn" id="17_vn63n"]
 [ext_resource type="PackedScene" uid="uid://dkrxb1xcrgcyh" path="res://Maps/Crypt1/Lectern.tscn" id="18_f5e00"]
 [ext_resource type="PackedScene" uid="uid://bsneha22ky31i" path="res://Maps/Crypt1/Dialogues/Messages/LecternViewLeft.tscn" id="20_4a86b"]
+[ext_resource type="PackedScene" uid="uid://dppxlc0isjfjq" path="res://Maps/Crypt1/Dialogues/Messages/LecternViewRight2.tscn" id="20_th0at"]
 [ext_resource type="PackedScene" uid="uid://bex1gokd3p08h" path="res://Maps/Crypt1/Dialogues/Messages/Lectern2.tscn" id="21_s07lf"]
+[ext_resource type="PackedScene" uid="uid://b2bb3yjxe7bgg" path="res://Maps/Crypt1/Dialogues/Messages/LecternViewRight3tscn.tscn" id="22_cua5o"]
 [ext_resource type="PackedScene" uid="uid://cpaqy2y6vt8to" path="res://Maps/Crypt1/Dialogues/Messages/LecternViewRight.tscn" id="22_dbbdw"]
+[ext_resource type="PackedScene" uid="uid://8qn12v0wnpod" path="res://Props/Pots/BreakablePots.tscn" id="23_sef2x"]
+[ext_resource type="PackedScene" uid="uid://dcjqgnaw0yoyw" path="res://Maps/Crypt1/Dialogues/Messages/LecternViewLeft2.tscn" id="25_qgc05"]
+[ext_resource type="PackedScene" uid="uid://bndbnasoe36p7" path="res://Maps/Crypt1/Dialogues/Messages/Lectern3.tscn" id="27_uhmp3"]
+[ext_resource type="PackedScene" uid="uid://brqc4ooa12nuy" path="res://Maps/Crypt1/Dialogues/Messages/Lectern4.tscn" id="28_s5nbv"]
+[ext_resource type="PackedScene" uid="uid://c3by2ri8vrfxa" path="res://Props/Health_Potion/Health_Potion_Detached.tscn" id="29_ha0s6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0x8q4"]
 texture = ExtResource("2_ms33i")
@@ -14939,7 +14946,7 @@ layer_2/modulate = Color(1, 1, 1, 1)
 layer_2/y_sort_enabled = false
 layer_2/y_sort_origin = 0
 layer_2/z_index = 0
-layer_2/tile_data = PackedInt32Array(65556, 1441792, 14, 131092, 1441792, 15, 65557, 1507328, 14, 131093, 1507328, 15, 65559, 1703936, 14, 131095, 1703936, 15, 65554, 1703936, 14, 131090, 1703936, 15, 131073, 589824, 14, 196631, 655360, 14, 131081, 851968, 15, 131080, 786432, 15, 655364, 786432, 15, 589835, 655360, 14, 393250, 655360, 14, 458787, 720896, 15, 393251, 786432, 15, 524317, 720896, 14, 131079, 1310720, 12, 196615, 1310720, 13, 131077, 1048576, 12, 196613, 1048576, 13, 917523, 1048576, 12, 983059, 1048576, 13, 917525, 1310720, 12, 983061, 1310720, 13, 917533, 1572864, 15, 851997, 1572864, 14, 983068, 655360, 14, 524303, 1703937, 32, 720928, 1703937, 32, 327695, 1703937, 37, 393231, 1703937, 38, 327696, 1769473, 37, 393232, 1769473, 38, 852002, 1441793, 37, 917538, 1441793, 38, 852003, 1507329, 37, 917539, 1507329, 38, 393223, 1048577, 37, 393224, 1114113, 37, 589844, 1310721, 35, 589845, 1376257, 35, 262171, 1507329, 39, 262172, 655360, 14, 196637, 1703936, 15, 196642, 1703936, 15, 196635, 851968, 15, 196636, 851968, 14, 131101, 1703936, 14, 131106, 1703936, 14, 1048584, 851968, 15, 917521, 1376256, 12, 917529, 1376256, 12, 786440, 1507329, 39, 851967, 786432, 14, 1048573, 655360, 14, 1179652, 655360, 14, 1179681, 720896, 14, 1114112, 655360, 15, 917504, 1703936, 14, 983040, 1703936, 15, 917508, 1703936, 14, 983044, 1703936, 15, 851972, 327689, 23, 983045, 196617, 23, 786434, 1966087, 10, 917506, 196617, 23, 327699, 1114112, 12, 393235, 1114112, 13, 327677, 1703937, 32, 196605, 1507336, 18, 917528, 1507336, 18, 196643, 1507336, 18, 393238, 1507336, 18, 1048579, 2097159, 15, 983041, 2097159, 14)
+layer_2/tile_data = PackedInt32Array(65556, 1441792, 14, 131092, 1441792, 15, 65557, 1507328, 14, 131093, 1507328, 15, 65559, 1703936, 14, 131095, 1703936, 15, 65554, 1703936, 14, 131090, 1703936, 15, 131073, 589824, 14, 196631, 655360, 14, 131081, 851968, 15, 131080, 786432, 15, 655364, 786432, 15, 589835, 655360, 14, 393250, 655360, 14, 458787, 720896, 15, 393251, 786432, 15, 524317, 720896, 14, 131079, 1310720, 12, 196615, 1310720, 13, 131077, 1048576, 12, 196613, 1048576, 13, 917523, 1048576, 12, 983059, 1048576, 13, 917525, 1310720, 12, 983061, 1310720, 13, 917533, 1572864, 15, 851997, 1572864, 14, 983068, 655360, 14, 524303, 1703937, 32, 720928, 1703937, 32, 327695, 1703937, 37, 393231, 1703937, 38, 327696, 1769473, 37, 393232, 1769473, 38, 852002, 1441793, 37, 917538, 1441793, 38, 852003, 1507329, 37, 917539, 1507329, 38, 393223, 1048577, 37, 393224, 1114113, 37, 589844, 1310721, 35, 589845, 1376257, 35, 262171, 1507329, 39, 262172, 655360, 14, 196637, 1703936, 15, 196642, 1703936, 15, 196635, 851968, 15, 196636, 851968, 14, 131101, 1703936, 14, 131106, 1703936, 14, 1048584, 851968, 15, 917521, 1376256, 12, 917529, 1376256, 12, 786440, 1507329, 39, 851967, 786432, 14, 1048573, 655360, 14, 1179652, 655360, 14, 1179681, 720896, 14, 1114112, 655360, 15, 917504, 1703936, 14, 983040, 1703936, 15, 917508, 1703936, 14, 983044, 1703936, 15, 851972, 327689, 23, 983045, 196617, 23, 786434, 1966087, 10, 917506, 196617, 23, 327699, 1114112, 12, 393235, 1114112, 13, 327677, 1703937, 32, 196605, 1507336, 18, 917528, 1507336, 18, 196643, 1507336, 18, 1048579, 2097159, 15, 983041, 2097159, 14)
 layer_3/name = "Coffin Animations"
 layer_3/enabled = true
 layer_3/modulate = Color(1, 1, 1, 1)
@@ -14953,7 +14960,7 @@ layer_4/modulate = Color(1, 1, 1, 1)
 layer_4/y_sort_enabled = false
 layer_4/y_sort_origin = 0
 layer_4/z_index = 0
-layer_4/tile_data = PackedInt32Array(983040, 1441792, 9, 983044, 1572864, 9, 196608, 3, 14, 131085, 3, 14, 196631, 3, 14, 851979, 3, 14, 917522, 3, 14, 1179673, 3, 14, 917537, 3, 14, 393243, 3, 14, 917507, 1507336, 18, 131090, 1572864, 9, 131095, 1572864, 9, 196637, 1572864, 9, 196642, 1572864, 9, 196644, 3, 14, 983043, 393225, 22, 1048579, 196617, 23, 1048576, 196617, 23, 917505, 1507336, 18, 983041, 262153, 22, 1048577, 327689, 23)
+layer_4/tile_data = PackedInt32Array(983040, 1441792, 9, 983044, 1572864, 9, 196608, 3, 14, 131085, 3, 14, 196631, 3, 14, 851979, 3, 14, 917522, 3, 14, 1179673, 3, 14, 917537, 3, 14, 393243, 3, 14, 917507, 1507336, 18, 131090, 1572864, 9, 131095, 1572864, 9, 196637, 1572864, 9, 196642, 1572864, 9, 196644, 3, 14, 983043, 393225, 22, 1048579, 196617, 23, 1048576, 196617, 23, 917505, 1507336, 18, 983041, 262153, 22, 1048577, 327689, 23, 393238, 1507336, 18)
 layer_5/name = "Flowers"
 layer_5/enabled = true
 layer_5/modulate = Color(1, 1, 1, 1)
@@ -15182,17 +15189,59 @@ position = Vector2(924, 206)
 [node name="SkullFountain4" parent="." instance=ExtResource("16_wqhsl")]
 position = Vector2(1116, 205)
 
-[node name="Lectern" parent="." instance=ExtResource("18_f5e00")]
-position = Vector2(78, 257)
-
 [node name="Coffin" parent="." instance=ExtResource("16_ugmu2")]
 position = Vector2(79, 495)
 
 [node name="LecternViewLeft" parent="." instance=ExtResource("20_4a86b")]
-position = Vector2(434, 150)
+position = Vector2(274, 481)
+
+[node name="LecternViewRight" parent="." instance=ExtResource("22_dbbdw")]
+position = Vector2(-117, 479)
+
+[node name="Lectern" parent="." instance=ExtResource("18_f5e00")]
+position = Vector2(80, 298)
+
+[node name="LecternViewLeft2" parent="." instance=ExtResource("25_qgc05")]
+position = Vector2(434, 141)
+
+[node name="LecternViewRight3" parent="." instance=ExtResource("22_cua5o")]
+position = Vector2(590, 113)
 
 [node name="Lectern2" parent="." instance=ExtResource("21_s07lf")]
 position = Vector2(495, 452)
+
+[node name="Lectern3" parent="." instance=ExtResource("27_uhmp3")]
+position = Vector2(654, 479)
+
+[node name="LecternViewRight2" parent="." instance=ExtResource("20_th0at")]
+position = Vector2(972, 411)
+
+[node name="Lectern4" parent="." instance=ExtResource("28_s5nbv")]
+position = Vector2(1021, 157)
+
+[node name="BreakablePots" parent="." instance=ExtResource("23_sef2x")]
+position = Vector2(-19, 81)
+
+[node name="BreakablePots2" parent="." instance=ExtResource("23_sef2x")]
+position = Vector2(464, 191)
+
+[node name="BreakablePots3" parent="." instance=ExtResource("23_sef2x")]
+position = Vector2(364, 465)
+
+[node name="BreakablePots4" parent="." instance=ExtResource("23_sef2x")]
+position = Vector2(877, 455)
+
+[node name="BreakablePots5" parent="." instance=ExtResource("23_sef2x")]
+position = Vector2(1131, 580)
+
+[node name="potion" parent="." instance=ExtResource("29_ha0s6")]
+position = Vector2(590, 146)
+
+[node name="potion2" parent="." instance=ExtResource("29_ha0s6")]
+position = Vector2(590, 476)
+
+[node name="potion3" parent="." instance=ExtResource("29_ha0s6")]
+position = Vector2(1135, 255)
 
 [node name="CryptCamera" type="Camera2D" parent="."]
 position = Vector2(84, 569)
@@ -15204,15 +15253,18 @@ limit_bottom = 750
 [node name="GUI" parent="CryptCamera" instance=ExtResource("17_1lvue")]
 
 [node name="Hero" parent="." instance=ExtResource("16_rt23y")]
-position = Vector2(84, 569)
+position = Vector2(79, 566)
 
 [node name="Skeleton" parent="." instance=ExtResource("17_vn63n")]
-position = Vector2(669, 255)
+position = Vector2(638, 256)
 
 [node name="Skeleton2" parent="." instance=ExtResource("17_vn63n")]
-position = Vector2(1025, 522)
+position = Vector2(967, 203)
 
-[node name="LecternViewRight" parent="." instance=ExtResource("22_dbbdw")]
-position = Vector2(971, 369)
+[node name="Skeleton3" parent="." instance=ExtResource("17_vn63n")]
+position = Vector2(991, 175)
+
+[node name="Skeleton4" parent="." instance=ExtResource("17_vn63n")]
+position = Vector2(1059, 225)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://cg8i804u0qyqc"]
 
-[ext_resource type="Script" path="res://Enemy/EnemySpawner/enemy_spawn.gd" id="1_wxu6v"]
+[ext_resource type="Script" path="res://Enemy/EnemySpawner/mass_enemy_spawn.gd" id="1_0f2up"]
 [ext_resource type="Texture2D" uid="uid://dvnj6mxj6tlio" path="res://Enemy/Skeleton/assets/Skeleton-naked-scimitar.png" id="2_eyj8l"]
 
-[node name="EnemySpawn" type="Marker2D"]
-script = ExtResource("1_wxu6v")
+[node name="MassEnemySpawner" type="Marker2D"]
+script = ExtResource("1_0f2up")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_eyj8l")
