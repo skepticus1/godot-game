@@ -23,7 +23,7 @@ func _ready():
 	death_scene.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Game.is_alive == false:
 		kill_label.text = "Kills: %s" % Game.Kills
 		handle_death()

@@ -6,9 +6,8 @@ extends CharacterBody2D
 @onready var dash_sound = $HeroSoundEffects/SwordDash
 @onready var wind_slash_sound = $HeroSoundEffects/WindSlash
 @onready var current_health = Game.HeroHealth
-@onready var sword_dash_count = 3
-@onready var wind_slash_count = 20
-@onready var sword_dash_timer = $SwordDashTimer
+@onready var current_mana = Game.HeroMana
+@onready var mana_regen_timer = $ManaRegenTimer
 @onready var effects_animation = $EffectsAnimation
 @onready var wind_slash_animation = $WindSlash/AnimationPlayer
 
@@ -23,7 +22,7 @@ var is_alive = true
 var nearby_interactable = null # used to know if the player is near an interactable object in the game world, such as a chest
 
 func _ready():
-	sword_dash_timer.set_wait_time(3)
+	pass
 
 func _physics_process(delta):
 	if current_health > Game.HeroHealth:
@@ -31,29 +30,29 @@ func _physics_process(delta):
 		current_health = Game.HeroHealth
 	else:
 		current_health = Game.HeroHealth
+	if current_mana != Game.HeroMana:
+		current_mana = Game.HeroMana
+		mana_regen_timer.start()
 	if Game.HeroHealth >= 1:
 		if Input.is_action_just_pressed("attack1"):
 			velocity = Vector2.ZERO
 			is_attacking = true
 			sword_attack()
 			await sword_attack()
-		elif Input.is_action_just_pressed("attack2") && sword_dash_count > 0:
-			sword_dash_count -= 1
-			print(sword_dash_count)
-			sword_dash_timer.start()
+		elif Input.is_action_just_pressed("attack2") && current_mana >= 15:
+			Game.HeroMana -= 15
 			velocity = Vector2.ZERO
 			is_attacking = true
 			sword_thrust()
 			await sword_thrust()
-		elif Input.is_action_just_pressed("wind slash") && wind_slash_count > 0:
+		elif Input.is_action_just_pressed("wind slash") && current_mana >= 50:
 			is_attacking = true
-			print(wind_slash_count)
+			Game.HeroMana -= 50
+			mana_regen_timer.start()
 			velocity = Vector2.ZERO
 			wind_slash()
 			sword_attack()
 			await sword_attack()
-			wind_slash_count -= 1
-			print(wind_slash_count)
 		else:
 			if is_attacking == false:
 				player_movement(delta)
@@ -133,7 +132,6 @@ func sword_attack():
 			if !sword_sound.playing:
 				sword_sound.play()
 			await get_node("AnimationPlayer").animation_finished
-			await sword_sound
 		elif last_movement == Vector2.UP:
 			if !sword_sound.playing:
 				sword_sound.play()
@@ -225,19 +223,14 @@ func _input(event):
 		if nearby_interactable:
 			nearby_interactable.interact()
 
-
-func _on_sword_dash_timer_timeout():
-	if sword_dash_count < 3:
-		sword_dash_count += 1
-		print(sword_dash_count)
-
 func _on_wind_slash_body_entered(body):
-	print(body)
 	if body.is_in_group("Enemy"):
 		body.health -= Game.WindSlashDamage
-		print(body.name, " health is: ", body.health)
 	elif body.name == "Skeleton":
 		body.health -= Game.WindSlashDamage
 	elif body.name == "Object":
 		body.health -= Game.WindSlashDamage
 
+func _on_mana_regen_timer_timeout():
+	if Game.HeroMana < 100:
+		Game.HeroMana += 1
