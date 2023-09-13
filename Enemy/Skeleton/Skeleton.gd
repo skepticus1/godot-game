@@ -100,7 +100,7 @@ func _on_timer_timeout():
 	
 func _on_attack_zone_body_entered(body):
 	var anim_attack = ""
-	if body.name == "Hero" and is_alive:
+	if body.name == "Hero" and is_alive and Game.is_alive:
 		# set attacking mode
 		is_attacking = true
 		print("attack zone entered by", body.name)
