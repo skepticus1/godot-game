@@ -5,7 +5,7 @@ var is_player_in_area = false
 
 
 func _on_area_2d_body_entered(body):
-	print('player has entered lectern zone')
+	#print('player has entered lectern zone')
 	if body.name == "Hero":
 		$Message.visible = true
 		#lectern_label.visible = true
@@ -14,7 +14,7 @@ func _on_area_2d_body_entered(body):
 
 
 func _on_area_2d_body_exited(body):
-	print('player has exited lectern zone')
+	#print('player has exited lectern zone')
 	if body.name == "Hero":
 		$Message.visible = false
 		#lectern_label.visible = false

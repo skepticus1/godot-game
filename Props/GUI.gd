@@ -39,6 +39,7 @@ func handle_death():
 	# stop parent audio
 	if grandparent_audio:
 		grandparent_audio.stop()
+		death_music.play()
 	else: # start death music
 		death_music.play()
 		

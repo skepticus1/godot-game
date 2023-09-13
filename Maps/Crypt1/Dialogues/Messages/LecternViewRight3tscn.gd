@@ -4,7 +4,7 @@ var is_player_in_area = false
 
 
 func _on_area_2d_body_entered(body):
-	print('player has entered right view lectern zone')
+	#print('player has entered right view lectern zone')
 	
 	if body.name == "Hero":
 		
@@ -14,7 +14,7 @@ func _on_area_2d_body_entered(body):
 
 
 func _on_area_2d_body_exited(body):
-	print('player has exited right view lectern zone')
+	#print('player has exited right view lectern zone')
 	
 	if body.name == "Hero":
 		
