@@ -1,4 +1,4 @@
-[gd_scene load_steps=130 format=3 uid="uid://bc38ckh2p3k87"]
+[gd_scene load_steps=131 format=3 uid="uid://bc38ckh2p3k87"]
 
 [ext_resource type="Texture2D" uid="uid://bdwfrd51vuicl" path="res://Playgrounds/KT/Assets/RA_Ground_Tiles.png" id="1_javcd"]
 [ext_resource type="Texture2D" uid="uid://cckjw07sewx11" path="res://Playgrounds/KT/Assets/RA_Ruins.png" id="2_a385p"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://drrqidemgvpm0" path="res://Props/Pots_Detached/Deatched_Pots.tscn" id="16_6whrv"]
 [ext_resource type="PackedScene" uid="uid://d3eg0qvebj3te" path="res://Props/Attack_up/Attack_up.tscn" id="17_nenvf"]
 [ext_resource type="PackedScene" uid="uid://0dpd65boxo0o" path="res://Props/Portal_message/portals.tscn" id="18_l685w"]
+[ext_resource type="PackedScene" uid="uid://bw8doryp14pe3" path="res://Maps/Main_World/Assets/to_dons_dungeon.tscn" id="19_quwnm"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_tue6v"]
 vertices = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -39575,6 +39576,7 @@ layer_8/tile_data = PackedInt32Array()
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_c8gi0")
+volume_db = -14.054
 autoplay = true
 
 [node name="BreakablePots6" parent="." instance=ExtResource("9_6wq7s")]
@@ -39750,3 +39752,9 @@ position = Vector2(308, -388)
 
 [node name="BreakablePots18" parent="." instance=ExtResource("16_6whrv")]
 position = Vector2(-650, 818)
+
+[node name="ToDonsDungeon" parent="." instance=ExtResource("19_quwnm")]
+position = Vector2(-1174, 492)
+
+[node name="Portals4" parent="." instance=ExtResource("18_l685w")]
+position = Vector2(1225, 486)
