@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bx4i8t8vsmmx1"]
+[gd_scene load_steps=10 format=3 uid="uid://bx4i8t8vsmmx1"]
 
 [ext_resource type="AudioStream" uid="uid://d2gn0rae643j4" path="res://Enemy/Skeleton/Skeleton_walk_sound.mp3" id="1_s7o5g"]
 [ext_resource type="AudioStream" uid="uid://0sqit0iye263" path="res://Enemy/Skeleton/assets/SkeletonSounds/bones-breaking.mp3" id="2_47edx"]
-[ext_resource type="AudioStream" uid="uid://ddtsknrmor5ec" path="res://Enemy/Skeleton/assets/SkeletonSounds/skeleton_hurt_sound.mp3" id="2_ufwhv"]
+[ext_resource type="AudioStream" uid="uid://c6nhhbjdr38sh" path="res://Enemy/Skeleton/assets/Skeleton_death_sound.wav" id="3_xqytb"]
 
 [sub_resource type="Animation" id="Animation_k3dp4"]
 resource_name = "skeletonMoving"
@@ -38,7 +38,7 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_1btlt"]
 resource_name = "skeletonHurt"
-length = 2.0
+length = 0.21
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -69,6 +69,38 @@ _data = {
 "skeletonHurt": SubResource("Animation_1btlt")
 }
 
+[sub_resource type="Animation" id="Animation_1tuoo"]
+resource_name = "skeletonDeath"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:stream")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_xqytb")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6p6ed"]
+_data = {
+"skeletonDeath": SubResource("Animation_1tuoo")
+}
+
 [node name="SkeletonSounds" type="Node2D"]
 
 [node name="SkeletonMoving" type="AudioStreamPlayer" parent="."]
@@ -80,9 +112,17 @@ libraries = {
 }
 
 [node name="SkeletonHurt" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_ufwhv")
+stream = ExtResource("2_47edx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SkeletonHurt"]
 libraries = {
 "": SubResource("AnimationLibrary_s88rs")
+}
+
+[node name="SkeletonDeath" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_xqytb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SkeletonDeath"]
+libraries = {
+"": SubResource("AnimationLibrary_6p6ed")
 }
