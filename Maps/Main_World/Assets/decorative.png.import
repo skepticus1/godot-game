@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxkyr7ejcqwu6"
-path="res://.godot/imported/decorative.png-8237e527f33fd235317c13ab366c10af.ctex"
+uid="uid://cid7lw75otgsp"
+path="res://.godot/imported/decorative.png-2a8557ff34bbc2324375a3a704bddedb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Playgrounds/KT/Kt-Dungeon/Dungeon-Assets/decorative.png"
-dest_files=["res://.godot/imported/decorative.png-8237e527f33fd235317c13ab366c10af.ctex"]
+source_file="res://Maps/Main_World/Assets/decorative.png"
+dest_files=["res://.godot/imported/decorative.png-2a8557ff34bbc2324375a3a704bddedb.ctex"]
 
 [params]
 

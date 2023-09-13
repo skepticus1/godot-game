@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy65arnqgo6v"
-path="res://.godot/imported/RA_Crypt.png-1117c6b40804b01b5b2c3ad6d40642b6.ctex"
+uid="uid://d0ky4oqgvcs2h"
+path="res://.godot/imported/mainlevbuild.png-d23d558400e38ac3b768924e09043197.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Playgrounds/KT/Kt-Dungeon/Dungeon-Assets/RA_Crypt.png"
-dest_files=["res://.godot/imported/RA_Crypt.png-1117c6b40804b01b5b2c3ad6d40642b6.ctex"]
+source_file="res://Playgrounds/KT/Kt-Dungeon/Dungeon-Assets/mainlevbuild.png"
+dest_files=["res://.godot/imported/mainlevbuild.png-d23d558400e38ac3b768924e09043197.ctex"]
 
 [params]
 
