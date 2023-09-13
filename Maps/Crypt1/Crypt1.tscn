@@ -15089,6 +15089,16 @@ position = Vector2(144, 461)
 collision_layer = 16
 collision_mask = 3
 
+[node name="FirePit22" parent="." instance=ExtResource("12_xmjl0")]
+position = Vector2(-50, 208)
+collision_layer = 16
+collision_mask = 3
+
+[node name="FirePit23" parent="." instance=ExtResource("12_xmjl0")]
+position = Vector2(176, 206)
+collision_layer = 16
+collision_mask = 3
+
 [node name="FirePillar" parent="." instance=ExtResource("13_8ln06")]
 position = Vector2(-50, 370)
 collision_layer = 16
@@ -15161,11 +15171,6 @@ collision_mask = 3
 
 [node name="FirePillar15" parent="." instance=ExtResource("13_8ln06")]
 position = Vector2(1167, 81)
-collision_layer = 16
-collision_mask = 3
-
-[node name="FirePit22" parent="." instance=ExtResource("12_xmjl0")]
-position = Vector2(-50, 208)
 collision_layer = 16
 collision_mask = 3
 
@@ -15244,7 +15249,7 @@ position = Vector2(590, 476)
 position = Vector2(1135, 255)
 
 [node name="CryptCamera" type="Camera2D" parent="."]
-position = Vector2(84, 569)
+position = Vector2(79, 566)
 limit_left = -300
 limit_top = -200
 limit_right = 1425
@@ -15254,6 +15259,9 @@ limit_bottom = 750
 
 [node name="Hero" parent="." instance=ExtResource("16_rt23y")]
 position = Vector2(79, 566)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Hero"]
+remote_path = NodePath("../../CryptCamera")
 
 [node name="Skeleton" parent="." instance=ExtResource("17_vn63n")]
 position = Vector2(638, 256)
