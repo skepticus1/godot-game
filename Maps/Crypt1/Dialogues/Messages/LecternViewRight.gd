@@ -8,7 +8,7 @@ func _on_area_2d_body_entered(body):
 	
 	if body.name == "Hero":
 		
-		$Message5.visible = true
+		$Message.visible = true
 		is_player_in_area = true
 		
 
@@ -18,5 +18,5 @@ func _on_area_2d_body_exited(body):
 	
 	if body.name == "Hero":
 		
-		$Message5.visible = false
+		$Message.visible = false
 		is_player_in_area = false

@@ -21,6 +21,7 @@ var last_movement = Vector2.ZERO
 var is_attacking = false
 var is_alive = true
 var nearby_interactable = null # used to know if the player is near an interactable object in the game world, such as a chest
+var knockback_strength = 400
 
 func _ready():
 	sword_dash_timer.set_wait_time(3)
@@ -212,11 +213,13 @@ func _on_attack_hit_box_body_entered(body):
 	print("Function is running! Entered body is: ", body.name) 
 	if body.is_in_group("Enemy"):
 		body.health -= Game.SwordDamage
+		apply_knockback(body)
 		print(body.name, " health is: ", body.health)
 	elif body.name == "Enemy":
 		print("Hit enemy")
 	elif body.name == "Object":
 		print("Hit object")
+	
 
 # Interact with items in the world
 # Handle interact being pressed default "F" key
@@ -241,3 +244,10 @@ func _on_wind_slash_body_entered(body):
 	elif body.name == "Object":
 		body.health -= Game.WindSlashDamage
 
+
+func apply_knockback(body: CharacterBody2D):
+	print("knockback")
+	var direction = body.global_position - self.global_position
+	direction = direction.normalized()
+	body.velocity = direction * knockback_strength
+	body.is_knockback = true

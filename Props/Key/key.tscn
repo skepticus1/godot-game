@@ -1,7 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://bxr4a61h8ybwd"]
+[gd_scene load_steps=30 format=3 uid="uid://bxr4a61h8ybwd"]
 
 [ext_resource type="Script" path="res://Props/Key/key.gd" id="1_lm5g1"]
 [ext_resource type="Texture2D" uid="uid://brprsk3jw8mvb" path="res://Props/Key/key_32x32_24f.png" id="1_nxs1v"]
+[ext_resource type="AudioStream" uid="uid://cx2eja1wnjawm" path="res://Props/Coins/CoinAssets/Retro PickUp Coin 07.wav" id="3_ywnyp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7t6gh"]
 atlas = ExtResource("1_nxs1v")
@@ -195,4 +196,11 @@ autoplay = "Key"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Key"]
 shape = SubResource("CircleShape2D_bx1qe")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ywnyp")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+
 [connection signal="body_entered" from="Key" to="." method="_on_key_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

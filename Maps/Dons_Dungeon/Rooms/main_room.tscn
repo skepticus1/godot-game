@@ -1,11 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2jl1at0ym326"]
+[gd_scene load_steps=2 format=3 uid="uid://c2jl1at0ym326"]
 
 [ext_resource type="TileSet" uid="uid://de2qum2e7y5tv" path="res://Maps/Dons_Dungeon/Tilesets/dungeon_tileset.tres" id="1_o5r11"]
-[ext_resource type="PackedScene" uid="uid://cll6grai6aptw" path="res://Maps/Dons_Dungeon/Spawners/crate_l_spawner.tscn" id="5_g3ubb"]
-[ext_resource type="PackedScene" uid="uid://cqwxe2yfa4eip" path="res://Props/Candle/candle.tscn" id="5_ork5k"]
-[ext_resource type="PackedScene" uid="uid://bckf6jaq6eqdl" path="res://Maps/Dons_Dungeon/Spawners/crate_s_spawner.tscn" id="6_aoymv"]
-[ext_resource type="PackedScene" uid="uid://cwrxn3ioyuari" path="res://Maps/Dons_Dungeon/Spawners/chest_spawner.tscn" id="6_vs74x"]
-[ext_resource type="PackedScene" uid="uid://ctmoiev76gvav" path="res://Props/SpikeTrap/spike_trap.tscn" id="8_4urhr"]
 
 [node name="main_room" type="Node2D"]
 y_sort_enabled = true
@@ -30,87 +25,3 @@ layer_2/y_sort_enabled = false
 layer_2/y_sort_origin = 0
 layer_2/z_index = 1
 layer_2/tile_data = PackedInt32Array()
-
-[node name="Candle" parent="." instance=ExtResource("5_ork5k")]
-position = Vector2(583, 376)
-
-[node name="crate_l_spawner" parent="." instance=ExtResource("5_g3ubb")]
-position = Vector2(410, 126)
-
-[node name="crate_l_spawner2" parent="." instance=ExtResource("5_g3ubb")]
-position = Vector2(815, 495)
-
-[node name="crate_l_spawner3" parent="." instance=ExtResource("5_g3ubb")]
-position = Vector2(912, 493)
-
-[node name="crate_l_spawner7" parent="." instance=ExtResource("5_g3ubb")]
-position = Vector2(975, 160)
-
-[node name="crate_l_spawner8" parent="." instance=ExtResource("5_g3ubb")]
-position = Vector2(1072, 158)
-
-[node name="crate_s_spawner" parent="." instance=ExtResource("6_aoymv")]
-position = Vector2(105, 618)
-
-[node name="crate_s_spawner2" parent="." instance=ExtResource("6_aoymv")]
-position = Vector2(148, 619)
-
-[node name="crate_s_spawner3" parent="." instance=ExtResource("6_aoymv")]
-position = Vector2(189, 619)
-
-[node name="crate_s_spawner4" parent="." instance=ExtResource("6_aoymv")]
-position = Vector2(229, 620)
-
-[node name="crate_s_spawner6" parent="." instance=ExtResource("6_aoymv")]
-position = Vector2(325, 621)
-
-[node name="crate_s_spawner9" parent="." instance=ExtResource("6_aoymv")]
-position = Vector2(104, 555)
-
-[node name="crate_s_spawner10" parent="." instance=ExtResource("6_aoymv")]
-position = Vector2(147, 556)
-
-[node name="crate_s_spawner12" parent="." instance=ExtResource("6_aoymv")]
-position = Vector2(228, 557)
-
-[node name="crate_s_spawner13" parent="." instance=ExtResource("6_aoymv")]
-position = Vector2(292, 558)
-
-[node name="crate_s_spawner14" parent="." instance=ExtResource("6_aoymv")]
-position = Vector2(324, 558)
-
-[node name="crate_s_spawner16" parent="." instance=ExtResource("6_aoymv")]
-position = Vector2(392, 557)
-
-[node name="crate_s_spawner17" parent="." instance=ExtResource("6_aoymv")]
-position = Vector2(103, 490)
-
-[node name="crate_s_spawner19" parent="." instance=ExtResource("6_aoymv")]
-position = Vector2(187, 491)
-
-[node name="crate_s_spawner21" parent="." instance=ExtResource("6_aoymv")]
-position = Vector2(291, 493)
-
-[node name="crate_s_spawner22" parent="." instance=ExtResource("6_aoymv")]
-position = Vector2(323, 493)
-
-[node name="crate_s_spawner23" parent="." instance=ExtResource("6_aoymv")]
-position = Vector2(356, 492)
-
-[node name="crate_l_spawner4" parent="." instance=ExtResource("5_g3ubb")]
-position = Vector2(109, 152)
-
-[node name="crate_l_spawner5" parent="." instance=ExtResource("5_g3ubb")]
-position = Vector2(218, 136)
-
-[node name="crate_l_spawner6" parent="." instance=ExtResource("5_g3ubb")]
-position = Vector2(328, 148)
-
-[node name="chest_spawner" parent="." instance=ExtResource("6_vs74x")]
-position = Vector2(1166, 604)
-
-[node name="chest_spawner2" parent="." instance=ExtResource("6_vs74x")]
-position = Vector2(1079, 603)
-
-[node name="SpikeTrap" parent="." instance=ExtResource("8_4urhr")]
-position = Vector2(504, 366)

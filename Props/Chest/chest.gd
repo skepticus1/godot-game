@@ -1,7 +1,17 @@
 extends Node2D
 
+# num of coins to spawn
+const COINS = 25
+
+# ejection force
+const EJECT_FORCE = 200
+
+@onready var coin_spawn_sound = $CoinSpawnSound
 
 @export var key: PackedScene
+var CoinScene: PackedScene = preload("res://Props/Coins/Coin_with_Physics/coin_physics.tscn")
+var HealthPotScene: PackedScene = preload("res://Props/Pots/Health_Potion.tscn")
+
 var is_player_in_area = false
 var is_locked = true
 var is_open = false
@@ -39,6 +49,27 @@ func _handle_interact():
 	is_open = true
 	$OpenSound.play()
 	
-	var inst = key.instantiate()
-	get_parent().add_child(inst)
-	inst.global_position = self.global_position
+	var health_pot = HealthPotScene.instantiate()
+	health_pot.global_position = self.global_position
+	get_parent().add_child(health_pot)
+	
+	#spawn and eject items (coins for now)
+	spawn_and_eject_items()
+	
+func spawn_and_eject_items():
+	for _i in range(COINS):
+		coin_spawn_sound.play()
+		var coin = CoinScene.instantiate()
+		coin.global_position = self.global_position
+		
+		# calc a random ejection angle and convert it to a direction
+		var angle = deg_to_rad(randf() * 360)
+		var direction = Vector2(cos(angle), sin(angle))
+		
+		# apply random force
+		var random_force = EJECT_FORCE + randi_range(-50, 50)
+		coin.linear_velocity = direction * random_force
+		
+		get_parent().add_child(coin)
+		
+		await get_tree().create_timer(0.15).timeout

@@ -9,12 +9,16 @@ var current_dir = "down"
 var is_attacking = false
 var is_alive = true
 var damage = 25
+var is_knockback = false
 
 
 
 @export var health: int = 30
 @export var key: PackedScene
+@export var coin: PackedScene
 
+@onready var current_health = 30
+@onready var death_sound = $SkeletonSounds/SkeletonDeath
 @onready var hurt_sound = $SkeletonSounds/SkeletonHurt
 @onready var animation_player = $AnimationPlayer
 @onready var animated_sprite = $AnimatedSprite2D
@@ -96,7 +100,7 @@ func _on_timer_timeout():
 	
 func _on_attack_zone_body_entered(body):
 	var anim_attack = ""
-	if body.name == "Hero" and is_alive:
+	if body.name == "Hero" and is_alive and Game.is_alive:
 		# set attacking mode
 		is_attacking = true
 		print("attack zone entered by", body.name)
@@ -118,22 +122,29 @@ func _on_slash_hit_box_body_entered(body):
 		
 
 func check_health():
-	if health <= 0:
+	if current_health != health:
+		hurt_sound.play()
+		current_health = health
+	elif health <= 0:
 		is_alive = false
 		animation_player.play("death")
 		walking_sound.stop()
+		death_sound.play()
 		death_timer.start()
-	else:
-		hurt_sound.play()
 
 func _on_death_timer_timeout():
 	Game.Kills += 1
-	var inst = key.instantiate()
-	inst.global_position = self.global_position
 	
+	var inst
+	if randi() % 10 == 0:
+		inst = key.instantiate()
+	else:
+		inst = coin.instantiate()
+		
+	inst.global_position = self.global_position
 	var map = self.get_parent().get_parent()
 	if map:
 		map.add_child(inst)
 	else:
-		printerr("Couldn't find map to put key in")
+		printerr("Couldn't find map to put coin/key in")
 	queue_free()
