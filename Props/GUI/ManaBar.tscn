@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://du8yyh8dqs7uy"]
+[gd_scene load_steps=4 format=3 uid="uid://du8yyh8dqs7uy"]
 
+[ext_resource type="Script" path="res://Props/GUI/ManaBar.gd" id="1_hts0l"]
 [ext_resource type="Texture2D" uid="uid://0ss8xjb3yce1" path="res://Props/GUI/GUIAssets/Blue/mana_progress.tres" id="1_u35ux"]
 [ext_resource type="Texture2D" uid="uid://d1diwv1ahi7et" path="res://Props/GUI/GUIAssets/Blue/mana_bar_background.tres" id="2_h67rf"]
 
 [node name="ManaBar" type="CanvasLayer"]
+script = ExtResource("1_hts0l")
 
 [node name="ManaProgressBar" type="TextureProgressBar" parent="."]
 anchors_preset = 15
