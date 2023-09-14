@@ -209,16 +209,9 @@ func wind_slash():
 	return is_attacking
 	
 func _on_attack_hit_box_body_entered(body):
-	print("Function is running! Entered body is: ", body.name) 
 	if body.is_in_group("Enemy"):
-		print("here is the issue")
 		body.health -= Game.SwordDamage
 		apply_knockback(body)
-		print(body.name, " health is: ", body.health)
-	elif body.name == "Enemy":
-		print("Hit enemy")
-	elif body.name == "Object":
-		print("Hit object")
 	
 
 # Interact with items in the world
@@ -232,10 +225,10 @@ func _input(event):
 
 
 func _on_wind_slash_body_entered(body):
-	print(body)
+	#print(body)
 	if body.is_in_group("Enemy"):
 		body.health -= Game.WindSlashDamage
-		print(body.name, " health is: ", body.health)
+		#print(body.name, " health is: ", body.health)
 	elif body.name == "Skeleton":
 		body.health -= Game.WindSlashDamage
 	elif body.name == "Object":
@@ -243,7 +236,7 @@ func _on_wind_slash_body_entered(body):
 
 
 func apply_knockback(body: CharacterBody2D):
-	print("knockback")
+	#print("knockback")
 	var direction = body.global_position - self.global_position
 	direction = direction.normalized()
 	body.velocity = direction * knockback_strength

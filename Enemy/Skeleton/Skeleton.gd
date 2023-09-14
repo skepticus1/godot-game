@@ -18,6 +18,7 @@ var is_knockback = false
 @export var coin: PackedScene
 
 @onready var current_health = 30
+@onready var skeleton_collision = $Skeleton/CollisionShape2D
 @onready var death_sound = $SkeletonSounds/SkeletonDeath
 @onready var hurt_sound = $SkeletonSounds/SkeletonHurt
 @onready var animation_player = $AnimationPlayer
@@ -54,7 +55,7 @@ func _physics_process(delta):
 		update_animation(Vector2.ZERO)
 	
 	if velocity != Vector2.ZERO and !walking_sound_playing:
-		print("playing walking sound now")
+		#print("playing walking sound now")
 		walking_sound.play()
 		walking_sound_playing = true
 	elif velocity == Vector2.ZERO and walking_sound_playing:
@@ -65,8 +66,8 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _on_player_detection_body_entered(body):
-	print(body)
-	print("Entered: ", body, ", Type: ", typeof(body))
+	#print(body)
+	#print("Entered: ", body, ", Type: ", typeof(body))
 	if body.name == "Hero" || body.name == "player_nav":
 		player = body
 		
@@ -103,21 +104,21 @@ func _on_attack_zone_body_entered(body):
 	if body.name == "Hero" and is_alive and Game.is_alive:
 		# set attacking mode
 		is_attacking = true
-		print("attack zone entered by", body.name)
+		#print("attack zone entered by", body.name)
 		#play animation
 		if current_dir in ["up", "down", "left", "right"]:
-			print("current direction:", current_dir)
+			#print("current direction:", current_dir)
 			anim_attack = "slash_" + current_dir
 			animation_player.play(anim_attack)
 
 func _on_attack_zone_body_exited(body):
 	if body.name == "Hero":
-		print("Hero out of attack zone")
+		#print("Hero out of attack zone")
 		is_attacking = false
 
 func _on_slash_hit_box_body_entered(body):
 	if body.name == "Hero" and Game.is_alive:
-		print("Hero health: ", Game.HeroHealth)
+		#print("Hero health: ", Game.HeroHealth)
 		Game.HeroHealth -= damage
 		
 
@@ -127,6 +128,9 @@ func check_health():
 		current_health = health
 	elif health <= 0:
 		is_alive = false
+		if is_alive == false:
+			get_node("SlashHitBox/CollisionShape2D").disabled = true
+
 		animation_player.play("death")
 		walking_sound.stop()
 		death_sound.play()

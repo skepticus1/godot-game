@@ -1021,7 +1021,6 @@ metadata/_edit_lock_ = true
 position = Vector2(0, -20)
 sprite_frames = SubResource("SpriteFrames_s6ila")
 animation = &"death"
-frame = 1
 metadata/_edit_lock_ = true
 
 [node name="PlayerDetection" type="Area2D" parent="."]
