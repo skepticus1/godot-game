@@ -211,6 +211,7 @@ func wind_slash():
 func _on_attack_hit_box_body_entered(body):
 	print("Function is running! Entered body is: ", body.name) 
 	if body.is_in_group("Enemy"):
+		print("here is the issue")
 		body.health -= Game.SwordDamage
 		apply_knockback(body)
 		print(body.name, " health is: ", body.health)

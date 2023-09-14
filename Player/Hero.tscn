@@ -2305,7 +2305,6 @@ collision_mask = 150
 script = ExtResource("1_4sm72")
 
 [node name="HeroHitBox" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, -9)
 shape = SubResource("CircleShape2D_h8x15")
 metadata/_edit_lock_ = true
@@ -2314,10 +2313,10 @@ metadata/_edit_lock_ = true
 position = Vector2(0, -30)
 sprite_frames = SubResource("SpriteFrames_pujre")
 animation = &"SwordAttackDown"
+frame = 1
 metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false
 enabled = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -2330,10 +2329,12 @@ collision_layer = 8
 collision_mask = 258
 
 [node name="SwordSlashCollision" type="CollisionShape2D" parent="AttackHitBox"]
+visible = false
 position = Vector2(4, -42.5)
 shape = SubResource("RectangleShape2D_g7gl0")
 
 [node name="SwordThrustCollision" type="CollisionShape2D" parent="AttackHitBox"]
+visible = false
 position = Vector2(-0.5, 13.5)
 shape = SubResource("RectangleShape2D_iindd")
 
