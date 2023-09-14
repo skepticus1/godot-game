@@ -14981,7 +14981,7 @@ navigation_polygon = SubResource("NavigationPolygon_f7x3f")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_8pmj5")
-volume_db = -25.137
+volume_db = -25.0
 autoplay = true
 
 [node name="FirePit" parent="." instance=ExtResource("12_xmjl0")]
