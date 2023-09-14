@@ -39706,7 +39706,7 @@ limit_bottom = 1150
 [node name="GUI" parent="OverworldCamera" instance=ExtResource("14_jyuax")]
 
 [node name="Skeleton" parent="." instance=ExtResource("15_rt6k0")]
-position = Vector2(-1019, 206)
+position = Vector2(-964, 181)
 
 [node name="BreakablePots9" parent="." instance=ExtResource("9_6wq7s")]
 position = Vector2(-990, -834)
@@ -39758,3 +39758,33 @@ position = Vector2(-1174, 492)
 
 [node name="Portals4" parent="." instance=ExtResource("18_l685w")]
 position = Vector2(1225, 486)
+
+[node name="Skeleton2" parent="." instance=ExtResource("15_rt6k0")]
+position = Vector2(443, -951)
+
+[node name="Skeleton3" parent="." instance=ExtResource("15_rt6k0")]
+position = Vector2(-493, -451)
+
+[node name="Skeleton4" parent="." instance=ExtResource("15_rt6k0")]
+position = Vector2(862, 857)
+
+[node name="Skeleton5" parent="." instance=ExtResource("15_rt6k0")]
+position = Vector2(-32, -290)
+
+[node name="Skeleton6" parent="." instance=ExtResource("15_rt6k0")]
+position = Vector2(128, 393)
+
+[node name="Skeleton7" parent="." instance=ExtResource("15_rt6k0")]
+position = Vector2(-537, 635)
+
+[node name="Skeleton8" parent="." instance=ExtResource("15_rt6k0")]
+position = Vector2(-1111, -1007)
+
+[node name="Skeleton9" parent="." instance=ExtResource("15_rt6k0")]
+position = Vector2(1200, 51)
+
+[node name="Skeleton10" parent="." instance=ExtResource("15_rt6k0")]
+position = Vector2(927, -501)
+
+[node name="Skeleton11" parent="." instance=ExtResource("15_rt6k0")]
+position = Vector2(-318, -925)
