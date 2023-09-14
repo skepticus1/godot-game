@@ -3,6 +3,8 @@ extends Node2D
 @onready var musicPlayer = $MusicPlayer
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Game.is_alive = true
+	Game.HeroHealth = 100
 	Utilities.saveGame()
 	Utilities.loadGame()
 	musicPlayer.play(true)
