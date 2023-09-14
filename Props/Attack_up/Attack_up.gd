@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-@export var requiredGold = 5  # Set the required gold for the upgrade
+@export var requiredGold = 50  # Set the required gold for the upgrade
 
 var is_player_in_area = false
 var is_interactable = true  # Set to false when the player successfully interacts

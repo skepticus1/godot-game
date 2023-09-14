@@ -1035,7 +1035,6 @@ wait_time = 0.25
 autostart = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-debug_enabled = true
 
 [node name="AttackZone" type="Area2D" parent="."]
 
